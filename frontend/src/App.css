@@ -1,0 +1,2 @@
+/* App-specific styles can be added here */
+.App { background: var(--bg); color: var(--fg); min-height: 100vh; }
