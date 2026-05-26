@@ -329,6 +329,13 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
     "headingFont": "Syne",
     "bodyFont": "Inter",
     "accentColor": "#FF7A1A",
+    "sizes": {
+        "heroTitle": 11,        # rem max for display-1 (clamp upper bound)
+        "sectionTitle": 6.5,    # rem max for display-2
+        "marquee": 3,           # rem max for marquee items
+        "marqueePadding": 32,   # vertical padding inside marquee in px
+        "bodyScale": 1.0,       # 0.85 to 1.2
+    },
 }
 
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "kyllian2026")
