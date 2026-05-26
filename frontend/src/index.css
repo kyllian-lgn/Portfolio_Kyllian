@@ -557,12 +557,36 @@ section { position: relative; }
     background: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
     overflow: hidden;
+    position: relative;
 }
 .skill-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--accent) 0%, #ffae6f 100%);
-    transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 0 12px var(--accent-glow);
 }
+.skill-bar-fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 100%
+    );
+    animation: shimmer 2.4s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    60%, 100% { transform: translateX(200%); }
+}
+/* Bars start at 0 width and animate to inline-style width once revealed */
+.reveal:not(.in) .skill-bar-fill { width: 0 !important; }
+.reveal:not(.in) .skill-bar-fill::after { animation: none; }
 
 /* Footer */
 footer {

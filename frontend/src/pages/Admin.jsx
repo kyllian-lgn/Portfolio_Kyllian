@@ -4,22 +4,26 @@ import { LogOut, Save, RotateCcw, Trash2, Download, Upload, CheckCircle2, Mail, 
 import { Toaster, toast } from "sonner";
 import apiClient from "../lib/api";
 import { usePortfolio, AVAILABLE_FONTS, applySettings } from "../context/PortfolioContext";
+import ContentEditor from "../components/admin/ContentEditor";
 
 const TABS = [
-  { id: "content", label: "Contenu (JSON)" },
+  { id: "edit", label: "Édition" },
   { id: "theme", label: "Apparence" },
   { id: "messages", label: "Messages" },
+  { id: "content", label: "JSON (avancé)" },
 ];
 
 export default function Admin() {
   const navigate = useNavigate();
   const { content, settings, refresh } = usePortfolio();
-  const [active, setActive] = useState("content");
+  const [active, setActive] = useState("edit");
   const [jsonText, setJsonText] = useState("");
   const [jsonError, setJsonError] = useState("");
   const [saving, setSaving] = useState(false);
   const [localSettings, setLocalSettings] = useState(null);
   const [messages, setMessages] = useState([]);
+  const [editorContent, setEditorContent] = useState(null);
+  const [dirty, setDirty] = useState(false);
 
   useEffect(() => {
     apiClient.get("/portfolio/verify").catch(() => {
@@ -29,7 +33,11 @@ export default function Admin() {
   }, [navigate]);
 
   useEffect(() => {
-    if (content) setJsonText(JSON.stringify(content, null, 2));
+    if (content) {
+      setJsonText(JSON.stringify(content, null, 2));
+      setEditorContent(content);
+      setDirty(false);
+    }
   }, [content]);
 
   useEffect(() => {
@@ -73,6 +81,30 @@ export default function Admin() {
     } catch {
       toast.error("Erreur d'enregistrement.");
     } finally { setSaving(false); }
+  };
+
+  const saveEditor = async () => {
+    if (!editorContent) return;
+    setSaving(true);
+    try {
+      await apiClient.put("/portfolio/content", editorContent);
+      await refresh();
+      setDirty(false);
+      toast.success("Modifications enregistrées.");
+    } catch {
+      toast.error("Erreur d'enregistrement.");
+    } finally { setSaving(false); }
+  };
+
+  const onEditorChange = (next) => {
+    setEditorContent(next);
+    setDirty(true);
+  };
+
+  const discardChanges = () => {
+    if (dirty && !window.confirm("Annuler les modifications non enregistrées ?")) return;
+    setEditorContent(content);
+    setDirty(false);
   };
 
   const resetContent = async () => {
@@ -161,6 +193,24 @@ export default function Admin() {
             </button>
           ))}
         </div>
+
+        {active === "edit" && (
+          <div data-testid="edit-tab">
+            <div style={{ display: "flex", gap: 10, marginBottom: 24, flexWrap: "wrap", alignItems: "center", position: "sticky", top: 80, background: "var(--bg)", padding: "12px 0", zIndex: 5, borderBottom: dirty ? "1px solid var(--accent)" : "1px solid transparent" }}>
+              <button className="btn-primary" onClick={saveEditor} disabled={!dirty || saving} data-testid="save-editor-btn">
+                <Save size={14} /> {saving ? "Enregistrement..." : "Enregistrer les modifications"}
+              </button>
+              <button className="btn-ghost" onClick={discardChanges} disabled={!dirty}>
+                <RotateCcw size={14} /> Annuler
+              </button>
+              {dirty && <span style={{ color: "var(--accent)", fontSize: "0.82rem", marginLeft: 8 }}>● Modifications non enregistrées</span>}
+            </div>
+            <p style={{ color: "var(--fg-muted)", fontSize: "0.88rem", marginBottom: 24, maxWidth: 760, lineHeight: 1.6 }}>
+              Modifiez chaque section de votre portfolio via les formulaires. Cliquez sur une section pour la déplier. Pensez à <strong style={{ color: "var(--fg)" }}>Enregistrer</strong> en haut une fois vos changements terminés.
+            </p>
+            <ContentEditor value={editorContent} onChange={onEditorChange} />
+          </div>
+        )}
 
         {active === "content" && (
           <div data-testid="content-tab">
