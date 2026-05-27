@@ -7,7 +7,7 @@ const portfolioData = {
   },
   "hero": {
     "tag": "Portfolio · Ingénierie 3D",
-    "firstName": "HEy HEY",
+    "firstName": "Kyllian",
     "lastName": "Le Guen",
     "subtitle": "Apprenti, ingénieur en conception 3D",
     "description": "Étudiant en alternance passionné par la conception 3D, la fabrication additive et la réalité virtuelle. En alternance aux Chantiers de l'Atlantique.",
