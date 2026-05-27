@@ -60,6 +60,7 @@ const portfolioData = {
         "Usinage"
       ],
       "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779872390/rqv41u0tyfhk28f8as7f.png"
+      "gallery": []
     },
     {
       "id": "p2",
@@ -79,6 +80,7 @@ const portfolioData = {
         "CAO"
       ],
       "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80"
+      "gallery": []
     },
     {
       "id": "p3",
@@ -97,6 +99,7 @@ const portfolioData = {
         "Enedis"
       ],
       "image": "https://images.unsplash.com/photo-1626387346567-68d0c4078b2a?w=1200&q=80"
+      "gallery": []
     },
     {
       "id": "p4",
@@ -115,6 +118,7 @@ const portfolioData = {
         "Engrenages"
       ],
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"
+      "gallery": []
     },
     {
       "id": "p5",
@@ -133,6 +137,7 @@ const portfolioData = {
         "Matériaux"
       ],
       "image": "https://images.unsplash.com/photo-1631467961059-2106c81a8f81?w=1200&q=80"
+      "gallery": []
     },
     {
       "id": "p6",
@@ -152,6 +157,7 @@ const portfolioData = {
         "Automatisation"
       ],
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
+      "gallery": []
     }
   ],
   "education": [
