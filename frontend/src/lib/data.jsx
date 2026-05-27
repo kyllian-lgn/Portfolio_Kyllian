@@ -58,7 +58,7 @@ const portfolioData = {
         "FAO",
         "Usinage"
       ],
-      "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80"
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779872390/rqv41u0tyfhk28f8as7f.png"
     },
     {
       "id": "p2",
