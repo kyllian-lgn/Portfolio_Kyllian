@@ -64,6 +64,10 @@ const portfolioData = {
         {
           "type": "image",
           "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779879900/zjtgjk3vtuuswwr1ai1p.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png"
         }
       ]
     },
