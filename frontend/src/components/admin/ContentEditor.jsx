@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, TextInput, TextArea, NumberInput, StringList, Repeater, Section, SkillRepeater } from "./EditorPrimitives";
+import ImageUpload from "./ImageUpload";
 
 /* ContentEditor: a fully formed UI to edit every field of the portfolio content.
    Receives `value` (the whole content object) and `onChange(next)` to update it. */
@@ -88,7 +89,7 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Compétences"><TextInput value={item.skills} onChange={(v) => update({ skills: v })} /></Field>
               <Field label="Livrables"><TextInput value={item.deliverables} onChange={(v) => update({ deliverables: v })} /></Field>
               <Field label="Innovation"><TextInput value={item.innovation} onChange={(v) => update({ innovation: v })} /></Field>
-              <Field label="Image (URL externe)"><TextInput value={item.image} onChange={(v) => update({ image: v })} /></Field>
+              <Field label="Image du projet"><ImageUpload value={item.image} onChange={(v) => update({ image: v })} /></Field>
               <Field label="Tags">
                 <StringList items={item.tags || []} onChange={(next) => update({ tags: next })} placeholder="Ex: Catia V5" />
               </Field>
@@ -215,7 +216,7 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Nom"><TextInput value={item.name} onChange={(v) => update({ name: v })} /></Field>
               <Field label="Description"><TextArea rows={3} value={item.description} onChange={(v) => update({ description: v })} /></Field>
               <Field label="Étiquette (sous la description)"><TextInput value={item.tag} onChange={(v) => update({ tag: v })} /></Field>
-              <Field label="Image (URL)"><TextInput value={item.image} onChange={(v) => update({ image: v })} /></Field>
+              <Field label="Image de l'activité"><ImageUpload value={item.image} onChange={(v) => update({ image: v })} /></Field>
             </>
           )}
         />
