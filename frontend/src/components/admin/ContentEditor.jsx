@@ -126,6 +126,8 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Lieu / École"><TextInput value={item.place} onChange={(v) => update({ place: v })} /></Field>
               <Field label="Points détaillés (un par ligne)">
                 <StringList items={item.details || []} onChange={(next) => update({ details: next })} placeholder="Nouveau point" />
+                <Field label="Lien externe (site, organisme...)"><TextInput value={item.link || ""} onChange={(v) => update({ link: v })} placeholder="https://..." /></Field>
+                <Field label="Images (2 max)"><GalleryUpload value={item.images || []} onChange={(v) => update({ images: v })} maxItems={2} /></Field>
               </Field>
             </>
           )}
