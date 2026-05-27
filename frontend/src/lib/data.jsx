@@ -60,7 +60,12 @@ const portfolioData = {
         "Usinage"
       ],
       "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779872390/rqv41u0tyfhk28f8as7f.png",
-      "gallery": []
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779879900/zjtgjk3vtuuswwr1ai1p.jpg"
+        }
+      ]
     },
     {
       "id": "p2",
