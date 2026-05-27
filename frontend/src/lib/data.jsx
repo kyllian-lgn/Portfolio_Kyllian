@@ -68,6 +68,14 @@ const portfolioData = {
         {
           "type": "image",
           "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880614/gncgio6rcej6bprvdglm.heic"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779880666/Vid%C3%A9o_Pi%C3%A8ce_FAO_ezje6s.mp4"
         }
       ]
     },
