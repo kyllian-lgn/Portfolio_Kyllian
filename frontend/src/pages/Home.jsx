@@ -15,40 +15,65 @@ export default function Home() {
       <section className="hero" data-testid="hero-section">
         <div className="huge-bg">{content.hero.lastName.split(" ").join("")}</div>
         <div className="container-x">
-          <div className="eyebrow reveal" style={{ marginBottom: 32 }}>{content.hero.tag}</div>
-          <h1 className="display-1 reveal" data-testid="hero-name">
-            {content.hero.firstName}<br />
-            <span className="italic-orange">{content.hero.lastName}</span>
-          </h1>
-          <div className="eyebrow reveal" style={{ marginTop: 40, marginBottom: 24, color: "var(--fg-muted)" }}>
-            <span style={{ color: "var(--fg-muted)" }}>{content.hero.subtitle}</span>
-          </div>
-          <p className="reveal" style={{ maxWidth: 580, color: "var(--fg-soft)", fontSize: "1.05rem", lineHeight: 1.7 }}>
-            {content.hero.description}
-          </p>
-          <div className="reveal" style={{ display: "flex", gap: 16, marginTop: 40, flexWrap: "wrap" }}>
-            <Link to="/projets" className="btn-primary" data-testid="cta-projects">
-              Voir mes projets <ArrowUpRight size={16} />
-            </Link>
-            <Link to="/contact" className="btn-ghost" data-testid="cta-contact">
-              Me contacter
-            </Link>
-          </div>
-
-          <div className="stats-row reveal">
-            {content.hero.stats.map((s, i) => (
-              <div className="stat" key={i}>
-                <div className="value">{s.value}</div>
-                <div className="label">{s.label}</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
+            <div style={{ flex: 1, minWidth: 280 }}>
+              <div className="eyebrow reveal" style={{ marginBottom: 32 }}>{content.hero.tag}</div>
+              <h1 className="display-1 reveal" data-testid="hero-name">
+                {content.hero.firstName}<br />
+                <span className="italic-orange">{content.hero.lastName}</span>
+              </h1>
+              <div className="eyebrow reveal" style={{ marginTop: 40, marginBottom: 24, color: "var(--fg-muted)" }}>
+                <span style={{ color: "var(--fg-muted)" }}>{content.hero.subtitle}</span>
               </div>
-            ))}
+              <p className="reveal" style={{ maxWidth: 580, color: "var(--fg-soft)", fontSize: "1.05rem", lineHeight: 1.7 }}>
+                {content.hero.description}
+              </p>
+              <div className="reveal" style={{ display: "flex", gap: 16, marginTop: 40, flexWrap: "wrap" }}>
+                <Link to="/projets" className="btn-primary" data-testid="cta-projects">
+                  Voir mes projets <ArrowUpRight size={16} />
+                </Link>
+                <Link to="/contact" className="btn-ghost" data-testid="cta-contact">
+                  Me contacter
+                </Link>
+              </div>
+              <div className="stats-row reveal">
+                {content.hero.stats.map((s, i) => (
+                  <div className="stat" key={i}>
+                    <div className="value">{s.value}</div>
+                    <div className="label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {content.hero.photo && (
+              <div className="reveal" style={{ flexShrink: 0 }}>
+                <div style={{
+                  width: "clamp(240px, 30vw, 380px)",
+                  aspectRatio: "3/4",
+                  borderRadius: 24,
+                  overflow: "hidden",
+                  border: "1px solid var(--border)",
+                  position: "relative",
+                }}>
+                  <img
+                    src={content.hero.photo}
+                    alt={content.hero.firstName}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                  <div style={{
+                    position: "absolute", inset: 0,
+                    background: "linear-gradient(to top, rgba(10,10,11,0.5) 0%, transparent 50%)"
+                  }} />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       <Marquee items={content.marquee} />
 
-      {/* Featured projects */}
       <section className="section-pad">
         <div className="container-x">
           <div className="section-title-block reveal">
@@ -58,7 +83,6 @@ export default function Home() {
             </div>
             <Link to="/projets" className="btn-ghost">Voir tous les projets <ArrowRight size={14} /></Link>
           </div>
-
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
             {featured.map((p) => (
               <Link to="/projets" key={p.id} className="card card-project reveal" data-testid={`project-card-${p.id}`}>
@@ -73,7 +97,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tools section */}
       <section className="section-pad" style={{ paddingTop: 0 }}>
         <div className="container-x">
           <div className="section-title-block reveal">
@@ -93,7 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="section-pad" style={{ paddingTop: 0 }}>
         <div className="container-x">
           <div className="cta-banner reveal">
