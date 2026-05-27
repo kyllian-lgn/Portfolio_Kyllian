@@ -189,7 +189,7 @@ const portfolioData = {
         "Fabrication et industrialisation : maîtrise des procédés d'usinage, de fabrication additive et de production automatisée",
         "Matériaux et résistance des structures : propriétés des matériaux, calculs de résistance, optimisation des structures",
         "Gestion de production : Lean Manufacturing, gestion de la chaîne logistique",
-        "Robotique et automatisation : systèmes automatisés, technologies Industrie 4.0, fabrication additive"
+        "Robotique et automatisation : systèmes automatisés, technologies Industrie 4.0, fabrication additive",
         "images": [],
         "link": ""
       ]
@@ -202,7 +202,7 @@ const portfolioData = {
       "tag": "Spécialisation",
       "details": [
         "Virtualisation et modélisation : outils de simulation des systèmes mécaniques en environnement virtuel (RA, RV, simulation numérique)",
-        "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication"
+        "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication",
         "images": [],
         "link": ""
       ]
@@ -216,7 +216,7 @@ const portfolioData = {
       "details": [
         "Coordination des réseaux : intégration multi-réseaux (ventilation, tuyauterie, électricité) avec fortes contraintes thermiques et phoniques",
         "Collaboration : travail entre secteurs production, industrialisation, bureau d'études",
-        "Compétences : autonomie, communication, maîtrise de logiciels CAO et code XML"
+        "Compétences : autonomie, communication, maîtrise de logiciels CAO et code XML",
         "images": [],
         "link": ""
       ]
@@ -229,7 +229,7 @@ const portfolioData = {
       "tag": "Certification",
       "details": [
         "Programme intensif de deux semaines avec des étudiants de diverses nationalités",
-        "Expression et compréhension orales / Expression et compréhension écrites"
+        "Expression et compréhension orales / Expression et compréhension écrites",
         "images": [],
         "link": ""
       ]
@@ -243,7 +243,7 @@ const portfolioData = {
       "details": [
         "Projets industriels, méthode de conception durable",
         "Formation à la programmation Python",
-        "Formation à la conception assistée par ordinateur (SolidWorks)"
+        "Formation à la conception assistée par ordinateur (SolidWorks)",
         "images": [],
         "link": ""
       ]
@@ -257,7 +257,7 @@ const portfolioData = {
       "details": [
         "Conception industrielle, recherche innovante",
         "Intelligence artificielle, réalité virtuelle",
-        "Gestion de projet, management, éthique et RSE"
+        "Gestion de projet, management, éthique et RSE",
         "images": [],
         "link": ""
       ]
