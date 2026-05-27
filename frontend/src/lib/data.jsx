@@ -59,7 +59,7 @@ const portfolioData = {
         "FAO",
         "Usinage"
       ],
-      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779872390/rqv41u0tyfhk28f8as7f.png"
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779872390/rqv41u0tyfhk28f8as7f.png",
       "gallery": []
     },
     {
@@ -79,7 +79,7 @@ const portfolioData = {
         "VR",
         "CAO"
       ],
-      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80",
       "gallery": []
     },
     {
@@ -98,7 +98,7 @@ const portfolioData = {
         "3DExp.",
         "Enedis"
       ],
-      "image": "https://images.unsplash.com/photo-1626387346567-68d0c4078b2a?w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1626387346567-68d0c4078b2a?w=1200&q=80",
       "gallery": []
     },
     {
@@ -117,7 +117,7 @@ const portfolioData = {
         "Mécanique",
         "Engrenages"
       ],
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
       "gallery": []
     },
     {
@@ -136,7 +136,7 @@ const portfolioData = {
         "SolidWorks",
         "Matériaux"
       ],
-      "image": "https://images.unsplash.com/photo-1631467961059-2106c81a8f81?w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1631467961059-2106c81a8f81?w=1200&q=80",
       "gallery": []
     },
     {
@@ -156,7 +156,7 @@ const portfolioData = {
         "Smart 3D",
         "Automatisation"
       ],
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
       "gallery": []
     }
   ],
