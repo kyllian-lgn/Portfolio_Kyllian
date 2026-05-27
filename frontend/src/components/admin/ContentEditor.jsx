@@ -33,6 +33,7 @@ export default function ContentEditor({ value, onChange }) {
         </div>
         <Field label="Sous-titre (en majuscules)"><TextInput value={value.hero?.subtitle} onChange={(v) => patch("hero", { subtitle: v })} /></Field>
         <Field label="Description courte"><TextArea rows={3} value={value.hero?.description} onChange={(v) => patch("hero", { description: v })} /></Field>
+        <Field label="Photo de profil"><ImageUpload value={value.hero?.photo} onChange={(v) => patch("hero", { photo: v })} /></Field>
 
         <div style={{ marginTop: 20, marginBottom: 10, fontFamily: "var(--heading-font)", fontSize: "1rem" }}>Statistiques (3 blocs)</div>
         <Repeater
