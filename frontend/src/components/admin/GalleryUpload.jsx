@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { uploadToCloudinary } from "../../lib/githubSave";
 import { X, Plus } from "lucide-react";
 
-export default function GalleryUpload({ value = [], onChange }) {
+export default function GalleryUpload({ value = [], onChange, maxItems = 5 }) {
   const [uploading, setUploading] = useState(false);
 
   const handleFile = async (e) => {
     const file = e.target.files?.[0];
-    if (!file || value.length >= 5) return;
+    if (!file || value.length >= maxItems) return;
     setUploading(true);
     try {
       const url = await uploadToCloudinary(file);
@@ -20,7 +20,7 @@ export default function GalleryUpload({ value = [], onChange }) {
   };
 
   const addVideo = () => {
-    if (value.length >= 5) return;
+    if (value.length >= maxItems) return;
     const url = window.prompt("Colle l'URL de ta vidéo (YouTube, Vimeo...) :");
     if (url) onChange([...value, { type: "video", url }]);
   };
@@ -55,7 +55,7 @@ export default function GalleryUpload({ value = [], onChange }) {
           </div>
         )}
       </div>
-      <p style={{ color: "var(--fg-muted)", fontSize: "0.75rem" }}>{value.length}/5 médias ajoutés</p>
+      <p style={{ color: "var(--fg-muted)", fontSize: "0.75rem" }}>{value.length}/maxItems médias ajoutés</p>
     </div>
   );
 }
