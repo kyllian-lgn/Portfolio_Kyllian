@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Star, ExternalLink } from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
 import Marquee from "../components/Marquee";
 
@@ -72,6 +72,39 @@ export default function Experiences() {
                     <div className="eyebrow no-after" style={{ fontSize: "0.7rem", marginBottom: 10 }}><Star size={12} /> Projet phare</div>
                     <div style={{ color: "var(--fg)", fontSize: "0.95rem", lineHeight: 1.6 }}>{e.highlight}</div>
                   </div>
+                )}
+
+                {/* Images en escalier */}
+                {e.images?.length > 0 && (
+                  <div style={{ position: "relative", height: e.images.length === 2 ? 220 : 180, margin: "24px 0" }}>
+                    {e.images[0] && (
+                      <img src={e.images[0].url || e.images[0]} alt="" style={{
+                        position: "absolute", left: 0, top: 0,
+                        width: "55%", aspectRatio: "4/3", objectFit: "cover",
+                        borderRadius: 12, border: "2px solid var(--border)",
+                        zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
+                      }} />
+                    )}
+                    {e.images[1] && (
+                      <img src={e.images[1].url || e.images[1]} alt="" style={{
+                        position: "absolute", right: 0, top: 40,
+                        width: "55%", aspectRatio: "4/3", objectFit: "cover",
+                        borderRadius: 12, border: "2px solid var(--border)",
+                        zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
+                      }} />
+                    )}
+                  </div>
+                )}
+
+                {/* Lien externe */}
+                {e.link && (
+                  <a href={e.link} target="_blank" rel="noreferrer" style={{
+                    display: "inline-flex", alignItems: "center", gap: 8,
+                    marginBottom: 16, color: "var(--accent)", fontSize: "0.85rem",
+                    fontWeight: 600, textDecoration: "none",
+                  }}>
+                    <ExternalLink size={14} /> Voir le site
+                  </a>
                 )}
 
                 <div>{e.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
