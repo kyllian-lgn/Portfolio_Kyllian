@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
-import apiClient from "../lib/api";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import portfolioData from "../lib/data";
 
 const PortfolioContext = createContext(null);
 
@@ -31,7 +31,7 @@ function ensureFontLoaded(family) {
   document.head.appendChild(link);
 }
 
-function applySettings(settings) {
+export function applySettings(settings) {
   if (!settings) return;
   ensureFontLoaded(settings.headingFont);
   ensureFontLoaded(settings.bodyFont);
@@ -39,7 +39,6 @@ function applySettings(settings) {
   root.style.setProperty("--heading-font", `'${settings.headingFont}', sans-serif`);
   root.style.setProperty("--body-font", `'${settings.bodyFont}', sans-serif`);
   root.style.setProperty("--accent", settings.accentColor);
-  // derive helpers
   const hex = settings.accentColor.replace("#", "");
   const r = parseInt(hex.slice(0, 2), 16);
   const g = parseInt(hex.slice(2, 4), 16);
@@ -48,28 +47,25 @@ function applySettings(settings) {
   root.style.setProperty("--accent-glow", `rgba(${r}, ${g}, ${b}, 0.4)`);
 }
 
+const defaultSettings = {
+  headingFont: "Syne",
+  bodyFont: "Inter",
+  accentColor: "#FF7A1A",
+};
+
 export function PortfolioProvider({ children }) {
   const [content, setContent] = useState(null);
   const [settings, setSettings] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const refresh = useCallback(async () => {
-    try {
-      const [c, s] = await Promise.all([
-        apiClient.get("/portfolio/content"),
-        apiClient.get("/portfolio/settings"),
-      ]);
-      setContent(c.data);
-      setSettings(s.data);
-      applySettings(s.data);
-    } catch (e) {
-      console.error("Failed to load portfolio data", e);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    setContent(portfolioData);
+    setSettings(defaultSettings);
+    applySettings(defaultSettings);
+    setLoading(false);
   }, []);
 
-  useEffect(() => { refresh(); }, [refresh]);
+  const refresh = () => {};
 
   return (
     <PortfolioContext.Provider value={{ content, settings, loading, refresh, applySettings }}>
@@ -83,5 +79,3 @@ export function usePortfolio() {
   if (!ctx) throw new Error("usePortfolio must be inside PortfolioProvider");
   return ctx;
 }
-
-export { applySettings };
