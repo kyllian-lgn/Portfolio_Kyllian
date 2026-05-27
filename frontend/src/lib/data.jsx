@@ -436,6 +436,11 @@ const portfolioData = {
     "fullAddress": "14 rue de la Fragonnette, 44730",
     "linkedin": "https://www.linkedin.com/in/le-guen-kyllian",
     "mobility": "Permis B - Véhiculé · Mobile en France"
+  },
+  "_settings": {
+    "headingFont": "Syne",
+    "bodyFont": "Inter",
+    "accentColor": "#00c4c4"
   }
 };
 
