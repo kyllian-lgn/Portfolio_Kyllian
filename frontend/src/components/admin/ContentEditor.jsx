@@ -229,7 +229,8 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Nom"><TextInput value={item.name} onChange={(v) => update({ name: v })} /></Field>
               <Field label="Description"><TextArea rows={3} value={item.description} onChange={(v) => update({ description: v })} /></Field>
               <Field label="Étiquette (sous la description)"><TextInput value={item.tag} onChange={(v) => update({ tag: v })} /></Field>
-              <Field label="Image de l'activité"><ImageUpload value={item.image} onChange={(v) => update({ image: v })} /></Field>
+              <Field label="Image principale"><ImageUpload value={item.image} onChange={(v) => update({ image: v })} /></Field>
+              <Field label="Galerie photos (catalogue)"><GalleryUpload value={item.gallery || []} onChange={(v) => update({ gallery: v })} maxItems={10} /></Field>
             </>
           )}
         />
