@@ -5,19 +5,28 @@ const portfolioData = {
     "title": "Kyllian Le Guen - Portfolio",
     "cvUrl": "https://customer-assets.emergentagent.com/job_0bcba074-278d-441d-b430-4ad6946c317d/artifacts/lb5e4682_4dafc6_c2f2085d1ff64f748fc5f4b760b0bb9b-4.pdf"
   },
-"hero": {
-  "photo": "",
-  "tag": "Portfolio · Ingénierie 3D",
-  "firstName": "Kyllian",
-  "lastName": "Le Guen",
-  "subtitle": "Apprenti, ingénieur en conception 3D",
-  "description": "Étudiant en alternance passionné par la conception 3D, la fabrication additive et la réalité virtuelle. En alternance aux Chantiers de l'Atlantique.",
-  "stats": [
-    {"value": "2+", "label": "Années d'expérience"},
-    {"value": "6+", "label": "Projets réalisés"},
-    {"value": "Master", "label": "Technologie Innovante"}
-  ]
-},
+  "hero": {
+    "photo": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779878224/wwwgnwnojraxrq6vjb46.jpg",
+    "tag": "Portfolio · Ingénierie 3D",
+    "firstName": "Kyllian",
+    "lastName": "Le Guen",
+    "subtitle": "Apprenti, ingénieur en conception 3D",
+    "description": "Étudiant en alternance passionné par la conception 3D, la fabrication additive et la réalité virtuelle. En alternance aux Chantiers de l'Atlantique.",
+    "stats": [
+      {
+        "value": "2+",
+        "label": "Années d'expérience"
+      },
+      {
+        "value": "6+",
+        "label": "Projets réalisés"
+      },
+      {
+        "value": "Master",
+        "label": "Technologie Innovante"
+      }
+    ]
+  },
   "marquee": [
     "3DExperience",
     "Smart 3D",
