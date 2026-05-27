@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, TextInput, TextArea, NumberInput, StringList, Repeater, Section, SkillRepeater } from "./EditorPrimitives";
 import ImageUpload from "./ImageUpload";
+import GalleryUpload from "./GalleryUpload";
 
 /* ContentEditor: a fully formed UI to edit every field of the portfolio content.
    Receives `value` (the whole content object) and `onChange(next)` to update it. */
@@ -91,6 +92,7 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Livrables"><TextInput value={item.deliverables} onChange={(v) => update({ deliverables: v })} /></Field>
               <Field label="Innovation"><TextInput value={item.innovation} onChange={(v) => update({ innovation: v })} /></Field>
               <Field label="Image du projet"><ImageUpload value={item.image} onChange={(v) => update({ image: v })} /></Field>
+              <Field label="Galerie (jusqu'à 5 images/vidéos)"><GalleryUpload value={item.gallery || []} onChange={(v) => update({ gallery: v })} /></Field>
               <Field label="Tags">
                 <StringList items={item.tags || []} onChange={(next) => update({ tags: next })} placeholder="Ex: Catia V5" />
               </Field>
