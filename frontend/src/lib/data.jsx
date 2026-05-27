@@ -13,33 +13,15 @@ const portfolioData = {
     "subtitle": "Apprenti, ingénieur en conception 3D",
     "description": "Étudiant en alternance passionné par la conception 3D, la fabrication additive et la réalité virtuelle. En alternance aux Chantiers de l'Atlantique.",
     "stats": [
-      {
-        "value": "2+",
-        "label": "Années d'expérience"
-      },
-      {
-        "value": "6+",
-        "label": "Projets réalisés"
-      },
-      {
-        "value": "Master",
-        "label": "Technologie Innovante"
-      }
+      { "value": "2+", "label": "Années d'expérience" },
+      { "value": "6+", "label": "Projets réalisés" },
+      { "value": "Master", "label": "Technologie Innovante" }
     ]
   },
   "marquee": [
-    "3DExperience",
-    "Smart 3D",
-    "Catia V5",
-    "SolidWorks",
-    "PowerMill",
-    "Fabrication Additive",
-    "VBA · Python",
-    "Réalité Virtuelle",
-    "Réalité Augmenté",
-    "Unity 3D",
-    "NCSimul",
-    "Industrie 4.0"
+    "3DExperience", "Smart 3D", "Catia V5", "SolidWorks", "PowerMill",
+    "Fabrication Additive", "VBA · Python", "Réalité Virtuelle",
+    "Réalité Augmenté", "Unity 3D", "NCSimul", "Industrie 4.0"
   ],
   "projects": [
     {
@@ -52,31 +34,13 @@ const portfolioData = {
       "skills": "Programmation FAO, conception de parcours d'outils, état de surface",
       "deliverables": "Parcours ébauche, demi-finition, finition + pièce usinée",
       "innovation": "Géométrie complexe, forme gauche, optimisation du processus 5 axes",
-      "tags": [
-        "PowerMill",
-        "NCSimul",
-        "5 axes",
-        "FAO",
-        "Usinage"
-      ],
+      "tags": ["PowerMill", "NCSimul", "5 axes", "FAO", "Usinage"],
       "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779872390/rqv41u0tyfhk28f8as7f.png",
       "gallery": [
-        {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779879900/zjtgjk3vtuuswwr1ai1p.jpg"
-        },
-        {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png"
-        },
-        {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880614/gncgio6rcej6bprvdglm.heic"
-        },
-        {
-          "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779880666/Vid%C3%A9o_Pi%C3%A8ce_FAO_ezje6s.mp4"
-        }
+        { "type": "image", "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779879900/zjtgjk3vtuuswwr1ai1p.jpg" },
+        { "type": "image", "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png" },
+        { "type": "image", "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880614/gncgio6rcej6bprvdglm.heic" },
+        { "type": "video", "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779880666/Vid%C3%A9o_Pi%C3%A8ce_FAO_ezje6s.mp4" }
       ]
     },
     {
@@ -89,13 +53,7 @@ const portfolioData = {
       "skills": "Conception de préhenseur, simulation robotique, analyse des risques",
       "deliverables": "Modélisation Robot Studio, préhenseur 3D, implantation atelier VR",
       "innovation": "Amélioration des conditions de travail, prévention des TMS",
-      "tags": [
-        "Robot Studio",
-        "ABB",
-        "3DExp.",
-        "VR",
-        "CAO"
-      ],
+      "tags": ["Robot Studio", "ABB", "3DExp.", "VR", "CAO"],
       "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80",
       "gallery": []
     },
@@ -109,12 +67,7 @@ const portfolioData = {
       "skills": "Conception de scénario VR, modélisation 3D, UX industrielle",
       "deliverables": "Simulation VR interactive, scénario immersif, modèles 3D",
       "innovation": "Aide à la décision par immersion VR, optimisation des espaces de travail",
-      "tags": [
-        "Unity 3D",
-        "VR",
-        "3DExp.",
-        "Enedis"
-      ],
+      "tags": ["Unity 3D", "VR", "3DExp.", "Enedis"],
       "image": "https://images.unsplash.com/photo-1626387346567-68d0c4078b2a?w=1200&q=80",
       "gallery": []
     },
@@ -128,12 +81,7 @@ const portfolioData = {
       "skills": "Étude cinématique, dimensionnement d'engrenages, CAO",
       "deliverables": "Schémas cinématiques, modèle CAO, mise en plan complète",
       "innovation": "Optimisation du train d'engrenages, conception pour le montage",
-      "tags": [
-        "Catia V5",
-        "SolidWorks",
-        "Mécanique",
-        "Engrenages"
-      ],
+      "tags": ["Catia V5", "SolidWorks", "Mécanique", "Engrenages"],
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
       "gallery": []
     },
@@ -147,12 +95,7 @@ const portfolioData = {
       "skills": "Modélisation CAO, process d'impression 3D à pellets, matériaux",
       "deliverables": "Pare-chocs avant en deux parties assemblées",
       "innovation": "Process de fabrication additive robotisée, optimisation des matériaux",
-      "tags": [
-        "Fab. additive",
-        "Robotique",
-        "SolidWorks",
-        "Matériaux"
-      ],
+      "tags": ["Fab. additive", "Robotique", "SolidWorks", "Matériaux"],
       "image": "https://images.unsplash.com/photo-1631467961059-2106c81a8f81?w=1200&q=80",
       "gallery": []
     },
@@ -166,13 +109,7 @@ const portfolioData = {
       "skills": "Programmation XML, modélisation 3D, automatisation",
       "deliverables": "Programme XML lié aux logiciels 3D",
       "innovation": "Action de progrès, gains économiques, standardisation",
-      "tags": [
-        "XML",
-        "3DExp.",
-        "VBA",
-        "Smart 3D",
-        "Automatisation"
-      ],
+      "tags": ["XML", "3DExp.", "VBA", "Smart 3D", "Automatisation"],
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
       "gallery": []
     }
@@ -189,10 +126,10 @@ const portfolioData = {
         "Fabrication et industrialisation : maîtrise des procédés d'usinage, de fabrication additive et de production automatisée",
         "Matériaux et résistance des structures : propriétés des matériaux, calculs de résistance, optimisation des structures",
         "Gestion de production : Lean Manufacturing, gestion de la chaîne logistique",
-        "Robotique et automatisation : systèmes automatisés, technologies Industrie 4.0, fabrication additive",
-        "images": [],
-        "link": ""
-      ]
+        "Robotique et automatisation : systèmes automatisés, technologies Industrie 4.0, fabrication additive"
+      ],
+      "images": [],
+      "link": ""
     },
     {
       "id": "e2",
@@ -202,10 +139,10 @@ const portfolioData = {
       "tag": "Spécialisation",
       "details": [
         "Virtualisation et modélisation : outils de simulation des systèmes mécaniques en environnement virtuel (RA, RV, simulation numérique)",
-        "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication",
-        "images": [],
-        "link": ""
-      ]
+        "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication"
+      ],
+      "images": [],
+      "link": ""
     },
     {
       "id": "e3",
@@ -216,10 +153,10 @@ const portfolioData = {
       "details": [
         "Coordination des réseaux : intégration multi-réseaux (ventilation, tuyauterie, électricité) avec fortes contraintes thermiques et phoniques",
         "Collaboration : travail entre secteurs production, industrialisation, bureau d'études",
-        "Compétences : autonomie, communication, maîtrise de logiciels CAO et code XML",
-        "images": [],
-        "link": ""
-      ]
+        "Compétences : autonomie, communication, maîtrise de logiciels CAO et code XML"
+      ],
+      "images": [],
+      "link": ""
     },
     {
       "id": "e4",
@@ -229,10 +166,10 @@ const portfolioData = {
       "tag": "Certification",
       "details": [
         "Programme intensif de deux semaines avec des étudiants de diverses nationalités",
-        "Expression et compréhension orales / Expression et compréhension écrites",
-        "images": [],
-        "link": ""
-      ]
+        "Expression et compréhension orales / Expression et compréhension écrites"
+      ],
+      "images": [],
+      "link": ""
     },
     {
       "id": "e5",
@@ -243,10 +180,10 @@ const portfolioData = {
       "details": [
         "Projets industriels, méthode de conception durable",
         "Formation à la programmation Python",
-        "Formation à la conception assistée par ordinateur (SolidWorks)",
-        "images": [],
-        "link": ""
-      ]
+        "Formation à la conception assistée par ordinateur (SolidWorks)"
+      ],
+      "images": [],
+      "link": ""
     },
     {
       "id": "e6",
@@ -257,10 +194,10 @@ const portfolioData = {
       "details": [
         "Conception industrielle, recherche innovante",
         "Intelligence artificielle, réalité virtuelle",
-        "Gestion de projet, management, éthique et RSE",
-        "images": [],
-        "link": ""
-      ]
+        "Gestion de projet, management, éthique et RSE"
+      ],
+      "images": [],
+      "link": ""
     }
   ],
   "experiences": [
@@ -278,14 +215,9 @@ const portfolioData = {
         "Collaboration multi-secteurs sur projets d'envergure internationale"
       ],
       "highlight": "Intégration complète d'un lot du navire Orient Express Corinthian pour le groupe ACCOR",
-      "tags": [
-        "Smart 3D",
-        "3DExperience",
-        "VBA",
-        "Coordination",
-        "Naval",
-        "Lean"
-      ]
+      "tags": ["Smart 3D", "3DExperience", "VBA", "Coordination", "Naval", "Lean"],
+      "images": [],
+      "link": ""
     },
     {
       "id": "x2",
@@ -300,13 +232,9 @@ const portfolioData = {
         "Application du Lean manufacturing en atelier de production"
       ],
       "highlight": "Installation de la cellule robotisée à pellets — réalisation d'un pare-chocs pour véhicule intermédiaire",
-      "tags": [
-        "Fab. additive",
-        "Robotique",
-        "Découpe laser",
-        "Jet d'eau",
-        "Lean"
-      ]
+      "tags": ["Fab. additive", "Robotique", "Découpe laser", "Jet d'eau", "Lean"],
+      "images": [],
+      "link": ""
     },
     {
       "id": "x3",
@@ -318,10 +246,9 @@ const portfolioData = {
         "Relation client, gestion des ventes en boutique artisanale et gestion des stocks."
       ],
       "highlight": "",
-      "tags": [
-        "Relation client",
-        "Vente"
-      ]
+      "tags": ["Relation client", "Vente"],
+      "images": [],
+      "link": ""
     },
     {
       "id": "x4",
@@ -333,109 +260,45 @@ const portfolioData = {
         "Service en salle, relation client, gestion des stocks et adaptation rapide en environnement de restauration."
       ],
       "highlight": "",
-      "tags": [
-        "Service",
-        "Adaptation"
-      ]
+      "tags": ["Service", "Adaptation"],
+      "images": [],
+      "link": ""
     }
   ],
   "skills": {
     "software": [
-      {
-        "name": "3DExperience",
-        "level": 90
-      },
-      {
-        "name": "Smart 3D",
-        "level": 85
-      },
-      {
-        "name": "Catia V5",
-        "level": 88
-      },
-      {
-        "name": "SolidWorks",
-        "level": 85
-      },
-      {
-        "name": "AutoCAD",
-        "level": 75
-      },
-      {
-        "name": "PowerMill",
-        "level": 80
-      },
-      {
-        "name": "NCSimul",
-        "level": 75
-      },
-      {
-        "name": "Lean",
-        "level": 70
-      }
+      { "name": "3DExperience", "level": 90 },
+      { "name": "Smart 3D", "level": 85 },
+      { "name": "Catia V5", "level": 88 },
+      { "name": "SolidWorks", "level": 85 },
+      { "name": "AutoCAD", "level": 75 },
+      { "name": "PowerMill", "level": 80 },
+      { "name": "NCSimul", "level": 75 },
+      { "name": "Lean", "level": 70 }
     ],
     "programming": [
-      {
-        "name": "VBA / Macros",
-        "level": 80
-      },
-      {
-        "name": "Python",
-        "level": 70
-      },
-      {
-        "name": "XML / 3D Scripting",
-        "level": 75
-      }
+      { "name": "VBA / Macros", "level": 80 },
+      { "name": "Python", "level": 70 },
+      { "name": "XML / 3D Scripting", "level": 75 }
     ],
     "technologies": [
-      {
-        "name": "Fabrication additive",
-        "level": 85
-      },
-      {
-        "name": "Réalité Virtuelle / RA",
-        "level": 80
-      },
-      {
-        "name": "Unity 3D",
-        "level": 40
-      }
+      { "name": "Fabrication additive", "level": 85 },
+      { "name": "Réalité Virtuelle / RA", "level": 80 },
+      { "name": "Unity 3D", "level": 40 }
     ],
     "scientific": "Mathématiques · Mécanique · Dimensionnement · Physique · Science des matériaux",
     "production": "Machines (fraisage, tournage) · Méthode · Métrologie",
     "industry": "Fabrication additive · Optimisation topologique · Transition énergétique · Coût-quantité-stock",
     "soft": [
-      {
-        "name": "Autonomie",
-        "description": "Capable de mener des projets de manière indépendante"
-      },
-      {
-        "name": "Travail en équipe",
-        "description": "Collaboration multi-secteurs en environnement industriel"
-      },
-      {
-        "name": "Rigueur",
-        "description": "Précision et soin dans les livrables techniques"
-      },
-      {
-        "name": "Curiosité",
-        "description": "Veille technologique et apprentissage continu"
-      }
+      { "name": "Autonomie", "description": "Capable de mener des projets de manière indépendante" },
+      { "name": "Travail en équipe", "description": "Collaboration multi-secteurs en environnement industriel" },
+      { "name": "Rigueur", "description": "Précision et soin dans les livrables techniques" },
+      { "name": "Curiosité", "description": "Veille technologique et apprentissage continu" }
     ],
     "languages": [
-      {
-        "name": "Français",
-        "level": "Langue maternelle"
-      },
-      {
-        "name": "Anglais",
-        "level": "B1 — B2"
-      },
-      {
-        "name": "Espagnol",
-        "level": "B1"
-      }
+      { "name": "Français", "level": "Langue maternelle" },
+      { "name": "Anglais", "level": "B1 — B2" },
+      { "name": "Espagnol", "level": "B1" }
     ]
   },
   "passions": {
@@ -455,13 +318,7 @@ const portfolioData = {
     ],
     "travels": {
       "description": "Mes voyages ont forgé mon ouverture d'esprit et ma capacité d'adaptation, que je peux transposer au quotidien dans mes collaborations professionnelles internationales.",
-      "countries": [
-        "Norvège",
-        "Espagne",
-        "Malte",
-        "Angleterre",
-        "Thaïlande"
-      ]
+      "countries": ["Norvège", "Espagne", "Malte", "Angleterre", "Thaïlande"]
     }
   },
   "contact": {
