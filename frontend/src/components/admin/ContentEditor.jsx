@@ -133,7 +133,7 @@ export default function ContentEditor({ value, onChange }) {
           )}
         />
       </Section>
-
+       
       {/* ---------- Experiences ---------- */}
       <Section title="Expériences" eyebrow="06">
         <Repeater
@@ -149,6 +149,8 @@ export default function ContentEditor({ value, onChange }) {
             missions: [],
             highlight: "",
             tags: [],
+            images: [],
+            link: "",
           })}
           itemTitle={(it) => `${it.company || "(sans nom)"} · ${it.type || ""}`}
           renderItem={(item, i, update) => (
@@ -165,6 +167,12 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Projet phare (optionnel)"><TextArea rows={2} value={item.highlight} onChange={(v) => update({ highlight: v })} /></Field>
               <Field label="Tags / Compétences">
                 <StringList items={item.tags || []} onChange={(next) => update({ tags: next })} placeholder="Nouveau tag" />
+              </Field>
+              <Field label="Lien externe (site entreprise...)">
+                <TextInput value={item.link || ""} onChange={(v) => update({ link: v })} placeholder="https://..." />
+              </Field>
+              <Field label="Images (2 max)">
+                <GalleryUpload value={item.images || []} onChange={(v) => update({ images: v })} maxItems={2} />
               </Field>
             </>
           )}
