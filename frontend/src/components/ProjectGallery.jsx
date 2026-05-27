@@ -50,10 +50,10 @@ export default function ProjectGallery({ project, onClose }) {
         </div>
 
         {/* Media principal */}
-        <div style={{ position: "relative", aspectRatio: "16/9", borderRadius: 16, overflow: "hidden", background: "#111" }}>
+        <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 200, maxHeight: "75vh" }}>
           {media[current]?.type === "video"
             ? <iframe src={getVideoEmbed(media[current].url)} style={{ width: "100%", height: "100%", border: "none" }} allowFullScreen />
-            : <img src={media[current]?.url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            : <img src={media[current]?.url} alt="" style={{ maxWidth: "100%", maxHeight: "75vh", objectFit: "contain", margin: "0 auto", display: "block" }} />
           }
 
           {/* Flèches */}
