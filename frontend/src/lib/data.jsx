@@ -7,7 +7,7 @@ const portfolioData = {
   },
   "hero": {
     "photo": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779878224/wwwgnwnojraxrq6vjb46.jpg",
-    "tag": "Portfolio · Ingénierie 3D",
+    "tag": "Portfolio · Ingénieur 3D",
     "firstName": "Kyllian",
     "lastName": "Le Guen",
     "subtitle": "Apprenti, ingénieur en conception 3D",
