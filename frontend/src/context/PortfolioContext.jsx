@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import portfolioData from "../lib/data";
+import portfolioData from "../lib/data.jsx";
 
 const PortfolioContext = createContext(null);
 
