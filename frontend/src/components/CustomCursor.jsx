@@ -19,8 +19,8 @@ export default function CustomCursor() {
       }
     };
     const animate = () => {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
+      ringX += (mouseX - ringX) * 0.80;
+      ringY += (mouseY - ringY) * 0.80;
       if (ringRef.current) {
         ringRef.current.style.left = `${ringX}px`;
         ringRef.current.style.top = `${ringY}px`;
