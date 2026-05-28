@@ -25,7 +25,6 @@ export default function Projects() {
           <h1 className="display-1">Projets<br /><span className="italic-orange">réalisés.</span></h1>
           <div style={{ display: "flex", gap: 60, marginTop: 48, flexWrap: "wrap" }}>
             <div className="stat"><div className="value">{content.projects.length}+</div><div className="label">Projets</div></div>
-            <div className="stat"><div className="value">{categories.length - 1}</div><div className="label">Domaines</div></div>
           </div>
         </div>
       </section>
