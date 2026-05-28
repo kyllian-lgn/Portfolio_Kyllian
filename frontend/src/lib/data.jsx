@@ -70,19 +70,19 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png"
         },
         {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880614/gncgio6rcej6bprvdglm.heic"
-        },
-        {
           "type": "video",
           "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779880666/Vid%C3%A9o_Pi%C3%A8ce_FAO_ezje6s.mp4"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966180/wpcwasncssecrribfas4.heic"
         }
       ]
     },
     {
       "id": "p2",
       "num": "02",
-      "title": "Création d'une cellule robotisée — Automatisation",
+      "title": "Création d'une cellule robotisée - Automatisation",
       "category": "Robotique",
       "subtitle": "Robotique industrielle & automatisation",
       "description": "Réponse à un appel d'offre La Poste : conception d'un préhenseur, simulation de la cellule robotique dans Robot Studio, et implantation virtuelle en réalité virtuelle pour valider l'aménagement atelier.",
@@ -92,17 +92,34 @@ const portfolioData = {
       "tags": [
         "Robot Studio",
         "ABB",
-        "3DExp.",
+        "3DExperience",
         "VR",
         "CAO"
       ],
-      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80",
-      "gallery": []
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966506/whgovrg7zak0i7kjbvod.png",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966515/wt76hlfi8abhxg9wzyai.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966520/awt8p5lxlrzqwlphn0mr.png"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/SAE2.2_video_o9lb1k.mp4"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/Video_SAE2.2_REA_100__tszeur.mov"
+        }
+      ]
     },
     {
       "id": "p3",
       "num": "03",
-      "title": "Simulation en VR — Aménagement des fourgons Enedis",
+      "title": "Simulation en VR - Aménagement des fourgons Enedis",
       "category": "Réalité Virtuelle",
       "subtitle": "Réalité virtuelle & conception industrielle",
       "description": "Réponse à un appel d'offre Enedis : conception d'un scénario de simulation VR pour accompagner les décisions d'aménagement de fourgons d'intervention, avec modélisation 3D complète des espaces.",
@@ -110,18 +127,39 @@ const portfolioData = {
       "deliverables": "Simulation VR interactive, scénario immersif, modèles 3D",
       "innovation": "Aide à la décision par immersion VR, optimisation des espaces de travail",
       "tags": [
-        "Unity 3D",
+        "Meta",
         "VR",
-        "3DExp.",
+        "3DExperience",
         "Enedis"
       ],
-      "image": "https://images.unsplash.com/photo-1626387346567-68d0c4078b2a?w=1200&q=80",
-      "gallery": []
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966806/ozc0vyqfmtvd8eh9cvmo.png",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966815/umeblvobshhxevptbuc6.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966821/ux5d4kdgolp7nloww23u.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966825/hp4nfldjaebkkii8bvr3.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966834/zzqvvntp3ihirndw9rt3.png"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966858/Vid%C3%A9o_Pr%C3%A9sentation_VR_mjthpu.mp4"
+        }
+      ]
     },
     {
       "id": "p4",
       "num": "04",
-      "title": "Conception d'un Winch — Dimensionnement mécanique",
+      "title": "Conception d'un Winch - Dimensionnement mécanique",
       "category": "Conception",
       "subtitle": "Conception mécanique & dimensionnement",
       "description": "Étude cinématique et dimensionnement complet d'un système de treuil (Winch) avec réductions ×2 et ×4, calcul d'engrenages, modélisation CAO et mise en plan complète du mécanisme.",
@@ -130,17 +168,39 @@ const portfolioData = {
       "innovation": "Optimisation du train d'engrenages, conception pour le montage",
       "tags": [
         "Catia V5",
-        "SolidWorks",
+        "3DExperience",
         "Mécanique",
-        "Engrenages"
+        "Engrenages",
+        "Mise en Plan"
       ],
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
-      "gallery": []
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967049/bcfeghe7apcllyzh9ylh.jpg",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967059/fgzdzl4wtukb0xsyfiho.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967063/icqqfdzyyvoqgdufo9sa.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967073/grdz99vyh5t36rbekr8h.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967078/u1agnquxsmfgsle4fknp.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967091/ffjovvrrn1qsdkb5vkld.jpg"
+        }
+      ]
     },
     {
       "id": "p5",
       "num": "05",
-      "title": "Fabrication additive — Véhicule intermédiaire",
+      "title": "Fabrication additive - Véhicule intermédiaire",
       "category": "Fab. Additive",
       "subtitle": "Impression 3D & modélisation",
       "description": "Conception et fabrication d'un pare-chocs avant pour véhicule intermédiaire via cellule robotisée à pellets. Maîtrise du process complet, choix des matériaux et optimisation de la fabrication additive grande dimension.",
@@ -150,16 +210,33 @@ const portfolioData = {
       "tags": [
         "Fab. additive",
         "Robotique",
-        "SolidWorks",
+        "3DExperience",
         "Matériaux"
       ],
-      "image": "https://images.unsplash.com/photo-1631467961059-2106c81a8f81?w=1200&q=80",
-      "gallery": []
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967221/vcywjkit846xnrvou1ul.jpg",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967226/t9x59h7mysw9mqphtnth.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967235/hwpglheusoxp804w0tmj.heic"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967246/bievwzlwzx6sjje52ns1.heic"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967288/IMG_3331_eiqhst.mov"
+        }
+      ]
     },
     {
       "id": "p6",
       "num": "06",
-      "title": "Programmation XML — Assemblage maquette 3D",
+      "title": "Programmation XML - Assemblage maquette 3D",
       "category": "Programmation",
       "subtitle": "Programmation & automatisation",
       "description": "Développement d'un programme XML lié aux logiciels 3D pour la standardisation de l'intégration des réseaux. Automatisation des tâches répétitives pour gains économiques et de qualité significatifs.",
@@ -168,13 +245,30 @@ const portfolioData = {
       "innovation": "Action de progrès, gains économiques, standardisation",
       "tags": [
         "XML",
-        "3DExp.",
-        "VBA",
+        "Visual Code",
+        "PAL",
         "Smart 3D",
         "Automatisation"
       ],
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
-      "gallery": []
+      "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967515/pabhmj0ayfg7pgzufjfm.jpg",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967521/ee1hfjtm2akabegchjcg.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967524/nv0hq20qigr48sr2lmir.jpg"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967538/PAL_TDD_1_nmdbiz.mp4"
+        },
+        {
+          "type": "video",
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967958/Jets_vacuum_sanitary_system_ocf9pd.mp4"
+        }
+      ]
     }
   ],
   "education": [
