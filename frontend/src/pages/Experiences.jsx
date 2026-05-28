@@ -1,58 +1,22 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Star, ExternalLink, X } from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
-import Marquee from "../components/Marquee";
 
 export default function Experiences() {
   const { content, loading } = usePortfolio();
-  const [filter, setFilter] = useState("Tout");
-  const [lightbox, setLightbox] = useState(null); // url de l'image ouverte
-
-  const types = useMemo(() => {
-    if (!content) return [];
-    return ["Tout", ...Array.from(new Set(content.experiences.map((e) => e.type)))];
-  }, [content]);
+  const [lightbox, setLightbox] = useState(null);
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
-  const visible = filter === "Tout" ? content.experiences : content.experiences.filter((e) => e.type === filter);
-
   return (
     <>
-      {/* ── LIGHTBOX OVERLAY ── */}
       {lightbox && (
-        <div
-          onClick={() => setLightbox(null)}
-          style={{
-            position: "fixed", inset: 0, zIndex: 1000,
-            background: "rgba(0,0,0,0.85)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            cursor: "zoom-out",
-          }}
-        >
-          <button
-            onClick={() => setLightbox(null)}
-            style={{
-              position: "absolute", top: 20, right: 24,
-              background: "none", border: "none", color: "#fff",
-              cursor: "pointer", padding: 4,
-            }}
-          >
+        <div onClick={() => setLightbox(null)} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "zoom-out" }}>
+          <button onClick={() => setLightbox(null)} style={{ position: "absolute", top: 20, right: 24, background: "none", border: "none", color: "#fff", cursor: "pointer", padding: 4 }}>
             <X size={32} />
           </button>
-          <img
-            src={lightbox}
-            alt=""
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: "90vw", maxHeight: "88vh",
-              objectFit: "contain",
-              borderRadius: 16,
-              boxShadow: "0 8px 60px rgba(0,0,0,0.7)",
-              cursor: "default",
-            }}
-          />
+          <img src={lightbox} alt="" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "90vw", maxHeight: "88vh", objectFit: "contain", borderRadius: 16, boxShadow: "0 8px 60px rgba(0,0,0,0.7)", cursor: "default" }} />
         </div>
       )}
 
@@ -69,31 +33,19 @@ export default function Experiences() {
         </div>
       </section>
 
-      <Marquee items={content.marquee} />
-
       <section className="section-pad" style={{ paddingTop: 80 }}>
         <div className="container-x">
           <div className="eyebrow reveal" style={{ marginBottom: 32 }}>01 — Alternances & Stages</div>
 
-          <div className="filter-row reveal">
-            {types.map((t) => (
-              <button key={t} className={`filter-chip${filter === t ? " active" : ""}`} onClick={() => setFilter(t)} data-testid={`exp-filter-${t}`}>
-                {t}
-              </button>
-            ))}
-          </div>
-
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-            {visible.map((e, idx) => (
-              <article key={e.id} className="card reveal" data-testid={`exp-${e.id}`}>
+            {content.experiences.map((e, idx) => (
+              <article key={e.id} className="card reveal">
                 <div style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
-
-                  {/* Colonne gauche — texte */}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
                       <div>
                         <div className="eyebrow no-after" style={{ marginBottom: 14, fontSize: "0.7rem" }}>
-                          {String(idx + 1).padStart(2, '0')} / {String(visible.length).padStart(2, '0')}
+                          {String(idx + 1).padStart(2, '0')} / {String(content.experiences.length).padStart(2, '0')}
                         </div>
                         <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "2rem", marginBottom: 8, lineHeight: 1.1 }}>{e.company}</h3>
                         <div style={{ color: "var(--fg-soft)", fontSize: "1rem" }}>{e.role}</div>
@@ -116,11 +68,7 @@ export default function Experiences() {
                     )}
 
                     {e.link && (
-                      <a href={e.link} target="_blank" rel="noreferrer" style={{
-                        display: "inline-flex", alignItems: "center", gap: 8,
-                        marginBottom: 16, color: "var(--accent)", fontSize: "0.85rem",
-                        fontWeight: 600, textDecoration: "none",
-                      }}>
+                      <a href={e.link} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 16, color: "var(--accent)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>
                         <ExternalLink size={14} /> Voir le site
                       </a>
                     )}
@@ -128,81 +76,23 @@ export default function Experiences() {
                     <div>{e.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
                   </div>
 
-                  {/* Colonne droite — images */}
                   {e.images?.length > 0 && (
                     <>
-                      {/* CAS : 1 seule image — centrée et plus grande */}
                       {e.images.length === 1 && (
                         <div style={{ flexShrink: 0, width: 220, alignSelf: "center" }}>
-                          <img
-                            src={e.images[0].url || e.images[0]}
-                            alt=""
-                            onClick={() => setLightbox(e.images[0].url || e.images[0])}
-                            style={{
-                              width: "100%",
-                              aspectRatio: "4/3",
-                              objectFit: "cover",
-                              borderRadius: 12,
-                              border: "2px solid var(--border)",
-                              boxShadow: "4px 4px 24px rgba(0,0,0,0.35)",
-                              cursor: "zoom-in",
-                              transition: "transform 0.2s, box-shadow 0.2s",
-                            }}
-                            onMouseEnter={e2 => { e2.target.style.transform = "scale(1.03)"; e2.target.style.boxShadow = "6px 6px 32px rgba(0,0,0,0.5)"; }}
-                            onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.boxShadow = "4px 4px 24px rgba(0,0,0,0.35)"; }}
+                          <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0].url || e.images[0])} style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 12, border: "2px solid var(--border)", boxShadow: "4px 4px 24px rgba(0,0,0,0.35)", cursor: "zoom-in", transition: "transform 0.2s" }}
+                            onMouseEnter={e2 => { e2.target.style.transform = "scale(1.03)"; }}
+                            onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; }}
                           />
                         </div>
                       )}
-
-                      {/* CAS : 2 images — escalier diagonal bien visible */}
                       {e.images.length >= 2 && (
-                        <div style={{
-                          flexShrink: 0,
-                          width: 260,
-                          position: "relative",
-                          height: 230,
-                          alignSelf: "flex-start",
-                          marginTop: 8,
-                        }}>
-                          {/* Image 1 — haut gauche, devant */}
-                          <img
-                            src={e.images[0].url || e.images[0]}
-                            alt=""
-                            onClick={() => setLightbox(e.images[0].url || e.images[0])}
-                            style={{
-                              position: "absolute",
-                              left: 0, top: 0,
-                              width: "62%",
-                              aspectRatio: "4/3",
-                              objectFit: "cover",
-                              borderRadius: 10,
-                              border: "2px solid var(--border)",
-                              zIndex: 2,
-                              boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
-                              cursor: "zoom-in",
-                              transition: "transform 0.2s",
-                            }}
+                        <div style={{ flexShrink: 0, width: 260, position: "relative", height: 230, alignSelf: "flex-start", marginTop: 8 }}>
+                          <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0].url || e.images[0])} style={{ position: "absolute", left: 0, top: 0, width: "62%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s" }}
                             onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
                             onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 2; }}
                           />
-                          {/* Image 2 — bas droite, derrière */}
-                          <img
-                            src={e.images[1].url || e.images[1]}
-                            alt=""
-                            onClick={() => setLightbox(e.images[1].url || e.images[1])}
-                            style={{
-                              position: "absolute",
-                              right: 0, bottom: 0,
-                              width: "62%",
-                              aspectRatio: "4/3",
-                              objectFit: "cover",
-                              borderRadius: 10,
-                              border: "2px solid var(--border)",
-                              zIndex: 1,
-                              boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
-                              cursor: "zoom-in",
-                              transition: "transform 0.2s",
-                            }}
+                          <img src={e.images[1].url || e.images[1]} alt="" onClick={() => setLightbox(e.images[1].url || e.images[1])} style={{ position: "absolute", right: 0, bottom: 0, width: "62%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s" }}
                             onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
                             onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 1; }}
                           />
@@ -210,21 +100,8 @@ export default function Experiences() {
                       )}
                     </>
                   )}
-
                 </div>
               </article>
-            ))}
-          </div>
-
-          <div className="divider" />
-
-          <div className="eyebrow reveal" style={{ marginBottom: 32 }}>03 — Compétences développées</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
-            {content.skills.software.slice(0, 7).map((s) => (
-              <div key={s.name} className="card reveal" style={{ padding: 20 }}>
-                <div style={{ fontFamily: "var(--heading-font)", fontSize: "1rem", marginBottom: 10 }}>{s.name}</div>
-                <div className="skill-bar"><div className="skill-bar-fill" style={{ width: `${s.level}%` }} /></div>
-              </div>
             ))}
           </div>
 
