@@ -658,9 +658,9 @@ const portfolioData = {
       },
       {
         "name": "Volley-ball",
-        "description": "Le volley-ball représente l'esprit d'équipe et la communication, deux valeurs essentielles que je retrouve dans ma vie professionnelle. Un sport collectif qui développe la réactivité et la stratégie.",
-        "tag": "En club · Esprit collectif",
-        "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976677/knijd20cbbo3dlrbiyki.heic",
+        "description": "Le volley-ball me permet de développer ma réactivité et ma stratégie tout un gardant un esprit collectif et fair-play même en situation difficile",
+        "tag": "Beach Volley · Esprit collectif",
+        "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976961/lq8wdjlkctq85lbbq2ng.png",
         "gallery": []
       }
     ],
