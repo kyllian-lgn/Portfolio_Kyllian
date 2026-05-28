@@ -273,8 +273,55 @@ const portfolioData = {
   ],
   "education": [
     {
+      "id": "e1779970643985",
+      "period": "2026 - 2028 · En cours",
+      "title": "Ingénieur 3D ",
+      "place": "Alstom Engineering - La Rochelle",
+      "tag": "Alternance",
+      "details": [
+        "Études générale train grande vitesse",
+        "Simulation Virtuelle",
+        "Conception maquette 3D"
+      ],
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970854/kn0eyuphe5nbaprmxbf5.png"
+        }
+      ],
+      "link": "https://www.alstom.com/fr"
+    },
+    {
+      "id": "e6",
+      "period": "2026 - 2028 · En cours",
+      "title": "Master Interdisciplinaire en Technologies Innovantes",
+      "place": "Nantes Université",
+      "tag": "Formation",
+      "details": [
+        "Conception industrielle, recherche innovante",
+        "Intelligence artificielle, réalité virtuelle",
+        "Gestion de projet, management, éthique et RSE"
+      ],
+      "images": [],
+      "link": "https://iutnantes.univ-nantes.fr/fr/formations/iti"
+    },
+    {
+      "id": "e1779970454191",
+      "period": "2026 - 2028 · En cours",
+      "title": "Parcours CASCAD",
+      "place": "Nantes Université - Halle 6 Ouest",
+      "tag": "Spécialisation",
+      "details": [
+        "Conception Avancée",
+        "Simulation, Maillage",
+        "Calcul numérique, Programmation"
+      ],
+      "images": [],
+      "link": ""
+    },
+    {
       "id": "e1",
-      "period": "2023 — 2026",
+      "period": "2023 - 2026",
       "title": "BUT Génie Mécanique et Productique",
       "place": "Spécialité simulation numérique et réalité virtuelle · IUT Nantes - Nantes Université",
       "tag": "Formation",
@@ -285,52 +332,88 @@ const portfolioData = {
         "Gestion de production : Lean Manufacturing, gestion de la chaîne logistique",
         "Robotique et automatisation : systèmes automatisés, technologies Industrie 4.0, fabrication additive"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969008/lkqudfkuacal704yjqgp.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969043/ycbo8gabwb7d8opnj0nh.jpg"
+        }
+      ],
+      "link": "https://iutnantes.univ-nantes.fr/fr/formations/but-gmp"
     },
     {
       "id": "e2",
-      "period": "2024 — 2026",
-      "title": "Parcours Simulation Numérique & VR",
-      "place": "IUT Nantes — Halle 6 Ouest",
+      "period": "2024 - 2026",
+      "title": "Parcours Simulation Numérique & Réalité Virtuelle",
+      "place": "IUT Nantes - Halle 6 Ouest",
       "tag": "Spécialisation",
       "details": [
         "Virtualisation et modélisation : outils de simulation des systèmes mécaniques en environnement virtuel (RA, RV, simulation numérique)",
         "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication"
       ],
-      "images": [],
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969158/n8wketilnnbs3xya1lgr.png"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969162/dz31k2tvsqbdi1rbfisw.png"
+        }
+      ],
       "link": ""
     },
     {
       "id": "e3",
-      "period": "2024 — 2026",
+      "period": "2024 - 2026",
       "title": "Apprenti Dessinateur Projeteur 3D",
-      "place": "Chantiers de l'Atlantique — Zone emménagement · Saint-Nazaire",
+      "place": "Chantiers de l'Atlantique - Zone emménagement - Saint-Nazaire",
       "tag": "Alternance",
       "details": [
         "Coordination des réseaux : intégration multi-réseaux (ventilation, tuyauterie, électricité) avec fortes contraintes thermiques et phoniques",
         "Collaboration : travail entre secteurs production, industrialisation, bureau d'études",
         "Compétences : autonomie, communication, maîtrise de logiciels CAO et code XML"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969664/r2sqql6lhrz9u0hzroca.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969669/exzk2uqe4afbnzh3xcdb.jpg"
+        }
+      ],
+      "link": "https://chantiers-atlantique.com/?__goaway_challenge=meta-refresh&__goaway_id=18b79497a06b4015f28c9c57e6ab9608&__goaway_referer=https%3A%2F%2Fwww.google.com%2F"
     },
     {
       "id": "e4",
       "period": "Août 2025",
       "title": "Certificat d'Anglais B1-B2",
-      "place": "Education First — Séjour linguistique à Malte",
+      "place": "Education First - Séjour linguistique à Malte",
       "tag": "Certification",
       "details": [
         "Programme intensif de deux semaines avec des étudiants de diverses nationalités",
         "Expression et compréhension orales / Expression et compréhension écrites"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969831/oofysbpij6jnp61wtsp2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970157/uzjvzc1vktz7nwpqj69e.jpg"
+        }
+      ],
+      "link": "https://www.ef.fr/"
     },
     {
       "id": "e5",
-      "period": "2021 — 2023",
+      "period": "2021 - 2023",
       "title": "BAC STI2D",
       "place": "Option Innovation Technologique & Éco-Conception · Lycée Aristide Briand",
       "tag": "Baccalauréat",
@@ -340,30 +423,16 @@ const portfolioData = {
         "Formation à la conception assistée par ordinateur (SolidWorks)"
       ],
       "images": [],
-      "link": ""
-    },
-    {
-      "id": "e6",
-      "period": "2026 — 2028 · À venir",
-      "title": "Master Génie Industriel",
-      "place": "Université de Nantes — Nantes Université",
-      "tag": "Projet",
-      "details": [
-        "Conception industrielle, recherche innovante",
-        "Intelligence artificielle, réalité virtuelle",
-        "Gestion de projet, management, éthique et RSE"
-      ],
-      "images": [],
-      "link": ""
+      "link": "https://aristide-briand.paysdelaloire.e-lyco.fr/sti2d/"
     }
   ],
   "experiences": [
     {
       "id": "x1",
       "company": "Chantiers de l'Atlantique",
-      "role": "Dessinateur projeteur 3D — Bureau d'études naval",
+      "role": "Dessinateur projeteur 3D - Bureau d'études naval",
       "type": "Alternance",
-      "period": "Sept. 2024 — Août 2026 · Saint-Nazaire",
+      "period": "Sept. 2024 - Août 2026 · Saint-Nazaire",
       "missions": [
         "Coordination des réseaux de ventilation, tuyauterie et électricité dans la zone emménagement",
         "Développement de macros VBA pour l'automatisation des outils de calcul des surbaux",
@@ -375,13 +444,22 @@ const portfolioData = {
       "tags": [
         "Smart 3D",
         "3DExperience",
-        "VBA",
+        "PAL",
         "Coordination",
         "Naval",
-        "Lean"
+        "Action de progrès"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970948/s3pgg5jjtfvqb1mjnihj.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971144/tdbyruziwbffiennpg1v.jpg"
+        }
+      ],
+      "link": "https://chantiers-atlantique.com/?__goaway_challenge=meta-refresh&__goaway_id=18b79497a06b4015f28c9c57e6ab9608&__goaway_referer=https%3A%2F%2Fwww.google.com%2F"
     },
     {
       "id": "x2",
@@ -390,38 +468,53 @@ const portfolioData = {
       "type": "Stage",
       "period": "Avril 2024 · Nantes",
       "missions": [
-        "Formation sur machines de fabrication additive — imprimante 3D résine & métallique",
+        "Formation sur machines de fabrication additive - imprimante 3D résine & métallique",
         "Gestion du processus complet sur cellule robotisée à pellets",
         "Maîtrise des machines : découpe jet d'eau et découpe laser",
         "Application du Lean manufacturing en atelier de production"
       ],
-      "highlight": "Installation de la cellule robotisée à pellets — réalisation d'un pare-chocs pour véhicule intermédiaire",
+      "highlight": "Installation de la cellule robotisée à pellets - réalisation d'un pare-chocs pour véhicule intermédiaire",
       "tags": [
         "Fab. additive",
         "Robotique",
         "Découpe laser",
         "Jet d'eau",
-        "Lean"
+        "Impression 3D",
+        "Projet événementiel"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971238/ur0rerorw6kqhw4hdkca.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971242/jhhsyv0exlt3ncsamawx.jpg"
+        }
+      ],
+      "link": "https://halle6ouest.univ-nantes.fr/"
     },
     {
       "id": "x3",
       "company": "Atelier Saint Michel",
       "role": "Vendeur",
       "type": "Saisonnier",
-      "period": "Juillet — Août 2023 · St Michel Chef Chef",
+      "period": "Juillet - Août 2023 · St Michel Chef Chef",
       "missions": [
-        "Relation client, gestion des ventes en boutique artisanale et gestion des stocks."
+        "Relation client, gestion des ventes en boutique artisanale et gestion des stocks"
       ],
       "highlight": "",
       "tags": [
         "Relation client",
         "Vente"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971321/wbbwgbasc0xavsaj1hj4.png"
+        }
+      ],
+      "link": "https://boutique.stmichel.fr/"
     },
     {
       "id": "x4",
@@ -430,15 +523,20 @@ const portfolioData = {
       "type": "Saisonnier",
       "period": "Août 2022 · Pornic",
       "missions": [
-        "Service en salle, relation client, gestion des stocks et adaptation rapide en environnement de restauration."
+        "Service en salle, relation client, gestion des stocks et adaptation rapide en environnement de restauration"
       ],
       "highlight": "",
       "tags": [
         "Service",
         "Adaptation"
       ],
-      "images": [],
-      "link": ""
+      "images": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971359/jsfeus7et0oppn2ei4sb.jpg"
+        }
+      ],
+      "link": "https://www.marius-pornic.fr/"
     }
   ],
   "skills": {
