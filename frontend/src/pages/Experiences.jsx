@@ -1,12 +1,13 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Star, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Star, ExternalLink, X } from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
 import Marquee from "../components/Marquee";
 
 export default function Experiences() {
   const { content, loading } = usePortfolio();
   const [filter, setFilter] = useState("Tout");
+  const [lightbox, setLightbox] = useState(null); // url de l'image ouverte
 
   const types = useMemo(() => {
     if (!content) return [];
@@ -19,6 +20,42 @@ export default function Experiences() {
 
   return (
     <>
+      {/* ── LIGHTBOX OVERLAY ── */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: "fixed", inset: 0, zIndex: 1000,
+            background: "rgba(0,0,0,0.85)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            cursor: "zoom-out",
+          }}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            style={{
+              position: "absolute", top: 20, right: 24,
+              background: "none", border: "none", color: "#fff",
+              cursor: "pointer", padding: 4,
+            }}
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={lightbox}
+            alt=""
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "90vw", maxHeight: "88vh",
+              objectFit: "contain",
+              borderRadius: 16,
+              boxShadow: "0 8px 60px rgba(0,0,0,0.7)",
+              cursor: "default",
+            }}
+          />
+        </div>
+      )}
+
       <section className="hero" style={{ minHeight: "70vh" }}>
         <div className="huge-bg" style={{ fontSize: "clamp(12rem, 28vw, 32rem)" }}>EXPÉRIENCE</div>
         <div className="container-x">
@@ -100,6 +137,7 @@ export default function Experiences() {
                           <img
                             src={e.images[0].url || e.images[0]}
                             alt=""
+                            onClick={() => setLightbox(e.images[0].url || e.images[0])}
                             style={{
                               width: "100%",
                               aspectRatio: "4/3",
@@ -107,7 +145,11 @@ export default function Experiences() {
                               borderRadius: 12,
                               border: "2px solid var(--border)",
                               boxShadow: "4px 4px 24px rgba(0,0,0,0.35)",
+                              cursor: "zoom-in",
+                              transition: "transform 0.2s, box-shadow 0.2s",
                             }}
+                            onMouseEnter={e2 => { e2.target.style.transform = "scale(1.03)"; e2.target.style.boxShadow = "6px 6px 32px rgba(0,0,0,0.5)"; }}
+                            onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.boxShadow = "4px 4px 24px rgba(0,0,0,0.35)"; }}
                           />
                         </div>
                       )}
@@ -126,10 +168,10 @@ export default function Experiences() {
                           <img
                             src={e.images[0].url || e.images[0]}
                             alt=""
+                            onClick={() => setLightbox(e.images[0].url || e.images[0])}
                             style={{
                               position: "absolute",
-                              left: 0,
-                              top: 0,
+                              left: 0, top: 0,
                               width: "62%",
                               aspectRatio: "4/3",
                               objectFit: "cover",
@@ -137,16 +179,20 @@ export default function Experiences() {
                               border: "2px solid var(--border)",
                               zIndex: 2,
                               boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
+                              cursor: "zoom-in",
+                              transition: "transform 0.2s",
                             }}
+                            onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
+                            onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 2; }}
                           />
                           {/* Image 2 — bas droite, derrière */}
                           <img
                             src={e.images[1].url || e.images[1]}
                             alt=""
+                            onClick={() => setLightbox(e.images[1].url || e.images[1])}
                             style={{
                               position: "absolute",
-                              right: 0,
-                              bottom: 0,
+                              right: 0, bottom: 0,
                               width: "62%",
                               aspectRatio: "4/3",
                               objectFit: "cover",
@@ -154,7 +200,11 @@ export default function Experiences() {
                               border: "2px solid var(--border)",
                               zIndex: 1,
                               boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
+                              cursor: "zoom-in",
+                              transition: "transform 0.2s",
                             }}
+                            onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
+                            onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 1; }}
                           />
                         </div>
                       )}
