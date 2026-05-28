@@ -54,7 +54,7 @@ const portfolioData = {
       "deliverables": "Modélisation Robot Studio, préhenseur 3D, implantation atelier VR",
       "innovation": "Amélioration des conditions de travail, prévention des TMS",
       "tags": ["Robot Studio", "ABB", "3DExp.", "VR", "CAO"],
-      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80"
       "gallery": []
     },
     {
