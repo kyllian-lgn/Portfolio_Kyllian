@@ -6,17 +6,11 @@ import ProjectGallery from "../components/ProjectGallery";
 
 export default function Projects() {
   const { content, loading } = usePortfolio();
-  const [filter, setFilter] = useState("Tout");
   const [galleryProject, setGalleryProject] = useState(null);
-
-  const categories = useMemo(() => {
-    if (!content) return [];
-    return ["Tout", ...Array.from(new Set(content.projects.map((p) => p.category)))];
-  }, [content]);
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
-  const visible = filter === "Tout" ? content.projects : content.projects.filter((p) => p.category === filter);
+  const visible = content.projects;
 
   return (
     <>
@@ -42,14 +36,6 @@ export default function Projects() {
           <p className="reveal" style={{ maxWidth: 720, color: "var(--fg-soft)", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: 48 }}>
             Voici une sélection de mes projets d'ingénierie réalisés durant ma formation ou au sein de mon alternance, mettant en valeur la conception mécanique, la fabrication, la modélisation CAO et le développement de systèmes à l'aide de 3DExperience.
           </p>
-
-          <div className="filter-row reveal" data-testid="filter-row">
-            {categories.map((c) => (
-              <button key={c} className={`filter-chip${filter === c ? " active" : ""}`} onClick={() => setFilter(c)} data-testid={`filter-${c}`}>
-                {c}
-              </button>
-            ))}
-          </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 28 }}>
             {visible.map((p) => (
