@@ -477,8 +477,8 @@ const portfolioData = {
   "contact": {
     "email": "kyllian.leguen55@orange.fr",
     "phone": "07 54 32 92 55",
-    "address": "St Michel Chef Chef, France",
-    "fullAddress": "14 rue de la Fragonnette, 44730",
+    "address": "France",
+    "fullAddress": "Nantes / La Rochelle",
     "linkedin": "https://www.linkedin.com/in/le-guen-kyllian",
     "mobility": "Permis B - Véhiculé · Mobile en France"
   },
