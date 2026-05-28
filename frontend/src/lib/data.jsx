@@ -75,7 +75,7 @@ const portfolioData = {
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966180/wpcwasncssecrribfas4.heic"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968377/r5prk8bnlibzqhpbh0xu.jpg"
         }
       ]
     },
@@ -112,7 +112,7 @@ const portfolioData = {
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/Video_SAE2.2_REA_100__tszeur.mov"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779968204/IMG_3338_yxypee.mov"
         }
       ]
     },
@@ -221,15 +221,15 @@ const portfolioData = {
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967235/hwpglheusoxp804w0tmj.heic"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968481/foph9w66tlzgcz1fhtdj.jpg"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967246/bievwzlwzx6sjje52ns1.heic"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968485/lyzgbuxblmhn4jjwl3og.jpg"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967288/IMG_3331_eiqhst.mov"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779968204/IMG_3338_yxypee.mov"
         }
       ]
     },
