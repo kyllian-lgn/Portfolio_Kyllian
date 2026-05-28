@@ -59,11 +59,12 @@ export function PortfolioProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const savedSettings = portfolioData._settings || defaultSettings;
     setContent(portfolioData);
-    setSettings(defaultSettings);
-    applySettings(defaultSettings);
+    setSettings(savedSettings);
+    applySettings(savedSettings);
     setLoading(false);
-  }, []);
+}, []);
 
   const refresh = () => {};
 
