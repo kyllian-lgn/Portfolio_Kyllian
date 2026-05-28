@@ -103,36 +103,42 @@ export default function ContentEditor({ value, onChange }) {
 
       {/* ---------- Education ---------- */}
       <Section title="Parcours · Formations" eyebrow="05">
-        <Repeater
-          items={value.education || []}
-          onChange={(next) => setKey("education", next)}
-          addLabel="Ajouter une formation"
-          makeNew={() => ({
-            id: `e${Date.now()}`,
-            period: "2026 — 2028",
-            title: "Nouvelle formation",
-            place: "",
-            tag: "Formation",
-            details: [],
-          })}
-          itemTitle={(it) => `${it.period || ""} · ${it.title || "(sans titre)"}`}
-          renderItem={(item, i, update) => (
-            <>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                <Field label="Période"><TextInput value={item.period} onChange={(v) => update({ period: v })} /></Field>
-                <Field label="Étiquette" hint="Ex: Formation, Alternance, Certification"><TextInput value={item.tag} onChange={(v) => update({ tag: v })} /></Field>
-              </div>
-              <Field label="Titre"><TextInput value={item.title} onChange={(v) => update({ title: v })} /></Field>
-              <Field label="Lieu / École"><TextInput value={item.place} onChange={(v) => update({ place: v })} /></Field>
-              <Field label="Points détaillés (un par ligne)">
-                <StringList items={item.details || []} onChange={(next) => update({ details: next })} placeholder="Nouveau point" />
-                <Field label="Lien externe (site, organisme...)"><TextInput value={item.link || ""} onChange={(v) => update({ link: v })} placeholder="https://..." /></Field>
-                <Field label="Images (2 max)"><GalleryUpload value={item.images || []} onChange={(v) => update({ images: v })} maxItems={2} /></Field>
-              </Field>
-            </>
-          )}
-        />
-      </Section>
+      <Repeater
+       items={value.education || []}
+       onChange={(next) => setKey("education", next)}
+       addLabel="Ajouter une formation"
+       makeNew={() => ({
+         id: `e${Date.now()}`,
+         period: "2026 — 2028",
+         title: "Nouvelle formation",
+         place: "",
+         tag: "Formation",
+         details: [],
+         images: [],
+         link: "",
+    })}
+    itemTitle={(it) => `${it.period || ""} · ${it.title || "(sans titre)"}`}
+    renderItem={(item, i, update) => (
+      <>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <Field label="Période"><TextInput value={item.period} onChange={(v) => update({ period: v })} /></Field>
+          <Field label="Étiquette" hint="Ex: Formation, Alternance, Certification"><TextInput value={item.tag} onChange={(v) => update({ tag: v })} /></Field>
+        </div>
+        <Field label="Titre"><TextInput value={item.title} onChange={(v) => update({ title: v })} /></Field>
+        <Field label="Lieu / École"><TextInput value={item.place} onChange={(v) => update({ place: v })} /></Field>
+        <Field label="Points détaillés (un par ligne)">
+          <StringList items={item.details || []} onChange={(next) => update({ details: next })} placeholder="Nouveau point" />
+        </Field>
+        <Field label="Lien externe (site, organisme...)">
+          <TextInput value={item.link || ""} onChange={(v) => update({ link: v })} placeholder="https://..." />
+        </Field>
+        <Field label="Images (2 max)">
+          <GalleryUpload value={item.images || []} onChange={(v) => update({ images: v })} maxItems={2} />
+        </Field>
+      </>
+    )}
+  />
+</Section>
        
       {/* ---------- Experiences ---------- */}
       <Section title="Expériences" eyebrow="06">
