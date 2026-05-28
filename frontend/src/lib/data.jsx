@@ -483,9 +483,9 @@ const portfolioData = {
     "mobility": "Permis B - Véhiculé · Mobile en France"
   },
   "_settings": {
-    "headingFont": "Syne",
+    "headingFont": "Playfair Display",
     "bodyFont": "Inter",
-    "accentColor": "#954a00"
+    "accentColor": "#FF7A1A"
   }
 };
 
