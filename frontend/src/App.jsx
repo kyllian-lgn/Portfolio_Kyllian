@@ -11,7 +11,6 @@ import Experiences from "./pages/Experiences";
 import Skills from "./pages/Skills";
 import Passions from "./pages/Passions";
 import Contact from "./pages/Contact";
-import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 
 function PublicShell() {
@@ -38,7 +37,6 @@ function AppShell() {
       <CustomCursor />
       {isAdmin ? (
         <Routes>
-          <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
       ) : (
