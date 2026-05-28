@@ -642,16 +642,25 @@ const portfolioData = {
     "sports": [
       {
         "name": "Course à pied",
-        "description": "Passionné de running, la course à pied est pour moi un moyen de me dépasser et de maintenir une discipline quotidienne. Un parallèle naturel avec mon approche professionnelle : régularité, efforts et progression.",
+        "description": "Passionné de running, la course à pied est pour moi un moyen de me dépasser et de maintenir une discipline quotidienne.",
         "tag": "Pratique régulière · Objectif Marathon",
-        "image": "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=1200&q=80",
-        "gallery": []
+        "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779975922/e2cupyf8k3oewoqhvvku.jpg",
+        "gallery": [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779975931/rorfy7567yflrwecs7ic.png"
+          },
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976521/etxwtoj3ekl5rkzr4zal.jpg"
+          }
+        ]
       },
       {
         "name": "Volley-ball",
         "description": "Le volley-ball représente l'esprit d'équipe et la communication, deux valeurs essentielles que je retrouve dans ma vie professionnelle. Un sport collectif qui développe la réactivité et la stratégie.",
         "tag": "En club · Esprit collectif",
-        "image": "https://images.unsplash.com/photo-1592656094267-764a45160876?w=1200&q=80",
+        "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976677/knijd20cbbo3dlrbiyki.heic",
         "gallery": []
       }
     ],
