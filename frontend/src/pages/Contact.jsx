@@ -1,24 +1,48 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Linkedin, Car, Send } from "lucide-react";
 import { Toaster, toast } from "sonner";
+import emailjs from "@emailjs/browser";
 import { usePortfolio } from "../context/PortfolioContext";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   const { content, loading } = usePortfolio();
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.lastName || !form.email || !form.message) {
       toast.error("Merci de remplir les champs obligatoires.");
       return;
     }
-    const body = `Nom: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\nTél: ${form.phone}\n\n${form.message}`;
-    window.location.href = `mailto:${content.contact.email}?subject=Contact Portfolio&body=${encodeURIComponent(body)}`;
-    toast.success("Ouverture de votre client mail...");
-    setForm({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    setSubmitting(true);
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: `${form.firstName} ${form.lastName}`.trim(),
+          from_email: form.email,
+          phone: form.phone || "Non renseigné",
+          message: form.message,
+          reply_to: form.email,
+        },
+        PUBLIC_KEY
+      );
+      toast.success("✅ Message envoyé ! Je vous répondrai rapidement.");
+      setForm({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      toast.error("Erreur lors de l'envoi. Utilisez le lien mail direct.");
+      console.error(err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const mailtoHref = `mailto:${content.contact.email}?subject=Contact%20Portfolio&body=${encodeURIComponent(form.message || '')}`;
@@ -107,8 +131,8 @@ export default function Contact() {
                 <textarea rows="6" placeholder="Décrivez votre projet ou votre demande..." required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
               </div>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
-                <button type="submit" className="btn-primary">
-                  Envoyer le message <Send size={14} />
+                <button type="submit" className="btn-primary" disabled={submitting}>
+                  {submitting ? "Envoi en cours..." : "Envoyer le message"} <Send size={14} />
                 </button>
                 <a href={mailtoHref} className="btn-ghost">Ouvrir dans mon mail</a>
               </div>
