@@ -28,7 +28,7 @@ export default function Parcours() {
               <div className="timeline-item reveal" key={e.id} data-testid={`edu-${e.id}`}>
                 <span className="timeline-dot" />
                 <div className="card" style={{ marginLeft: 0 }}>
-                  <div style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
+                  <div style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
 
                     {/* Colonne gauche — texte */}
                     <div style={{ flex: 1, minWidth: 0 }}>
@@ -52,26 +52,74 @@ export default function Parcours() {
                       )}
                     </div>
 
-                    {/* Colonne droite — images en escalier */}
+                    {/* Colonne droite — images */}
                     {e.images?.length > 0 && (
-                      <div style={{ flexShrink: 0, width: 260, position: "relative", height: 200 }}>
-                        {e.images[0] && (
-                          <img src={e.images[0].url || e.images[0]} alt="" style={{
-                            position: "absolute", left: 0, top: 0,
-                            width: "72%", aspectRatio: "4/3", objectFit: "cover",
-                            borderRadius: 10, border: "2px solid var(--border)",
-                            zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
-                          }} />
+                      <>
+                        {/* CAS : 1 seule image — centrée et plus grande */}
+                        {e.images.length === 1 && (
+                          <div style={{ flexShrink: 0, width: 220, alignSelf: "center" }}>
+                            <img
+                              src={e.images[0].url || e.images[0]}
+                              alt=""
+                              style={{
+                                width: "100%",
+                                aspectRatio: "4/3",
+                                objectFit: "cover",
+                                borderRadius: 12,
+                                border: "2px solid var(--border)",
+                                boxShadow: "4px 4px 24px rgba(0,0,0,0.35)",
+                              }}
+                            />
+                          </div>
                         )}
-                        {e.images[1] && (
-                          <img src={e.images[1].url || e.images[1]} alt="" style={{
-                            position: "absolute", right: 0, top: 45,
-                            width: "72%", aspectRatio: "4/3", objectFit: "cover",
-                            borderRadius: 10, border: "2px solid var(--border)",
-                            zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
-                          }} />
+
+                        {/* CAS : 2 images — escalier décalé bien visible */}
+                        {e.images.length >= 2 && (
+                          <div style={{
+                            flexShrink: 0,
+                            width: 260,
+                            position: "relative",
+                            height: 230,
+                            alignSelf: "flex-start",
+                            marginTop: 4,
+                          }}>
+                            {/* Image 1 — haut gauche, devant */}
+                            <img
+                              src={e.images[0].url || e.images[0]}
+                              alt=""
+                              style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "62%",
+                                aspectRatio: "4/3",
+                                objectFit: "cover",
+                                borderRadius: 10,
+                                border: "2px solid var(--border)",
+                                zIndex: 2,
+                                boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
+                              }}
+                            />
+                            {/* Image 2 — bas droite, derrière */}
+                            <img
+                              src={e.images[1].url || e.images[1]}
+                              alt=""
+                              style={{
+                                position: "absolute",
+                                right: 0,
+                                bottom: 0,
+                                width: "62%",
+                                aspectRatio: "4/3",
+                                objectFit: "cover",
+                                borderRadius: 10,
+                                border: "2px solid var(--border)",
+                                zIndex: 1,
+                                boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
+                              }}
+                            />
+                          </div>
                         )}
-                      </div>
+                      </>
                     )}
 
                   </div>
