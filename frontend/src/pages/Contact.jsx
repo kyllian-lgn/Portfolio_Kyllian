@@ -1,32 +1,24 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Linkedin, Car, Send } from "lucide-react";
 import { Toaster, toast } from "sonner";
-import apiClient from "../lib/api";
 import { usePortfolio } from "../context/PortfolioContext";
 
 export default function Contact() {
   const { content, loading } = usePortfolio();
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-  const [submitting, setSubmitting] = useState(false);
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.lastName || !form.email || !form.message) {
       toast.error("Merci de remplir les champs obligatoires.");
       return;
     }
-    setSubmitting(true);
-    try {
-      await apiClient.post("/contact", form);
-      toast.success("Message envoyé ! Merci, je vous répondrai rapidement.");
-      setForm({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      toast.error("Erreur lors de l'envoi. Réessayez ou utilisez le mailto.");
-    } finally {
-      setSubmitting(false);
-    }
+    const body = `Nom: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\nTél: ${form.phone}\n\n${form.message}`;
+    window.location.href = `mailto:${content.contact.email}?subject=Contact Portfolio&body=${encodeURIComponent(body)}`;
+    toast.success("Ouverture de votre client mail...");
+    setForm({ firstName: "", lastName: "", email: "", phone: "", message: "" });
   };
 
   const mailtoHref = `mailto:${content.contact.email}?subject=Contact%20Portfolio&body=${encodeURIComponent(form.message || '')}`;
@@ -51,9 +43,8 @@ export default function Contact() {
               <p style={{ color: "var(--fg-soft)", lineHeight: 1.7, marginBottom: 40 }}>
                 Disponible pour échanger autour de nouveaux projets innovants, de collaborations ou d'opportunités professionnelles.
               </p>
-
               <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-                <a href={`mailto:${content.contact.email}`} className="card" style={{ padding: 22, display: "flex", alignItems: "center", gap: 18, textDecoration: "none" }} data-testid="contact-email">
+                <a href={`mailto:${content.contact.email}`} className="card" style={{ padding: 22, display: "flex", alignItems: "center", gap: 18, textDecoration: "none" }}>
                   <div style={{ width: 44, height: 44, background: "var(--accent-soft)", color: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: 10 }}><Mail size={18} /></div>
                   <div>
                     <div style={{ color: "var(--fg-muted)", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>Email</div>
@@ -92,32 +83,32 @@ export default function Contact() {
               </div>
             </div>
 
-            <form className="card reveal" style={{ padding: 40, display: "flex", flexDirection: "column", gap: 18 }} onSubmit={handleSubmit} data-testid="contact-form">
+            <form className="card reveal" style={{ padding: 40, display: "flex", flexDirection: "column", gap: 18 }} onSubmit={handleSubmit}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <div className="form-field">
                   <label>Prénom</label>
-                  <input type="text" placeholder="Votre prénom" value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} data-testid="input-firstName" />
+                  <input type="text" placeholder="Votre prénom" value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} />
                 </div>
                 <div className="form-field">
                   <label>Nom *</label>
-                  <input type="text" placeholder="Votre nom" required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} data-testid="input-lastName" />
+                  <input type="text" placeholder="Votre nom" required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} />
                 </div>
               </div>
               <div className="form-field">
                 <label>Email *</label>
-                <input type="email" placeholder="votre@email.com" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} data-testid="input-email" />
+                <input type="email" placeholder="votre@email.com" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
               </div>
               <div className="form-field">
                 <label>Téléphone</label>
-                <input type="tel" placeholder="+33 6 ..." value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} data-testid="input-phone" />
+                <input type="tel" placeholder="+33 6 ..." value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
               </div>
               <div className="form-field">
                 <label>Message *</label>
-                <textarea rows="6" placeholder="Décrivez votre projet ou votre demande..." required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} data-testid="input-message" />
+                <textarea rows="6" placeholder="Décrivez votre projet ou votre demande..." required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
               </div>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
-                <button type="submit" className="btn-primary" disabled={submitting} data-testid="submit-btn">
-                  {submitting ? "Envoi..." : "Envoyer le message"} <Send size={14} />
+                <button type="submit" className="btn-primary">
+                  Envoyer le message <Send size={14} />
                 </button>
                 <a href={mailtoHref} className="btn-ghost">Ouvrir dans mon mail</a>
               </div>
