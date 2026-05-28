@@ -26,7 +26,6 @@ export default function Admin() {
   const [editorContent, setEditorContent] = useState(null);
   const [dirty, setDirty] = useState(false);
 
-  // Mot de passe simple
   useEffect(() => {
     const pwd = localStorage.getItem("admin_pwd");
     if (pwd !== "kyllian2024") {
@@ -75,13 +74,18 @@ export default function Admin() {
   };
 
   const saveSettings = async () => {
-    if (!editorContent) return;
     setSaving(true);
     try {
-      const newData = { ...editorContent, _settings: localSettings };
+      const currentData = editorContent || content;
+      if (!currentData) {
+        toast.error("Données non chargées, réessayez.");
+        setSaving(false);
+        return;
+      }
+      const newData = { ...currentData, _settings: localSettings };
       await saveDataToGithub(newData);
       applySettings(localSettings);
-      toast.success("✅ Apparence enregistrée !");
+      toast.success("✅ Apparence enregistrée ! Le site se met à jour dans 1 minute.");
     } catch (e) {
       toast.error("Erreur : " + e.message);
     } finally {
@@ -149,13 +153,21 @@ export default function Admin() {
               <div className="eyebrow" style={{ marginBottom: 28 }}>Police d'écriture</div>
               <div className="form-field" style={{ marginBottom: 24 }}>
                 <label>Police des titres</label>
-                <select value={localSettings.headingFont} onChange={(e) => setLocalSettings({ ...localSettings, headingFont: e.target.value })} className="json-editor" style={{ minHeight: 0, padding: "12px 16px", fontFamily: "inherit", fontSize: "0.95rem" }}>
+                <select
+                  value={localSettings.headingFont}
+                  onChange={(e) => setLocalSettings({ ...localSettings, headingFont: e.target.value })}
+                  style={{ width: "100%", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 10, padding: "12px 16px", color: "var(--fg)", fontSize: "0.95rem" }}
+                >
                   {AVAILABLE_FONTS.map((f) => (<option key={f.name} value={f.name}>{f.name} — {f.category}</option>))}
                 </select>
               </div>
               <div className="form-field" style={{ marginBottom: 24 }}>
                 <label>Police du texte</label>
-                <select value={localSettings.bodyFont} onChange={(e) => setLocalSettings({ ...localSettings, bodyFont: e.target.value })} className="json-editor" style={{ minHeight: 0, padding: "12px 16px", fontFamily: "inherit", fontSize: "0.95rem" }}>
+                <select
+                  value={localSettings.bodyFont}
+                  onChange={(e) => setLocalSettings({ ...localSettings, bodyFont: e.target.value })}
+                  style={{ width: "100%", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 10, padding: "12px 16px", color: "var(--fg)", fontSize: "0.95rem" }}
+                >
                   {AVAILABLE_FONTS.map((f) => (<option key={f.name} value={f.name}>{f.name} — {f.category}</option>))}
                 </select>
               </div>
@@ -171,8 +183,8 @@ export default function Admin() {
                   ))}
                 </div>
               </div>
-              <button className="btn-primary" onClick={saveSettings} style={{ marginTop: 28 }}>
-                <Save size={14} /> Enregistrer l'apparence
+              <button className="btn-primary" onClick={saveSettings} disabled={saving} style={{ marginTop: 28 }}>
+                <Save size={14} /> {saving ? "Enregistrement..." : "Enregistrer l'apparence"}
               </button>
             </div>
             <div className="card" style={{ padding: 32 }}>
