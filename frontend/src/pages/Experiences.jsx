@@ -49,65 +49,71 @@ export default function Experiences() {
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
             {visible.map((e, idx) => (
               <article key={e.id} className="card reveal" data-testid={`exp-${e.id}`}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
-                  <div>
-                    <div className="eyebrow no-after" style={{ marginBottom: 14, fontSize: "0.7rem" }}>
-                      {String(idx + 1).padStart(2, '0')} / {String(visible.length).padStart(2, '0')}
+                <div style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
+
+                  {/* Colonne gauche — texte */}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
+                      <div>
+                        <div className="eyebrow no-after" style={{ marginBottom: 14, fontSize: "0.7rem" }}>
+                          {String(idx + 1).padStart(2, '0')} / {String(visible.length).padStart(2, '0')}
+                        </div>
+                        <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "2rem", marginBottom: 8, lineHeight: 1.1 }}>{e.company}</h3>
+                        <div style={{ color: "var(--fg-soft)", fontSize: "1rem" }}>{e.role}</div>
+                      </div>
+                      <div style={{ textAlign: "right" }}>
+                        <span className="tag-pill accent">{e.type}</span>
+                        <div style={{ color: "var(--fg-muted)", fontSize: "0.82rem", marginTop: 12 }}>{e.period}</div>
+                      </div>
                     </div>
-                    <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "2rem", marginBottom: 8, lineHeight: 1.1 }}>{e.company}</h3>
-                    <div style={{ color: "var(--fg-soft)", fontSize: "1rem" }}>{e.role}</div>
+
+                    <ul style={{ paddingLeft: 18, color: "var(--fg-soft)", fontSize: "0.92rem", lineHeight: 1.8, margin: "0 0 24px" }}>
+                      {e.missions.map((m, i) => <li key={i} style={{ marginBottom: 6 }}>{m}</li>)}
+                    </ul>
+
+                    {e.highlight && (
+                      <div style={{ padding: "20px 24px", background: "var(--accent-soft)", borderLeft: "3px solid var(--accent)", borderRadius: "0 12px 12px 0", marginBottom: 20 }}>
+                        <div className="eyebrow no-after" style={{ fontSize: "0.7rem", marginBottom: 10 }}><Star size={12} /> Projet phare</div>
+                        <div style={{ color: "var(--fg)", fontSize: "0.95rem", lineHeight: 1.6 }}>{e.highlight}</div>
+                      </div>
+                    )}
+
+                    {e.link && (
+                      <a href={e.link} target="_blank" rel="noreferrer" style={{
+                        display: "inline-flex", alignItems: "center", gap: 8,
+                        marginBottom: 16, color: "var(--accent)", fontSize: "0.85rem",
+                        fontWeight: 600, textDecoration: "none",
+                      }}>
+                        <ExternalLink size={14} /> Voir le site
+                      </a>
+                    )}
+
+                    <div>{e.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
                   </div>
-                  <div style={{ textAlign: "right" }}>
-                    <span className="tag-pill accent">{e.type}</span>
-                    <div style={{ color: "var(--fg-muted)", fontSize: "0.82rem", marginTop: 12 }}>{e.period}</div>
-                  </div>
+
+                  {/* Colonne droite — images en escalier */}
+                  {e.images?.length > 0 && (
+                    <div style={{ flexShrink: 0, width: 260, position: "relative", height: 200, alignSelf: "flex-start", marginTop: 8 }}>
+                      {e.images[0] && (
+                        <img src={e.images[0].url || e.images[0]} alt="" style={{
+                          position: "absolute", left: 0, top: 0,
+                          width: "72%", aspectRatio: "4/3", objectFit: "cover",
+                          borderRadius: 10, border: "2px solid var(--border)",
+                          zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
+                        }} />
+                      )}
+                      {e.images[1] && (
+                        <img src={e.images[1].url || e.images[1]} alt="" style={{
+                          position: "absolute", right: 0, top: 45,
+                          width: "72%", aspectRatio: "4/3", objectFit: "cover",
+                          borderRadius: 10, border: "2px solid var(--border)",
+                          zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
+                        }} />
+                      )}
+                    </div>
+                  )}
+
                 </div>
-
-                <ul style={{ paddingLeft: 18, color: "var(--fg-soft)", fontSize: "0.92rem", lineHeight: 1.8, margin: "20px 0 24px" }}>
-                  {e.missions.map((m, i) => <li key={i} style={{ marginBottom: 6 }}>{m}</li>)}
-                </ul>
-
-                {e.highlight && (
-                  <div style={{ padding: "20px 24px", background: "var(--accent-soft)", borderLeft: "3px solid var(--accent)", borderRadius: "0 12px 12px 0", marginBottom: 20 }}>
-                    <div className="eyebrow no-after" style={{ fontSize: "0.7rem", marginBottom: 10 }}><Star size={12} /> Projet phare</div>
-                    <div style={{ color: "var(--fg)", fontSize: "0.95rem", lineHeight: 1.6 }}>{e.highlight}</div>
-                  </div>
-                )}
-
-                {/* Images en escalier */}
-                {e.images?.length > 0 && (
-                  <div style={{ position: "relative", height: e.images.length === 2 ? 220 : 180, margin: "24px 0" }}>
-                    {e.images[0] && (
-                      <img src={e.images[0].url || e.images[0]} alt="" style={{
-                        position: "absolute", left: 0, top: 0,
-                        width: "55%", aspectRatio: "4/3", objectFit: "cover",
-                        borderRadius: 12, border: "2px solid var(--border)",
-                        zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
-                      }} />
-                    )}
-                    {e.images[1] && (
-                      <img src={e.images[1].url || e.images[1]} alt="" style={{
-                        position: "absolute", right: 0, top: 40,
-                        width: "55%", aspectRatio: "4/3", objectFit: "cover",
-                        borderRadius: 12, border: "2px solid var(--border)",
-                        zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.3)"
-                      }} />
-                    )}
-                  </div>
-                )}
-
-                {/* Lien externe */}
-                {e.link && (
-                  <a href={e.link} target="_blank" rel="noreferrer" style={{
-                    display: "inline-flex", alignItems: "center", gap: 8,
-                    marginBottom: 16, color: "var(--accent)", fontSize: "0.85rem",
-                    fontWeight: 600, textDecoration: "none",
-                  }}>
-                    <ExternalLink size={14} /> Voir le site
-                  </a>
-                )}
-
-                <div>{e.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
               </article>
             ))}
           </div>
