@@ -27,16 +27,29 @@ export default function Admin() {
   const [dirty, setDirty] = useState(false);
 
   useEffect(() => {
-    const pwd = localStorage.getItem("admin_pwd");
-    if (pwd !== "PortfolioMOD") {
-      const input = window.prompt("Mot de passe admin :");
-      if (input !== "PortfolioMOD") {
-        navigate("/");
-      } else {
-        localStorage.setItem("admin_pwd", input);
-      }
+  const checkPwd = async () => {
+    const stored = localStorage.getItem("admin_pwd");
+    const HASH = "ac946d6f5cf0b2f5a8fa1f574ae6f4dc49a63a11b342f755ed5818fcae9d30e8";
+    if (stored === HASH) return;
+
+    const input = window.prompt("Mot de passe admin :");
+    if (!input) { navigate("/"); return; }
+
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+
+    if (hashHex !== HASH) {
+      alert("Mot de passe incorrect.");
+      navigate("/");
+    } else {
+      localStorage.setItem("admin_pwd", hashHex);
     }
-  }, [navigate]);
+  };
+  checkPwd();
+}, [navigate]);
 
   useEffect(() => {
     if (content) {
