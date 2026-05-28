@@ -28,9 +28,9 @@ export default function Admin() {
 
   useEffect(() => {
     const pwd = localStorage.getItem("admin_pwd");
-    if (pwd !== "kyllian2024") {
+    if (pwd !== "Kiki3465%") {
       const input = window.prompt("Mot de passe admin :");
-      if (input !== "kyllian2024") {
+      if (input !== "Kiki3465%") {
         navigate("/");
       } else {
         localStorage.setItem("admin_pwd", input);
