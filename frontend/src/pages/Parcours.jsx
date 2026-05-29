@@ -2,47 +2,33 @@ import React, { useState } from "react";
 import { Download, ExternalLink, X } from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
 
+const Caption = ({ text }) => !text ? null : (
+  <div style={{ marginTop: 8, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", borderTop: "1px solid var(--border)", paddingTop: 6 }}>
+    {text}
+  </div>
+);
+
 export default function Parcours() {
   const { content, loading } = usePortfolio();
-  const [lightbox, setLightbox] = useState(null); // url de l'image ouverte
+  const [lightbox, setLightbox] = useState(null);
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
   return (
     <>
-      {/* ── LIGHTBOX OVERLAY ── */}
       {lightbox && (
-        <div
-          onClick={() => setLightbox(null)}
-          style={{
-            position: "fixed", inset: 0, zIndex: 1000,
-            background: "rgba(0,0,0,0.85)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            cursor: "zoom-out",
-          }}
-        >
-          <button
-            onClick={() => setLightbox(null)}
-            style={{
-              position: "absolute", top: 20, right: 24,
-              background: "none", border: "none", color: "#fff",
-              cursor: "pointer", padding: 4,
-            }}
-          >
+        <div onClick={() => setLightbox(null)} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "zoom-out" }}>
+          <button onClick={() => setLightbox(null)} style={{ position: "absolute", top: 20, right: 24, background: "none", border: "none", color: "#fff", cursor: "pointer", padding: 4 }}>
             <X size={32} />
           </button>
-          <img
-            src={lightbox}
-            alt=""
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: "90vw", maxHeight: "88vh",
-              objectFit: "contain",
-              borderRadius: 16,
-              boxShadow: "0 8px 60px rgba(0,0,0,0.7)",
-              cursor: "default",
-            }}
-          />
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12, maxWidth: "90vw" }}>
+            <img src={lightbox.url} alt="" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "90vw", maxHeight: "80vh", objectFit: "contain", borderRadius: 16, boxShadow: "0 8px 60px rgba(0,0,0,0.7)", cursor: "default" }} />
+            {lightbox.caption && (
+              <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.78rem", fontStyle: "italic", borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 10, textAlign: "center" }}>
+                {lightbox.caption}
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -63,12 +49,10 @@ export default function Parcours() {
           <div className="eyebrow reveal" style={{ marginBottom: 60 }}>01 — Formations & Alternances</div>
           <div className="timeline">
             {content.education.map((e) => (
-              <div className="timeline-item reveal" key={e.id} data-testid={`edu-${e.id}`}>
+              <div className="timeline-item reveal" key={e.id}>
                 <span className="timeline-dot" />
                 <div className="card" style={{ marginLeft: 0 }}>
                   <div style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
-
-                    {/* Colonne gauche — texte */}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12, marginBottom: 16 }}>
                         <div className="eyebrow no-after" style={{ fontSize: "0.72rem" }}>{e.period}</div>
@@ -80,99 +64,45 @@ export default function Parcours() {
                         {e.details.map((d, i) => <li key={i} style={{ marginBottom: 6 }}>{d}</li>)}
                       </ul>
                       {e.link && (
-                        <a href={e.link} target="_blank" rel="noreferrer" style={{
-                          display: "inline-flex", alignItems: "center", gap: 8,
-                          marginTop: 16, color: "var(--accent)", fontSize: "0.85rem",
-                          fontWeight: 600, textDecoration: "none",
-                        }}>
+                        <a href={e.link} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 16, color: "var(--accent)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>
                           <ExternalLink size={14} /> Voir le site
                         </a>
                       )}
                     </div>
 
-                    {/* Colonne droite — images */}
                     {e.images?.length > 0 && (
-                      <>
-                        {/* CAS : 1 seule image — centrée et plus grande */}
+                      <div style={{ flexShrink: 0 }}>
                         {e.images.length === 1 && (
-                          <div style={{ flexShrink: 0, width: 220, alignSelf: "center" }}>
-                            <img
-                              src={e.images[0].url || e.images[0]}
-                              alt=""
-                              onClick={() => setLightbox(e.images[0].url || e.images[0])}
-                              style={{
-                                width: "100%",
-                                aspectRatio: "4/3",
-                                objectFit: "cover",
-                                borderRadius: 12,
-                                border: "2px solid var(--border)",
-                                boxShadow: "4px 4px 24px rgba(0,0,0,0.35)",
-                                cursor: "zoom-in",
-                                transition: "transform 0.2s, box-shadow 0.2s",
-                              }}
-                              onMouseEnter={e2 => { e2.target.style.transform = "scale(1.03)"; e2.target.style.boxShadow = "6px 6px 32px rgba(0,0,0,0.5)"; }}
-                              onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.boxShadow = "4px 4px 24px rgba(0,0,0,0.35)"; }}
+                          <div style={{ width: 220 }}>
+                            <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0])} style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 12, border: "2px solid var(--border)", boxShadow: "4px 4px 24px rgba(0,0,0,0.35)", cursor: "zoom-in", transition: "transform 0.2s" }}
+                              onMouseEnter={e2 => e2.target.style.transform = "scale(1.03)"}
+                              onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
                             />
+                            <Caption text={e.images[0]?.caption} />
                           </div>
                         )}
-
-                        {/* CAS : 2 images — escalier décalé bien visible */}
                         {e.images.length >= 2 && (
-                          <div style={{
-                            flexShrink: 0,
-                            width: 260,
-                            position: "relative",
-                            height: 230,
-                            alignSelf: "flex-start",
-                            marginTop: 4,
-                          }}>
-                            {/* Image 1 — haut gauche, devant */}
-                            <img
-                              src={e.images[0].url || e.images[0]}
-                              alt=""
-                              onClick={() => setLightbox(e.images[0].url || e.images[0])}
-                              style={{
-                                position: "absolute",
-                                left: 0, top: 0,
-                                width: "62%",
-                                aspectRatio: "4/3",
-                                objectFit: "cover",
-                                borderRadius: 10,
-                                border: "2px solid var(--border)",
-                                zIndex: 2,
-                                boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
-                                cursor: "zoom-in",
-                                transition: "transform 0.2s, box-shadow 0.2s",
-                              }}
-                              onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
-                              onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 2; }}
-                            />
-                            {/* Image 2 — bas droite, derrière */}
-                            <img
-                              src={e.images[1].url || e.images[1]}
-                              alt=""
-                              onClick={() => setLightbox(e.images[1].url || e.images[1])}
-                              style={{
-                                position: "absolute",
-                                right: 0, bottom: 0,
-                                width: "62%",
-                                aspectRatio: "4/3",
-                                objectFit: "cover",
-                                borderRadius: 10,
-                                border: "2px solid var(--border)",
-                                zIndex: 1,
-                                boxShadow: "4px 4px 20px rgba(0,0,0,0.4)",
-                                cursor: "zoom-in",
-                                transition: "transform 0.2s, box-shadow 0.2s",
-                              }}
-                              onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
-                              onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 1; }}
-                            />
+                          <div style={{ width: 260 }}>
+                            <div style={{ position: "relative", height: 230 }}>
+                              <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0])} style={{ position: "absolute", left: 0, top: 0, width: "62%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s" }}
+                                onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
+                                onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 2; }}
+                              />
+                              <img src={e.images[1].url || e.images[1]} alt="" onClick={() => setLightbox(e.images[1])} style={{ position: "absolute", right: 0, bottom: 0, width: "62%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s" }}
+                                onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
+                                onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 1; }}
+                              />
+                            </div>
+                            {(e.images[0]?.caption || e.images[1]?.caption) && (
+                              <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
+                                <div style={{ flex: 1, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center" }}>{e.images[0]?.caption}</div>
+                                <div style={{ flex: 1, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center" }}>{e.images[1]?.caption}</div>
+                              </div>
+                            )}
                           </div>
                         )}
-                      </>
+                      </div>
                     )}
-
                   </div>
                 </div>
               </div>
