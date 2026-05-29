@@ -42,27 +42,31 @@ export default function Projects() {
                 <span className="num">{p.num}</span>
 
                 <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setGalleryProject(p)}>
-                  <img src={p.image} alt={p.title} className="card-img" />
-                  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", transition: "background 0.2s", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}
-                    onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.4)"}
-                    onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}
-                  >
-                    <Images size={28} color="white" style={{ opacity: 0, transition: "opacity 0.2s" }}
-                      onMouseEnter={e => e.currentTarget.style.opacity = 1}
-                    />
-                  </div>
-                  {p.gallery?.length > 0 && (
-                    <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}>
-                      <Images size={12} /> {p.gallery.length + 1} photos
-                    </div>
-                  )}
-                </div>
+  <img src={p.image} alt={p.title} className="card-img" />
+  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", transition: "background 0.2s", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}
+    onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.4)"}
+    onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}
+  />
+  {p.gallery?.length > 0 && (
+    <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}>
+      <Images size={12} /> {p.gallery.length + 1} photos
+    </div>
+  )}
+  {p.imageCaption && (
+    <div style={{
+      position: "absolute", bottom: 0, left: 0, right: 0,
+      padding: "24px 14px 10px",
+      background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
+      borderRadius: "0 0 12px 12px",
+      fontSize: "0.72rem", color: "rgba(255,255,255,0.85)",
+      fontStyle: "italic",
+    }}>
+      {p.imageCaption}
+    </div>
+  )}
+</div>
 
-                {p.imageCaption && (
-                  <div style={{ marginTop: 6, marginBottom: 4, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", borderTop: "1px solid var(--border)", paddingTop: 6 }}>
-                    {p.imageCaption}
-                  </div>
-                )}
+
 
                 <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem" }}>{p.subtitle}</div>
                 <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.5rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
