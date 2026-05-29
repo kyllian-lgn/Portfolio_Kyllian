@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Images } from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
@@ -18,7 +18,7 @@ export default function Projects() {
         <ProjectGallery project={galleryProject} onClose={() => setGalleryProject(null)} />
       )}
 
-      <section className="hero" style={{ minHeight: "70vh" }} data-testid="projects-hero">
+      <section className="hero" style={{ minHeight: "70vh" }}>
         <div className="huge-bg" style={{ fontSize: "clamp(15rem, 35vw, 40rem)" }}>PROJETS</div>
         <div className="container-x">
           <div className="eyebrow" style={{ marginBottom: 32 }}>Kyllian Le Guen — Portfolio</div>
@@ -38,17 +38,12 @@ export default function Projects() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 28 }}>
             {visible.map((p) => (
-              <article key={p.id} className="card card-project reveal" data-testid={`project-${p.id}`}>
+              <article key={p.id} className="card card-project reveal">
                 <span className="num">{p.num}</span>
 
-                {/* Image cliquable */}
                 <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setGalleryProject(p)}>
                   <img src={p.image} alt={p.title} className="card-img" />
-                  <div style={{
-                    position: "absolute", inset: 0, background: "rgba(0,0,0,0)",
-                    transition: "background 0.2s", borderRadius: 12,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}
+                  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", transition: "background 0.2s", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}
                     onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.4)"}
                     onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}
                   >
@@ -56,17 +51,18 @@ export default function Projects() {
                       onMouseEnter={e => e.currentTarget.style.opacity = 1}
                     />
                   </div>
-                  {(p.gallery?.length > 0) && (
-                    <div style={{
-                      position: "absolute", bottom: 10, right: 10,
-                      background: "rgba(0,0,0,0.7)", borderRadius: 20,
-                      padding: "4px 10px", fontSize: "0.72rem", color: "white",
-                      display: "flex", alignItems: "center", gap: 5,
-                    }}>
+                  {p.gallery?.length > 0 && (
+                    <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}>
                       <Images size={12} /> {p.gallery.length + 1} photos
                     </div>
                   )}
                 </div>
+
+                {p.imageCaption && (
+                  <div style={{ marginTop: 6, marginBottom: 4, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", borderTop: "1px solid var(--border)", paddingTop: 6 }}>
+                    {p.imageCaption}
+                  </div>
+                )}
 
                 <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem" }}>{p.subtitle}</div>
                 <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.5rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
