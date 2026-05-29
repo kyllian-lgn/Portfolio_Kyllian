@@ -63,8 +63,16 @@ export default function Home() {
                   />
                   <div style={{
                     position: "absolute", inset: 0,
-                    background: "linear-gradient(to top, rgba(10,10,11,0.5) 0%, transparent 50%)"
+                    background: "linear-gradient(to top, rgba(10,10,11,0.85) 0%, transparent 50%)"
                   }} />
+                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 24px" }}>
+                    <div style={{ color: "var(--accent)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 4 }}>
+                      {content.hero.tag}
+                    </div>
+                    <div style={{ color: "#fff", fontFamily: "var(--heading-font)", fontSize: "1rem", fontWeight: 700 }}>
+                      {content.hero.firstName} {content.hero.lastName}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -88,6 +96,11 @@ export default function Home() {
               <Link to="/projets" key={p.id} className="card card-project reveal" data-testid={`project-card-${p.id}`}>
                 <span className="num">{p.num}</span>
                 <img src={p.image} alt={p.title} className="card-img" />
+                {p.imageCaption && (
+                  <div style={{ marginTop: 6, marginBottom: 8, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", borderTop: "1px solid var(--border)", paddingTop: 6 }}>
+                    {p.imageCaption}
+                  </div>
+                )}
                 <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem" }}>{p.subtitle}</div>
                 <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.4rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
                 <div>{p.tags.slice(0, 3).map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
