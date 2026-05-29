@@ -81,29 +81,38 @@ export default function Parcours() {
                             <Caption text={e.images[0]?.caption} />
                           </div>
                         )}
-                        {e.images.length >= 2 && (
-                          <div style={{ width: 260 }}>
-                            <div style={{ position: "relative", height: 230 }}>
-                              <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0])} style={{ position: "absolute", left: 0, top: 0, width: "62%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", zIndex: 2, boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s" }}
-                                onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
-                                onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 2; }}
-                              />
-                              <img src={e.images[1].url || e.images[1]} alt="" onClick={() => setLightbox(e.images[1])} style={{ position: "absolute", right: 0, bottom: 0, width: "62%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", zIndex: 1, boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s" }}
-                                onMouseEnter={e2 => { e2.target.style.transform = "scale(1.05)"; e2.target.style.zIndex = 3; }}
-                                onMouseLeave={e2 => { e2.target.style.transform = "scale(1)"; e2.target.style.zIndex = 1; }}
-                              />
-                            </div>
-                            {(e.images[0]?.caption || e.images[1]?.caption) && (
-                              <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
-                                <div style={{ flex: 1, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center" }}>{e.images[0]?.caption}</div>
-                                <div style={{ flex: 1, fontSize: "0.72rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center" }}>{e.images[1]?.caption}</div>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
+                       {e.images.length >= 2 && (
+  <div style={{ width: 260 }}>
+    <div style={{ position: "relative", height: 230 }}>
+      {/* Image 1 — haut gauche */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: "62%", zIndex: 2 }}>
+        <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0])}
+          style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s", display: "block" }}
+          onMouseEnter={e2 => e2.target.style.transform = "scale(1.05)"}
+          onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
+        />
+        {e.images[0]?.caption && (
+          <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 4 }}>
+            {e.images[0].caption}
+          </div>
+        )}
+      </div>
+      {/* Image 2 — bas droite */}
+      <div style={{ position: "absolute", right: 0, bottom: 0, width: "62%", zIndex: 1 }}>
+        <img src={e.images[1].url || e.images[1]} alt="" onClick={() => setLightbox(e.images[1])}
+          style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s", display: "block" }}
+          onMouseEnter={e2 => e2.target.style.transform = "scale(1.05)"}
+          onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
+        />
+        {e.images[1]?.caption && (
+          <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 4 }}>
+            {e.images[1].caption}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+)}
                 </div>
               </div>
             ))}
