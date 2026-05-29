@@ -41,34 +41,30 @@ export default function Projects() {
               <article key={p.id} className="card card-project reveal">
                 <span className="num">{p.num}</span>
 
-                <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setGalleryProject(p)}>
-  <img src={p.image} alt={p.title} className="card-img" />
-  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", transition: "background 0.2s", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}
-    onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.4)"}
-    onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}
-  />
-  {p.gallery?.length > 0 && (
-    <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}>
-      <Images size={12} /> {p.gallery.length + 1} photos
-    </div>
-  )}
-  {p.imageCaption && (
-    <div style={{
-      position: "absolute", bottom: 0, left: 0, right: 0,
-      padding: "24px 14px 10px",
-      background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
-      borderRadius: "0 0 12px 12px",
-      fontSize: "0.72rem", color: "rgba(255,255,255,0.85)",
-      fontStyle: "italic",
-    }}>
-      {p.imageCaption}
-    </div>
-  )}
-</div>
+                {/* Image cliquable */}
+                <div style={{ cursor: "pointer" }} onClick={() => setGalleryProject(p)}>
+                  <div style={{ position: "relative" }}>
+                    <img src={p.image} alt={p.title} className="card-img" />
+                    <div
+                      style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", transition: "background 0.2s", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}
+                      onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.4)"}
+                      onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}
+                    />
+                    {p.gallery?.length > 0 && (
+                      <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}>
+                        <Images size={12} /> {p.gallery.length + 1} photos
+                      </div>
+                    )}
+                  </div>
+                  {/* Légende style Passions — sous l'image */}
+                  {p.imageCaption && (
+                    <div style={{ fontSize: "0.65rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 6 }}>
+                      {p.imageCaption}
+                    </div>
+                  )}
+                </div>
 
-
-
-                <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem" }}>{p.subtitle}</div>
+                <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem", marginTop: 16 }}>{p.subtitle}</div>
                 <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.5rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
                 <p style={{ color: "var(--fg-soft)", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: 20 }}>{p.description}</p>
 
