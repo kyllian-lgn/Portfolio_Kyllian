@@ -55,6 +55,20 @@ export default function ProjectGallery({ project, onClose }) {
             ? <iframe src={getVideoEmbed(media[current].url)} style={{ width: "100%", height: "100%", border: "none" }} allowFullScreen />
             : <img src={media[current]?.url} alt="" style={{ maxWidth: "100%", maxHeight: "75vh", objectFit: "contain", margin: "0 auto", display: "block" }} />
           }
+          {/* Légende */}
+          {media[current]?.caption && (
+            <div style={{
+              textAlign: "center",
+              color: "rgba(255,255,255,0.5)",
+              fontSize: "0.78rem",
+              letterSpacing: "0.05em",
+              borderTop: "1px solid rgba(255,255,255,0.08)",
+              paddingTop: 10,
+              fontStyle: "italic",
+            }}>
+              {media[current].caption}
+            </div>
+          )}
 
           {/* Flèches */}
           {current > 0 && (
@@ -88,7 +102,7 @@ export default function ProjectGallery({ project, onClose }) {
         )}
 
         {/* Compteur */}
-        <div style={{ textAlign: "center", color: "rgba(255,255,255,0.4)", fontSize: "0.8rem" }}>
+        <div style={{ textAlign: "center", color: "rgba(255,255,255,0.3)", fontSize: "0.75rem" }}>
           {current + 1} / {media.length}
         </div>
       </div>
