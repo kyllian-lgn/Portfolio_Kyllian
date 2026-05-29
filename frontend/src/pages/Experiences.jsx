@@ -88,7 +88,11 @@ export default function Experiences() {
                     <div style={{ flexShrink: 0 }}>
                       {e.images.length === 1 && (
                         <div style={{ width: 220 }}>
-                          <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0])} style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 12, border: "2px solid var(--border)", boxShadow: "4px 4px 24px rgba(0,0,0,0.35)", cursor: "zoom-in", transition: "transform 0.2s" }}
+                          <img
+                            src={e.images[0].url || e.images[0]}
+                            alt=""
+                            onClick={() => setLightbox(e.images[0])}
+                            style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 12, border: "2px solid var(--border)", boxShadow: "4px 4px 24px rgba(0,0,0,0.35)", cursor: "zoom-in", transition: "transform 0.2s" }}
                             onMouseEnter={e2 => e2.target.style.transform = "scale(1.03)"}
                             onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
                           />
@@ -96,37 +100,44 @@ export default function Experiences() {
                         </div>
                       )}
                       {e.images.length >= 2 && (
-  <div style={{ width: 260 }}>
-    <div style={{ position: "relative", height: 230 }}>
-      {/* Image 1 — haut gauche */}
-      <div style={{ position: "absolute", left: 0, top: 0, width: "62%", zIndex: 2 }}>
-        <img src={e.images[0].url || e.images[0]} alt="" onClick={() => setLightbox(e.images[0])}
-          style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s", display: "block" }}
-          onMouseEnter={e2 => e2.target.style.transform = "scale(1.05)"}
-          onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
-        />
-        {e.images[0]?.caption && (
-          <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 4 }}>
-            {e.images[0].caption}
-          </div>
-        )}
-      </div>
-      {/* Image 2 — bas droite */}
-      <div style={{ position: "absolute", right: 0, bottom: 0, width: "62%", zIndex: 1 }}>
-        <img src={e.images[1].url || e.images[1]} alt="" onClick={() => setLightbox(e.images[1])}
-          style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s", display: "block" }}
-          onMouseEnter={e2 => e2.target.style.transform = "scale(1.05)"}
-          onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
-        />
-        {e.images[1]?.caption && (
-          <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 4 }}>
-            {e.images[1].caption}
-          </div>
-        )}
-      </div>
-    </div>
-  </div>
-)}
+                        <div style={{ width: 260 }}>
+                          <div style={{ position: "relative", height: 230 }}>
+                            <div style={{ position: "absolute", left: 0, top: 0, width: "62%", zIndex: 2 }}>
+                              <img
+                                src={e.images[0].url || e.images[0]}
+                                alt=""
+                                onClick={() => setLightbox(e.images[0])}
+                                style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s", display: "block" }}
+                                onMouseEnter={e2 => e2.target.style.transform = "scale(1.05)"}
+                                onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
+                              />
+                              {e.images[0]?.caption && (
+                                <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 4 }}>
+                                  {e.images[0].caption}
+                                </div>
+                              )}
+                            </div>
+                            <div style={{ position: "absolute", right: 0, bottom: 0, width: "62%", zIndex: 1 }}>
+                              <img
+                                src={e.images[1].url || e.images[1]}
+                                alt=""
+                                onClick={() => setLightbox(e.images[1])}
+                                style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 10, border: "2px solid var(--border)", boxShadow: "4px 4px 20px rgba(0,0,0,0.4)", cursor: "zoom-in", transition: "transform 0.2s", display: "block" }}
+                                onMouseEnter={e2 => e2.target.style.transform = "scale(1.05)"}
+                                onMouseLeave={e2 => e2.target.style.transform = "scale(1)"}
+                              />
+                              {e.images[1]?.caption && (
+                                <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 4 }}>
+                                  {e.images[1].caption}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
               </article>
             ))}
           </div>
