@@ -63,19 +63,23 @@ const portfolioData = {
       "gallery": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779879900/zjtgjk3vtuuswwr1ai1p.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779879900/zjtgjk3vtuuswwr1ai1p.jpg",
+          "caption": "Moi et mon Partenaire du projet"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779880392/rnqmv49lhipazrapfqrl.png",
+          "caption": "Notre Pièce avec PowerMill"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779880666/Vid%C3%A9o_Pi%C3%A8ce_FAO_ezje6s.mp4"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779880666/Vid%C3%A9o_Pi%C3%A8ce_FAO_ezje6s.mp4",
+          "caption": "Notre Pièce avec 3DExperience"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968377/r5prk8bnlibzqhpbh0xu.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968377/r5prk8bnlibzqhpbh0xu.jpg",
+          "caption": "Notre Pièce Finale"
         }
       ]
     },
@@ -100,19 +104,23 @@ const portfolioData = {
       "gallery": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966515/wt76hlfi8abhxg9wzyai.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966515/wt76hlfi8abhxg9wzyai.png",
+          "caption": "Cellule Robot en action 1"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966520/awt8p5lxlrzqwlphn0mr.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966520/awt8p5lxlrzqwlphn0mr.png",
+          "caption": "Cellule Robot en action 2"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/SAE2.2_video_o9lb1k.mp4"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/SAE2.2_video_o9lb1k.mp4",
+          "caption": "Fonctionnement de l'ensemble du projet"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/Video_SAE2.2_REA_100__tszeur.mov"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/Video_SAE2.2_REA_100__tszeur.mov",
+          "caption": "Mise en situation VR dans l'Atelier de l'IUT"
         }
       ]
     },
@@ -136,23 +144,28 @@ const portfolioData = {
       "gallery": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966815/umeblvobshhxevptbuc6.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966815/umeblvobshhxevptbuc6.png",
+          "caption": "Fourgon Enedis avec 3DExpeirence"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966821/ux5d4kdgolp7nloww23u.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966821/ux5d4kdgolp7nloww23u.png",
+          "caption": "Première aménagement intérieur"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966825/hp4nfldjaebkkii8bvr3.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966825/hp4nfldjaebkkii8bvr3.png",
+          "caption": "Deuxième aménagement intérieur"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966834/zzqvvntp3ihirndw9rt3.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779966834/zzqvvntp3ihirndw9rt3.png",
+          "caption": "Intérieur du Fourgon en VR"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966858/Vid%C3%A9o_Pr%C3%A9sentation_VR_mjthpu.mp4"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966858/Vid%C3%A9o_Pr%C3%A9sentation_VR_mjthpu.mp4",
+          "caption": "Session VR du Fourgon Enedis"
         }
       ]
     },
@@ -177,23 +190,28 @@ const portfolioData = {
       "gallery": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967059/fgzdzl4wtukb0xsyfiho.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967059/fgzdzl4wtukb0xsyfiho.jpg",
+          "caption": "CAO du Winch avec 3DExperience"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967063/icqqfdzyyvoqgdufo9sa.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967063/icqqfdzyyvoqgdufo9sa.png",
+          "caption": "CAO intérieur du Winch avec 3DExperience"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967073/grdz99vyh5t36rbekr8h.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967073/grdz99vyh5t36rbekr8h.png",
+          "caption": "Schéma cinématique n°1"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967078/u1agnquxsmfgsle4fknp.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967078/u1agnquxsmfgsle4fknp.png",
+          "caption": "Schéma cinématique n°2"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967091/ffjovvrrn1qsdkb5vkld.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967091/ffjovvrrn1qsdkb5vkld.jpg",
+          "caption": "Winch réel"
         }
       ]
     },
@@ -217,19 +235,23 @@ const portfolioData = {
       "gallery": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967226/t9x59h7mysw9mqphtnth.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967226/t9x59h7mysw9mqphtnth.jpg",
+          "caption": "Première version du projet Vhéliotech "
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968481/foph9w66tlzgcz1fhtdj.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968481/foph9w66tlzgcz1fhtdj.jpg",
+          "caption": "Notre Pare-chocs avant"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968485/lyzgbuxblmhn4jjwl3og.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968485/lyzgbuxblmhn4jjwl3og.jpg",
+          "caption": "Notre cellule robotisé d'impression 3D à pellets"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779968204/IMG_3338_yxypee.mov"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779968204/IMG_3338_yxypee.mov",
+          "caption": "Impression 3D du pare-choc"
         }
       ]
     },
@@ -254,19 +276,23 @@ const portfolioData = {
       "gallery": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967521/ee1hfjtm2akabegchjcg.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967521/ee1hfjtm2akabegchjcg.jpg",
+          "caption": "Ensemble \"Pocket\" d'un réseau pour eau noire"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967524/nv0hq20qigr48sr2lmir.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967524/nv0hq20qigr48sr2lmir.jpg",
+          "caption": "Début d'intégration du Programme"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967538/PAL_TDD_1_nmdbiz.mp4"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967538/PAL_TDD_1_nmdbiz.mp4",
+          "caption": "Fonctionnement du Programme"
         },
         {
           "type": "video",
-          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967958/Jets_vacuum_sanitary_system_ocf9pd.mp4"
+          "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967958/Jets_vacuum_sanitary_system_ocf9pd.mp4",
+          "caption": "Explication système générale des eaux noire"
         }
       ]
     }
@@ -286,7 +312,8 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970854/kn0eyuphe5nbaprmxbf5.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970854/kn0eyuphe5nbaprmxbf5.png",
+          "caption": "Logo de l'entreprise \"Alstom\""
         }
       ],
       "link": "https://www.alstom.com/fr"
@@ -335,11 +362,13 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969008/lkqudfkuacal704yjqgp.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969008/lkqudfkuacal704yjqgp.jpg",
+          "caption": "Promo BUT GMP"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969043/ycbo8gabwb7d8opnj0nh.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969043/ycbo8gabwb7d8opnj0nh.jpg",
+          "caption": "Logo Université de Nantes"
         }
       ],
       "link": "https://iutnantes.univ-nantes.fr/fr/formations/but-gmp"
@@ -357,11 +386,13 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969158/n8wketilnnbs3xya1lgr.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969158/n8wketilnnbs3xya1lgr.png",
+          "caption": "Projet type d'impression 3D"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969162/dz31k2tvsqbdi1rbfisw.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969162/dz31k2tvsqbdi1rbfisw.png",
+          "caption": "Machine d'impression 3D"
         }
       ],
       "link": ""
@@ -380,11 +411,13 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969664/r2sqql6lhrz9u0hzroca.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969664/r2sqql6lhrz9u0hzroca.jpg",
+          "caption": "Chantiers de l'Atlantique à St Nazaire"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969669/exzk2uqe4afbnzh3xcdb.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969669/exzk2uqe4afbnzh3xcdb.jpg",
+          "caption": "Ensemble des réseaux à intégrer dans un navire"
         }
       ],
       "link": "https://chantiers-atlantique.com/?__goaway_challenge=meta-refresh&__goaway_id=18b79497a06b4015f28c9c57e6ab9608&__goaway_referer=https%3A%2F%2Fwww.google.com%2F"
@@ -402,11 +435,13 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969831/oofysbpij6jnp61wtsp2.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779969831/oofysbpij6jnp61wtsp2.jpg",
+          "caption": "Classe à Malte avec EF"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970157/uzjvzc1vktz7nwpqj69e.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970157/uzjvzc1vktz7nwpqj69e.jpg",
+          "caption": "Certification du niveau d'anglais EF"
         }
       ],
       "link": "https://www.ef.fr/"
@@ -452,11 +487,13 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970948/s3pgg5jjtfvqb1mjnihj.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779970948/s3pgg5jjtfvqb1mjnihj.jpg",
+          "caption": "Ensemble des réseaux à intégrer dans un navire"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971144/tdbyruziwbffiennpg1v.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971144/tdbyruziwbffiennpg1v.jpg",
+          "caption": "Projet d'intégration avec l'UIMM de St Nazaire"
         }
       ],
       "link": "https://chantiers-atlantique.com/?__goaway_challenge=meta-refresh&__goaway_id=18b79497a06b4015f28c9c57e6ab9608&__goaway_referer=https%3A%2F%2Fwww.google.com%2F"
@@ -485,11 +522,13 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971238/ur0rerorw6kqhw4hdkca.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971238/ur0rerorw6kqhw4hdkca.jpg",
+          "caption": "Halle 6 Ouest à Nantes"
         },
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971242/jhhsyv0exlt3ncsamawx.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971242/jhhsyv0exlt3ncsamawx.jpg",
+          "caption": "Evénements auquels j'ai participé durant mon stage"
         }
       ],
       "link": "https://halle6ouest.univ-nantes.fr/"
@@ -511,7 +550,8 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971321/wbbwgbasc0xavsaj1hj4.png"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971321/wbbwgbasc0xavsaj1hj4.png",
+          "caption": "Logo de la Biscuiterie St Michel"
         }
       ],
       "link": "https://boutique.stmichel.fr/"
@@ -533,7 +573,8 @@ const portfolioData = {
       "images": [
         {
           "type": "image",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971359/jsfeus7et0oppn2ei4sb.jpg"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779971359/jsfeus7et0oppn2ei4sb.jpg",
+          "caption": "Logo du restaurant \"Le Marius\""
         }
       ],
       "link": "https://www.marius-pornic.fr/"
@@ -652,11 +693,13 @@ const portfolioData = {
         "gallery": [
           {
             "type": "image",
-            "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779975931/rorfy7567yflrwecs7ic.png"
+            "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779975931/rorfy7567yflrwecs7ic.png",
+            "caption": "Marathon de Nantes"
           },
           {
             "type": "image",
-            "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976521/etxwtoj3ekl5rkzr4zal.jpg"
+            "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976521/etxwtoj3ekl5rkzr4zal.jpg",
+            "caption": "Course Ekiden trail"
           }
         ]
       },
