@@ -5,7 +5,7 @@ import { usePortfolio } from "../context/PortfolioContext";
 
 export default function Passions() {
   const { content, loading } = usePortfolio();
-  const [lightbox, setLightbox] = useState(null); // { images, index }
+  const [lightbox, setLightbox] = useState(null);
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
@@ -16,12 +16,8 @@ export default function Passions() {
 
   return (
     <>
-      {/* Lightbox */}
       {lightbox && (
-        <div onClick={closeLightbox} style={{
-          position: "fixed", inset: 0, background: "rgba(0,0,0,0.92)",
-          zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center"
-        }}>
+        <div onClick={closeLightbox} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.92)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div onClick={e => e.stopPropagation()} style={{ width: "90vw", maxWidth: 900, display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button onClick={closeLightbox} style={{ background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "50%", width: 40, height: 40, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -43,16 +39,17 @@ export default function Passions() {
             </div>
             <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 4 }}>
               {lightbox.images.map((img, i) => (
-                <div key={i} onClick={() => setLightbox(l => ({ ...l, index: i }))} style={{
-                  flexShrink: 0, width: 70, height: 50, borderRadius: 8, overflow: "hidden",
-                  border: i === lightbox.index ? "2px solid var(--accent)" : "2px solid transparent",
-                  cursor: "pointer"
-                }}>
+                <div key={i} onClick={() => setLightbox(l => ({ ...l, index: i }))} style={{ flexShrink: 0, width: 70, height: 50, borderRadius: 8, overflow: "hidden", border: i === lightbox.index ? "2px solid var(--accent)" : "2px solid transparent", cursor: "pointer" }}>
                   <img src={img?.url || img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
               ))}
             </div>
-            <div style={{ textAlign: "center", color: "rgba(255,255,255,0.4)", fontSize: "0.8rem" }}>
+            {lightbox.images[lightbox.index]?.caption && (
+              <div style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontSize: "0.78rem", fontStyle: "italic", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 10 }}>
+                {lightbox.images[lightbox.index].caption}
+              </div>
+            )}
+            <div style={{ textAlign: "center", color: "rgba(255,255,255,0.3)", fontSize: "0.75rem" }}>
               {lightbox.index + 1} / {lightbox.images.length}
             </div>
           </div>
@@ -76,22 +73,14 @@ export default function Passions() {
           <div className="eyebrow reveal" style={{ marginBottom: 40 }}>01 — Sports & Activités</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))", gap: 28 }}>
             {content.passions.sports.map((s, i) => {
-              const allImages = [
-                { url: s.image },
-                ...(s.gallery || [])
-              ];
+              const allImages = [{ url: s.image }, ...(s.gallery || [])];
               return (
-                <article className="card reveal" key={i} style={{ overflow: "hidden", padding: 0 }} data-testid={`sport-${i}`}>
-                  {/* Image principale cliquable */}
+                <article className="card reveal" key={i} style={{ overflow: "hidden", padding: 0 }}>
                   <div style={{ position: "relative", cursor: allImages.length > 1 ? "pointer" : "default" }}
                     onClick={() => allImages.length > 1 && openLightbox(allImages, 0)}>
                     <img src={s.image} alt={s.name} style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover", filter: "grayscale(15%)" }} />
                     {allImages.length > 1 && (
-                      <div style={{
-                        position: "absolute", bottom: 10, right: 10,
-                        background: "rgba(0,0,0,0.7)", borderRadius: 20,
-                        padding: "4px 10px", fontSize: "0.72rem", color: "white"
-                      }}>
+                      <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white" }}>
                         📷 {allImages.length} photos
                       </div>
                     )}
@@ -102,15 +91,18 @@ export default function Passions() {
                     <p style={{ color: "var(--fg-soft)", lineHeight: 1.7, marginBottom: 20 }}>{s.description}</p>
                     <span className="tag-pill accent">{s.tag}</span>
 
-                    {/* Miniatures catalogue */}
                     {s.gallery?.length > 0 && (
                       <div style={{ display: "flex", gap: 8, marginTop: 20, flexWrap: "wrap" }}>
                         {s.gallery.map((img, j) => (
-                          <div key={j} onClick={() => openLightbox(allImages, j + 1)} style={{
-                            width: 72, height: 52, borderRadius: 8, overflow: "hidden",
-                            cursor: "pointer", border: "1px solid var(--border)", flexShrink: 0
-                          }}>
-                            <img src={img?.url || img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          <div key={j} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+                            <div onClick={() => openLightbox(allImages, j + 1)} style={{ width: 72, height: 52, borderRadius: 8, overflow: "hidden", cursor: "pointer", border: "1px solid var(--border)", flexShrink: 0 }}>
+                              <img src={img?.url || img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            </div>
+                            {img?.caption && (
+                              <div style={{ fontSize: "0.65rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", maxWidth: 72 }}>
+                                {img.caption}
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>
