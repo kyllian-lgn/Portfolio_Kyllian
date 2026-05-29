@@ -551,15 +551,15 @@ const portfolioData = {
       },
       {
         "name": "Catia V5",
-        "level": 88
+        "level": 80
       },
       {
         "name": "SolidWorks",
-        "level": 85
+        "level": 80
       },
       {
         "name": "AutoCAD",
-        "level": 75
+        "level": 70
       },
       {
         "name": "PowerMill",
@@ -577,11 +577,11 @@ const portfolioData = {
     "programming": [
       {
         "name": "VBA / Macros",
-        "level": 80
+        "level": 70
       },
       {
         "name": "Python",
-        "level": 70
+        "level": 75
       },
       {
         "name": "XML / 3D Scripting",
@@ -595,15 +595,15 @@ const portfolioData = {
       },
       {
         "name": "Réalité Virtuelle / RA",
-        "level": 80
+        "level": 85
       },
       {
         "name": "Unity 3D",
-        "level": 40
+        "level": 30
       }
     ],
     "scientific": "Mathématiques · Mécanique · Dimensionnement · Physique · Science des matériaux",
-    "production": "Machines (fraisage, tournage) · Méthode · Métrologie",
+    "production": "Machines (fraisage, tournage, soudage) · Méthode · Métrologie",
     "industry": "Fabrication additive · Optimisation topologique · Transition énergétique · Coût-quantité-stock",
     "soft": [
       {
@@ -620,7 +620,11 @@ const portfolioData = {
       },
       {
         "name": "Curiosité",
-        "description": "Veille technologique et apprentissage continu"
+        "description": "Toujours à la recherche de nouveaux projets"
+      },
+      {
+        "name": "Adaptabilité",
+        "description": "Capable d'évoluer dans différent environnement de travail et de s'adapter à ses collègues"
       }
     ],
     "languages": [
@@ -630,7 +634,7 @@ const portfolioData = {
       },
       {
         "name": "Anglais",
-        "level": "B1 — B2"
+        "level": "B1 / B2"
       },
       {
         "name": "Espagnol",
