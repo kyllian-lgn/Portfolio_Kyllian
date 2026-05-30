@@ -665,7 +665,7 @@ const portfolioData = {
       },
       {
         "name": "Adaptabilité",
-        "description": "Capable d'évoluer dans différent environnement de travail et de s'adapter à ses collègues"
+        "description": "Capable d'évoluer dans différents environnements de travail et de s'adapter à ses collègues"
       }
     ],
     "languages": [
