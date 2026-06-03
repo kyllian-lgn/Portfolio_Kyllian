@@ -266,9 +266,9 @@ const portfolioData = {
       "title": "Programmation XML - Assemblage maquette 3D",
       "category": "Programmation",
       "subtitle": "Programmation & automatisation",
-      "description": "Développement d'un programme XML lié aux logiciels 3D pour la standardisation de l'intégration des réseaux. Automatisation des tâches répétitives pour gains économiques et de qualité significatifs.",
+      "description": "Développement d'un programme XML lié au logiciel 3D des Chantiers de l'Atlantique. Permet la standardisation des équipements lors de l'intégration des réseaux. Automatisation des tâches répétitives avec des gains économiques significatifs à la clé.",
       "skills": "Programmation XML, modélisation 3D, automatisation",
-      "deliverables": "Programme XML lié aux logiciels 3D",
+      "deliverables": "Programme XML ",
       "innovation": "Action de progrès, gains économiques, standardisation",
       "tags": [
         "XML",
