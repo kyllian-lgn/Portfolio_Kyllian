@@ -90,9 +90,9 @@ const portfolioData = {
       "title": "Création d'une cellule robotisée - Automatisation",
       "category": "Robotique",
       "subtitle": "Robotique industrielle & automatisation",
-      "description": "Réponse à un appel d'offre La Poste : conception d'un préhenseur, simulation de la cellule robotique dans Robot Studio, et implantation virtuelle en réalité virtuelle pour valider l'aménagement atelier.",
+      "description": "Réponse à un appel d'offre La Poste : conception d'un préhenseur, simulation de la cellule robotique dans Robot Studio, et implantation en réalité virtuelle dans l'atelier pour vérifier les distances de sécurités et le bon fonctionnement du système.",
       "skills": "Conception de préhenseur, simulation robotique, analyse des risques",
-      "deliverables": "Modélisation Robot Studio, préhenseur 3D, implantation atelier VR",
+      "deliverables": "Modélisation Robot Studio, préhenseur 3D, implantation VR",
       "innovation": "Amélioration des conditions de travail, prévention des TMS",
       "tags": [
         "Robot Studio",
