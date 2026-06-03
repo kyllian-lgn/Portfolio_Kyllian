@@ -72,7 +72,7 @@ export default function Experiences() {
                     </ul>
                     {e.highlight && (
                       <div style={{ padding: "20px 24px", background: "var(--accent-soft)", borderLeft: "3px solid var(--accent)", borderRadius: "0 12px 12px 0", marginBottom: 20 }}>
-                        <div className="eyebrow no-after" style={{ fontSize: "0.7rem", marginBottom: 10 }}><Star size={12} /> Projet phare</div>
+                        <div className="eyebrow no-after" style={{ fontSize: "0.7rem", marginBottom: 10 }}><Star size={12} /> Projet principal</div>
                         <div style={{ color: "var(--fg)", fontSize: "0.95rem", lineHeight: 1.6 }}>{e.highlight}</div>
                       </div>
                     )}
