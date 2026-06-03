@@ -33,7 +33,7 @@ export default function Projects() {
         <div className="container-x">
           <div className="eyebrow reveal" style={{ marginBottom: 24 }}>01 — Sélection de projets</div>
           <p className="reveal" style={{ maxWidth: 720, color: "var(--fg-soft)", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: 48 }}>
-            Voici une sélection de mes projets d'ingénierie réalisés durant ma formation ou au sein de mon alternance, mettant en valeur la conception mécanique, la fabrication, la modélisation CAO et le développement de systèmes à l'aide de 3DExperience.
+            Voici une sélection de mes projets d'ingénierie réalisés durant ma formation ou au sein de mon alternance, mettant en valeur la conception mécanique, la fabrication additive, la modélisation 3D et la programmation.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 28 }}>
