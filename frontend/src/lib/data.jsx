@@ -386,8 +386,10 @@ const portfolioData = {
       "place": "IUT Nantes - Halle 6 Ouest",
       "tag": "Spécialisation",
       "details": [
-        "Virtualisation et modélisation : outils de simulation des systèmes mécaniques en environnement virtuel (RA, RV, simulation numérique)",
-        "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication"
+        "Virtualisation et modélisation, outils de simulation des systèmes mécaniques en environnement virtuel (RA, RV, simulation numérique)",
+        "Étude des matériaux / Modélisation 3D / Simulation des procédés de fabrication",
+        "Fabrication additive avec des impressimantes 3D",
+        "Experience Lab, Manufacturing Lab"
       ],
       "images": [
         {
@@ -411,6 +413,7 @@ const portfolioData = {
       "tag": "Alternance",
       "details": [
         "Coordination des réseaux : intégration multi-réseaux (ventilation, tuyauterie, électricité) avec fortes contraintes thermiques et phoniques",
+        "Développement et automatisation d’outils d’aide aux calculs pour l’optimisation des coûts de production",
         "Collaboration : travail entre secteurs production, industrialisation, bureau d'études",
         "Compétences : autonomie, communication, maîtrise de logiciels CAO et code XML"
       ],
