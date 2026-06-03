@@ -73,7 +73,7 @@ export default function Passions() {
           <div className="eyebrow reveal" style={{ marginBottom: 40 }}>01 — Sports & Activités</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))", gap: 28 }}>
             {content.passions.sports.map((s, i) => {
-              const allImages = [{ url: s.image }, ...(s.gallery || [])];
+              const allImages = [{ url: s.image, caption: s.imageCaption || "" }, ...(s.gallery || [])];
               return (
                 <article className="card reveal" key={i} style={{ overflow: "hidden", padding: 0 }}>
                   <div style={{ position: "relative", cursor: allImages.length > 1 ? "pointer" : "default" }}
