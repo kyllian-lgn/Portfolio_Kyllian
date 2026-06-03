@@ -115,7 +115,7 @@ export default function Home() {
           <div className="section-title-block reveal">
             <div>
               <div className="eyebrow" style={{ marginBottom: 20 }}>02 — Outils & Compétences</div>
-              <h2 className="display-2">Stack<br /><span className="italic-orange">technique.</span></h2>
+              <h2 className="display-2">Compétences<br /><span className="italic-orange">techniques.</span></h2>
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
