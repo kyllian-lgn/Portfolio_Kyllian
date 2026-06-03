@@ -3,7 +3,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectGallery({ project, onClose }) {
   const media = [
-    { type: "image", url: project.image },
+    { type: "image", url: project.image, caption: project.imageCaption || "" },
     ...(project.gallery || []),
   ];
   const [current, setCurrent] = useState(0);
@@ -36,9 +36,10 @@ export default function ProjectGallery({ project, onClose }) {
       zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center",
     }}>
       <div onClick={(e) => e.stopPropagation()} style={{
-        width: "90vw", maxWidth: 900, display: "flex", flexDirection: "column", gap: 16,
+        width: "90vw", maxWidth: 900, display: "flex", flexDirection: "column", gap: 12,
       }}>
-        {/* Bouton fermer */}
+
+        {/* Header — titre + fermer */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div>
             <div style={{ color: "var(--accent)", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>{project.category}</div>
@@ -49,26 +50,12 @@ export default function ProjectGallery({ project, onClose }) {
           </button>
         </div>
 
-        {/* Media principal */}
-        <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 200, maxHeight: "75vh" }}>
+        {/* Média principal */}
+        <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 200, maxHeight: "68vh" }}>
           {media[current]?.type === "video"
-            ? <iframe src={getVideoEmbed(media[current].url)} style={{ width: "100%", height: "100%", border: "none" }} allowFullScreen />
-            : <img src={media[current]?.url} alt="" style={{ maxWidth: "100%", maxHeight: "75vh", objectFit: "contain", margin: "0 auto", display: "block" }} />
+            ? <iframe src={getVideoEmbed(media[current].url)} style={{ width: "100%", height: "60vh", border: "none" }} allowFullScreen />
+            : <img src={media[current]?.url} alt="" style={{ maxWidth: "100%", maxHeight: "68vh", objectFit: "contain", margin: "0 auto", display: "block" }} />
           }
-          {/* Légende */}
-          {media[current]?.caption && (
-            <div style={{
-              textAlign: "center",
-              color: "rgba(255,255,255,0.5)",
-              fontSize: "0.78rem",
-              letterSpacing: "0.05em",
-              borderTop: "1px solid rgba(255,255,255,0.08)",
-              paddingTop: 10,
-              fontStyle: "italic",
-            }}>
-              {media[current].caption}
-            </div>
-          )}
 
           {/* Flèches */}
           {current > 0 && (
@@ -82,6 +69,21 @@ export default function ProjectGallery({ project, onClose }) {
             </button>
           )}
         </div>
+
+        {/* Légende — en dessous de l'image */}
+        {media[current]?.caption && (
+          <div style={{
+            textAlign: "center",
+            color: "rgba(255,255,255,0.55)",
+            fontSize: "0.78rem",
+            fontStyle: "italic",
+            letterSpacing: "0.03em",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: 10,
+          }}>
+            {media[current].caption}
+          </div>
+        )}
 
         {/* Miniatures */}
         {media.length > 1 && (
@@ -105,6 +107,7 @@ export default function ProjectGallery({ project, onClose }) {
         <div style={{ textAlign: "center", color: "rgba(255,255,255,0.3)", fontSize: "0.75rem" }}>
           {current + 1} / {media.length}
         </div>
+
       </div>
     </div>
   );
