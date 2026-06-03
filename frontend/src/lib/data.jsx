@@ -81,7 +81,8 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779968377/r5prk8bnlibzqhpbh0xu.jpg",
           "caption": "Notre Pièce Finale"
         }
-      ]
+      ],
+      "imageCaption": "Oeuvre d'art utilisée pour le projet"
     },
     {
       "id": "p2",
@@ -122,7 +123,8 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966576/Video_SAE2.2_REA_100__tszeur.mov",
           "caption": "Mise en situation VR dans l'Atelier de l'IUT"
         }
-      ]
+      ],
+      "imageCaption": "Bras robotisé Kuka"
     },
     {
       "id": "p3",
@@ -167,7 +169,8 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779966858/Vid%C3%A9o_Pr%C3%A9sentation_VR_mjthpu.mp4",
           "caption": "Session VR du Fourgon Enedis"
         }
-      ]
+      ],
+      "imageCaption": "Moi entrain de tester la simulation VR"
     },
     {
       "id": "p4",
@@ -213,7 +216,8 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779967091/ffjovvrrn1qsdkb5vkld.jpg",
           "caption": "Winch réel"
         }
-      ]
+      ],
+      "imageCaption": "Mise en plan de mon Winch"
     },
     {
       "id": "p5",
@@ -253,7 +257,8 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779968204/IMG_3338_yxypee.mov",
           "caption": "Impression 3D du pare-choc"
         }
-      ]
+      ],
+      "imageCaption": "Moi (au centre) et mes collègues après l'impression du pare-choc"
     },
     {
       "id": "p6",
@@ -294,7 +299,8 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779967958/Jets_vacuum_sanitary_system_ocf9pd.mp4",
           "caption": "Explication système générale des eaux noire"
         }
-      ]
+      ],
+      "imageCaption": "Interface utilisateur du logiciel d'intégration 3D"
     }
   ],
   "education": [
@@ -701,14 +707,16 @@ const portfolioData = {
             "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976521/etxwtoj3ekl5rkzr4zal.jpg",
             "caption": "Course Ekiden trail"
           }
-        ]
+        ],
+        "imageCaption": "Moi ( à droite ) après avoir finis le Marathon de Nantes 2026"
       },
       {
         "name": "Volley-ball",
         "description": "Le volley-ball me permet de développer ma réactivité et ma stratégie tout un gardant un esprit collectif et fair-play même en situation difficile",
         "tag": "Beach Volley · Esprit collectif",
         "image": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1779976961/lq8wdjlkctq85lbbq2ng.png",
-        "gallery": []
+        "gallery": [],
+        "imageCaption": "Moi au beach volley"
       }
     ],
     "travels": {
