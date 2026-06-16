@@ -52,7 +52,7 @@ export default function Experiences() {
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
             {content.experiences.map((e, idx) => (
               <article key={e.id} className="card reveal">
-                <div style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
+                <div className="card-flex-row" style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
                       <div>
@@ -85,9 +85,9 @@ export default function Experiences() {
                   </div>
 
                   {e.images?.length > 0 && (
-                    <div style={{ flexShrink: 0 }}>
+                    <div className="card-img-block" style={{ flexShrink: 0 }}>
                       {e.images.length === 1 && (
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 220, maxWidth: "100%" }}>
                           <img
                             src={e.images[0].url || e.images[0]}
                             alt=""
@@ -100,7 +100,7 @@ export default function Experiences() {
                         </div>
                       )}
                       {e.images.length >= 2 && (
-                        <div style={{ width: 240 }}>
+                        <div style={{ width: 240, maxWidth: "100%" }}>
                           {/* Image 1 */}
                           <div style={{ marginBottom: 12 }}>
                             <img
