@@ -748,3 +748,47 @@ textarea.json-editor {
     background: var(--border);
     margin: 60px 0;
 }
+
+/* =============================================
+   RESPONSIVE MOBILE — correctifs
+   ============================================= */
+
+/* Timeline : réduit l'indent et repositionne le dot */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 24px;
+  }
+  .timeline::before {
+    left: 6px;
+  }
+  .timeline-dot {
+    left: -22px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Cards : moins de padding sur mobile */
+  .card {
+    padding: 20px 16px;
+  }
+
+  /* CTA banner : moins de padding */
+  .cta-banner {
+    padding: 48px 20px;
+  }
+
+  /* Flex image+texte : passe en colonne */
+  .card-flex-row {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Image pleine largeur sur mobile */
+  .card-img-block {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .card-img-block img {
+    width: 100%;
+  }
+}
