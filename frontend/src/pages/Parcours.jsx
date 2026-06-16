@@ -52,7 +52,7 @@ export default function Parcours() {
               <div className="timeline-item reveal" key={e.id}>
                 <span className="timeline-dot" />
                 <div className="card" style={{ marginLeft: 0 }}>
-                  <div style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
+                  <div className="card-flex-row" style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12, marginBottom: 16 }}>
                         <div className="eyebrow no-after" style={{ fontSize: "0.72rem" }}>{e.period}</div>
@@ -71,9 +71,9 @@ export default function Parcours() {
                     </div>
 
                     {e.images?.length > 0 && (
-                      <div style={{ flexShrink: 0 }}>
+                      <div className="card-img-block" style={{ flexShrink: 0 }}>
                         {e.images.length === 1 && (
-                          <div style={{ width: 220 }}>
+                          <div style={{ width: 220, maxWidth: "100%" }}>
                             <img
                               src={e.images[0].url || e.images[0]}
                               alt=""
@@ -86,7 +86,7 @@ export default function Parcours() {
                           </div>
                         )}
                         {e.images.length >= 2 && (
-                          <div style={{ width: 240 }}>
+                          <div style={{ width: 240, maxWidth: "100%" }}>
                             {/* Image 1 */}
                             <div style={{ marginBottom: 12 }}>
                               <img
