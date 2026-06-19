@@ -749,9 +749,7 @@ const portfolioData = {
     "projectsHeroTags": [
       "CAO",
       "VR",
-      "Mécanique",
-      "Usinage",
-      "Mise en plan"
+      "Mécanique"
     ]
   }
 };
