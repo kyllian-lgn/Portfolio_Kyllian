@@ -744,7 +744,7 @@ const portfolioData = {
   "_settings": {
     "headingFont": "Playfair Display",
     "bodyFont": "Inter",
-    "accentColor": "#085b83",
+    "accentColor": "#5fafaf",
     "bgColor": "#2f2f33"
   }
 };
