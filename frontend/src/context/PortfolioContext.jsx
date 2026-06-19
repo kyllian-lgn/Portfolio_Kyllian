@@ -45,12 +45,22 @@ export function applySettings(settings) {
   const b = parseInt(hex.slice(4, 6), 16);
   root.style.setProperty("--accent-soft", `rgba(${r}, ${g}, ${b}, 0.12)`);
   root.style.setProperty("--accent-glow", `rgba(${r}, ${g}, ${b}, 0.4)`);
+  if (settings.bgColor) {
+    const bgHex = settings.bgColor.replace("#", "");
+    const br = parseInt(bgHex.slice(0, 2), 16);
+    const bg = parseInt(bgHex.slice(2, 4), 16);
+    const bb = parseInt(bgHex.slice(4, 6), 16);
+    root.style.setProperty("--bg", settings.bgColor);
+    root.style.setProperty("--bg-soft", `rgba(${br}, ${bg}, ${bb}, 0.85)`);
+    root.style.setProperty("--bg-card", `rgba(${br}, ${bg}, ${bb}, 0.65)`);
+  }
 }
 
 const defaultSettings = {
   headingFont: "Syne",
   bodyFont: "Inter",
   accentColor: "#FF7A1A",
+  bgColor: "#0a0a0b",
 };
 
 export function PortfolioProvider({ children }) {
