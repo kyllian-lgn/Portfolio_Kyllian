@@ -23,8 +23,18 @@ export default function Projects() {
         <div className="container-x">
           <div className="eyebrow" style={{ marginBottom: 32 }}>Kyllian Le Guen — Portfolio</div>
           <h1 className="display-1">Projets<br /><span className="italic-orange">réalisés.</span></h1>
-          <div style={{ display: "flex", gap: 60, marginTop: 48, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 60, marginTop: 48, flexWrap: "wrap", alignItems: "flex-end" }}>
             <div className="stat"><div className="value">{content.projects.length}+</div><div className="label">Projets</div></div>
+            {content._settings?.projectsHeroTags?.length > 0 && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, paddingBottom: 4 }}>
+                {content._settings.projectsHeroTags.map((tag) => (
+                  <div key={tag} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", display: "inline-block", flexShrink: 0 }} />
+                    <span style={{ color: "var(--fg-soft)", fontSize: "0.88rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{tag}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
