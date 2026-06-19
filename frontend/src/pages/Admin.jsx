@@ -15,6 +15,7 @@ const defaultSettings = {
   headingFont: "Syne",
   bodyFont: "Inter",
   accentColor: "#FF7A1A",
+  bgColor: "#0a0a0b",
 };
 
 export default function Admin() {
@@ -193,6 +194,18 @@ export default function Admin() {
                 <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
                   {["#FF7A1A", "#10B981", "#3B82F6", "#8B5CF6", "#EC4899", "#F59E0B", "#EF4444", "#06B6D4"].map((c) => (
                     <button key={c} onClick={() => setLocalSettings({ ...localSettings, accentColor: c })} style={{ width: 28, height: 28, background: c, border: localSettings.accentColor === c ? "2px solid #fff" : "1px solid var(--border)", borderRadius: 8 }} />
+                  ))}
+                </div>
+              </div>
+              <div className="form-field" style={{ marginTop: 24 }}>
+                <label>Couleur de fond</label>
+                <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                  <input type="color" value={localSettings.bgColor || "#0a0a0b"} onChange={(e) => setLocalSettings({ ...localSettings, bgColor: e.target.value })} style={{ width: 60, height: 50, border: "1px solid var(--border)", borderRadius: 10, background: "transparent" }} />
+                  <input type="text" value={localSettings.bgColor || "#0a0a0b"} onChange={(e) => setLocalSettings({ ...localSettings, bgColor: e.target.value })} style={{ flex: 1, background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 10, padding: "14px 18px", color: "var(--fg)" }} />
+                </div>
+                <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
+                  {["#0a0a0b", "#0f172a", "#0d0d0d", "#1a0a2e", "#0a1628", "#0d1a0d", "#1a0a0a", "#1a1a1a"].map((c) => (
+                    <button key={c} onClick={() => setLocalSettings({ ...localSettings, bgColor: c })} style={{ width: 28, height: 28, background: c, border: (localSettings.bgColor || "#0a0a0b") === c ? "2px solid #fff" : "1px solid var(--border)", borderRadius: 8 }} />
                   ))}
                 </div>
               </div>
