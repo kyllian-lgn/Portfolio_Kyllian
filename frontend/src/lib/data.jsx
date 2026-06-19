@@ -744,9 +744,13 @@ const portfolioData = {
   "_settings": {
     "headingFont": "Playfair Display",
     "bodyFont": "Inter",
-    "accentColor": "#085b83",
+    "accentColor": "#55c0f4",
     "bgColor": "#2f2f33",
-    "projectsHeroTags": ["CAO", "VR", "Mécanique"]
+    "projectsHeroTags": [
+      "CAO",
+      "VR",
+      "Mécanique"
+    ]
   }
 };
 
