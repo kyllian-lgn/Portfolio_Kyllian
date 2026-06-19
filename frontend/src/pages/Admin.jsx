@@ -16,6 +16,7 @@ const defaultSettings = {
   bodyFont: "Inter",
   accentColor: "#FF7A1A",
   bgColor: "#0a0a0b",
+  projectsHeroTags: ["CAO", "VR", "Mécanique"],
 };
 
 export default function Admin() {
@@ -206,6 +207,29 @@ export default function Admin() {
                 <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
                   {["#0a0a0b", "#0f172a", "#0d0d0d", "#1a0a2e", "#0a1628", "#0d1a0d", "#1a0a0a", "#1a1a1a"].map((c) => (
                     <button key={c} onClick={() => setLocalSettings({ ...localSettings, bgColor: c })} style={{ width: 28, height: 28, background: c, border: (localSettings.bgColor || "#0a0a0b") === c ? "2px solid #fff" : "1px solid var(--border)", borderRadius: 8 }} />
+                  ))}
+                </div>
+              </div>
+              <div className="form-field" style={{ marginTop: 24 }}>
+                <label>Tags hero (page Projets)</label>
+                <p style={{ color: "var(--fg-muted)", fontSize: "0.82rem", marginBottom: 10, lineHeight: 1.5 }}>
+                  Mots-clés affichés à côté du compteur de projets. Séparez-les par une virgule.
+                </p>
+                <input
+                  type="text"
+                  value={(localSettings.projectsHeroTags || []).join(", ")}
+                  onChange={(e) => {
+                    const tags = e.target.value.split(",").map(t => t.trimStart());
+                    setLocalSettings({ ...localSettings, projectsHeroTags: tags });
+                  }}
+                  placeholder="CAO, VR, Mécanique"
+                  style={{ width: "100%", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 10, padding: "14px 18px", color: "var(--fg)", fontSize: "0.95rem", boxSizing: "border-box" }}
+                />
+                <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
+                  {(localSettings.projectsHeroTags || []).filter(t => t.trim()).map((tag) => (
+                    <span key={tag} style={{ background: "var(--accent-soft)", color: "var(--accent)", border: "1px solid var(--accent)", borderRadius: 20, padding: "3px 12px", fontSize: "0.78rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                      {tag.trim()}
+                    </span>
                   ))}
                 </div>
               </div>
