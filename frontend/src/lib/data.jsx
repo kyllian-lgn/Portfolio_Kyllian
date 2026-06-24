@@ -99,7 +99,7 @@ const portfolioData = {
         },
         {
           "name": "Travail en binôme",
-          "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning."
+          "description": "Coordination avec un partenaire sur le projet."
         }
       ],
       "documents": []
@@ -207,23 +207,23 @@ const portfolioData = {
         }
       ],
       "imageCaption": "Moi entrain de tester la simulation VR",
-      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "longDescription": "Dans le cadre d'un partenariat entre Enedis et plusieurs formations de Master, j'ai contribué à la conception d'une simulation en réalité virtuelle destinée aux techniciens de l'entreprise. L'objectif était d'accompagner un projet de réaménagement intérieur des fourgons de travail en offrant aux employés une expérience immersive leur permettant de se projeter dans leurs nouveaux environnements de travail, avant leur mise en œuvre réelle.\nNotre mission portait spécifiquement sur la composante VR du projet, de la prise en main du logiciel jusqu'à la livraison d'un scénario fonctionnel et utilisable en autonomie par les agents Enedis. \nDémarche du projet et de la session VR : Analyse du besoin, compréhension du contexte métier des techniciens Enedis, étude des usages actuels des fourgons, identification des points avec beaucoup de changements pour les optimiser dans la simulation. Scénarisation, rédaction du parcours utilisateur en VR avec la définition des actions clés du technicien, des séquences d'interaction et des points de décision pour rendre l'expérience autonome et ergonomique. Développement & intégration, programmation des interactions sous 3DExperience, modélisation de l'environnement intérieur du fourgon, itérations sur la fluidité et le réalisme. Livraison & restitution, mise à disposition de la simulation aux équipes Enedis, avec une expérience utilisable partout en conditions réelles par des agents sans expertise technique.",
       "competences": [
         {
-          "name": "Programmation FAO 5 axes",
-          "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill."
+          "name": "Conception de scénario immersif",
+          "description": "Élaboration d'un scénario structuré et cohérent, conçue pour être intuitif, en reproduisant fidèlement les gestes et repères du métier."
         },
         {
-          "name": "Simulation & vérification",
-          "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel."
+          "name": "Développement VR",
+          "description": "Maitrise du logiciel de réalité virtuelle, programmation des interactions utilisateur, gestion des transitions de scène, de l'environnement et optimisation de la fluidité de l'expérience."
         },
         {
-          "name": "Optimisation de l'état de surface",
-          "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée."
+          "name": "UX immersive & tests utilisateurs",
+          "description": "Intégration des contraintes ergonomiques, confort visuel, lisibilité des éléments dans l'espace 3D."
         },
         {
           "name": "Travail en binôme",
-          "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning."
+          "description": "Coordination avec un partenaire sur le projet."
         }
       ],
       "documents": []
