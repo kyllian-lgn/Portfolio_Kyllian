@@ -141,27 +141,25 @@ export default function ProjectDetail() {
           <div className="container-x">
             <div className="eyebrow reveal" style={{ marginBottom: 24 }}>03 — Documents</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
-              {documents.map((d, i) => {
-                return (
-                  
-                    key={i}
-                    href={d.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="card reveal"
-                    style={{ padding: 20, display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "var(--fg)" }}
-                  >
-                    <div style={{ width: 42, height: 42, borderRadius: 10, background: "var(--accent-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <FileText size={18} style={{ color: "var(--accent)" }} />
-                    </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: "0.92rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{d.title || "Document"}</div>
-                      <div style={{ fontSize: "0.74rem", color: "var(--fg-muted)" }}>{d.type || "Fichier"}</div>
-                    </div>
-                    <Download size={16} style={{ color: "var(--fg-muted)", flexShrink: 0 }} />
-                  </a>
-                );
-              })}
+              {documents.map((d, i) => (
+                <a
+                  key={i}
+                  href={d.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="card reveal"
+                  style={{ padding: 20, display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "var(--fg)" }}
+                >
+                  <div style={{ width: 42, height: 42, borderRadius: 10, background: "var(--accent-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <FileText size={18} style={{ color: "var(--accent)" }} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: "0.92rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{d.title || "Document"}</div>
+                    <div style={{ fontSize: "0.74rem", color: "var(--fg-muted)" }}>{d.type || "Fichier"}</div>
+                  </div>
+                  <Download size={16} style={{ color: "var(--fg-muted)", flexShrink: 0 }} />
+                </a>
+              ))}
             </div>
           </div>
         </section>
