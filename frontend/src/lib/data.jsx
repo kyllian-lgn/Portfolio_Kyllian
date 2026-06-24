@@ -363,7 +363,7 @@ const portfolioData = {
         {
           "title": "Cahier des Charges",
           "type": "PDF",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782299740/kbplnloopcnfc5idimzp.pdf"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782302269/t5epagnm2qbfmsbhwciv.png"
         },
         {
           "title": "Test ergonomie en VR",
@@ -437,7 +437,7 @@ const portfolioData = {
         {
           "title": "Schéma du Transport Pocket",
           "type": "PDF",
-          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782301408/vcgqmmriozbleerqzsy7.pdf"
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782304772/edz1umjdtkwvacdcizqw.png"
         }
       ]
     }
