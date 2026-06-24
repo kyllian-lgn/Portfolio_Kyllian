@@ -2,6 +2,7 @@ import React from "react";
 import { Field, TextInput, TextArea, NumberInput, StringList, Repeater, Section, SkillRepeater } from "./EditorPrimitives";
 import ImageUpload from "./ImageUpload";
 import GalleryUpload from "./GalleryUpload";
+import DocumentUpload from "./DocumentUpload";
 
 export default function ContentEditor({ value, onChange }) {
   if (!value) return null;
@@ -65,6 +66,7 @@ export default function ContentEditor({ value, onChange }) {
             category: "Conception",
             subtitle: "",
             description: "",
+            longDescription: "",
             skills: "",
             deliverables: "",
             innovation: "",
@@ -72,6 +74,8 @@ export default function ContentEditor({ value, onChange }) {
             image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
             imageCaption: "",
             gallery: [],
+            competences: [],
+            documents: [],
           })}
           itemTitle={(it) => `${it.num || "—"} · ${it.title || "(sans titre)"}`}
           renderItem={(item, i, update) => (
@@ -82,8 +86,11 @@ export default function ContentEditor({ value, onChange }) {
                 <Field label="Catégorie" hint="Sert au filtre"><TextInput value={item.category} onChange={(v) => update({ category: v })} /></Field>
               </div>
               <Field label="Sous-titre"><TextInput value={item.subtitle} onChange={(v) => update({ subtitle: v })} /></Field>
-              <Field label="Description"><TextArea rows={3} value={item.description} onChange={(v) => update({ description: v })} /></Field>
-              <Field label="Compétences"><TextInput value={item.skills} onChange={(v) => update({ skills: v })} /></Field>
+              <Field label="Description courte" hint="Affichée sur la carte projet, dans la liste"><TextArea rows={3} value={item.description} onChange={(v) => update({ description: v })} /></Field>
+              <Field label="Description détaillée" hint="Affichée sur la page de détail du projet, dans la section Aperçu">
+                <TextArea rows={6} value={item.longDescription || ""} onChange={(v) => update({ longDescription: v })} placeholder="Décrivez le contexte, la démarche et les résultats du projet plus en détail..." />
+              </Field>
+              <Field label="Compétences (résumé)" hint="Affiché en encart sur la page de détail"><TextInput value={item.skills} onChange={(v) => update({ skills: v })} /></Field>
               <Field label="Livrables"><TextInput value={item.deliverables} onChange={(v) => update({ deliverables: v })} /></Field>
               <Field label="Innovation"><TextInput value={item.innovation} onChange={(v) => update({ innovation: v })} /></Field>
               <Field label="Image du projet"><ImageUpload value={item.image} onChange={(v) => update({ image: v })} /></Field>
@@ -94,9 +101,42 @@ export default function ContentEditor({ value, onChange }) {
               <Field label="Tags">
                 <StringList items={item.tags || []} onChange={(next) => update({ tags: next })} placeholder="Ex: Catia V5" />
               </Field>
+
+              <div style={{ marginTop: 20, marginBottom: 10, fontFamily: "var(--heading-font)", fontSize: "1rem" }}>Compétences acquises</div>
+              <div style={{ color: "var(--fg-muted)", fontSize: "0.78rem", marginBottom: 10 }}>Affichées sous forme de cartes sur la page de détail du projet.</div>
+              <Repeater
+                items={item.competences || []}
+                onChange={(next) => update({ competences: next })}
+                addLabel="Ajouter une compétence acquise"
+                makeNew={() => ({ name: "Nouvelle compétence", description: "" })}
+                itemTitle={(it) => it.name || "—"}
+                renderItem={(comp, j, updateComp) => (
+                  <>
+                    <Field label="Nom de la compétence"><TextInput value={comp.name} onChange={(v) => updateComp({ name: v })} /></Field>
+                    <Field label="Description"><TextArea rows={2} value={comp.description} onChange={(v) => updateComp({ description: v })} /></Field>
+                  </>
+                )}
+              />
+
+              <div style={{ marginTop: 24, marginBottom: 10, fontFamily: "var(--heading-font)", fontSize: "1rem" }}>Documents</div>
+              <div style={{ color: "var(--fg-muted)", fontSize: "0.78rem", marginBottom: 10 }}>Plans, rapports, cahiers des charges... téléchargeables sur la page de détail.</div>
+              <Repeater
+                items={item.documents || []}
+                onChange={(next) => update({ documents: next })}
+                addLabel="Ajouter un document"
+                makeNew={() => ({ title: "Nouveau document", type: "PDF", url: "" })}
+                itemTitle={(it) => it.title || "—"}
+                renderItem={(doc, j, updateDoc) => (
+                  <>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 140px", gap: 12 }}>
+                      <Field label="Titre du document"><TextInput value={doc.title} onChange={(v) => updateDoc({ title: v })} /></Field>
+                      <Field label="Type"><TextInput value={doc.type} onChange={(v) => updateDoc({ type: v })} placeholder="PDF, DOCX..." /></Field>
+                    </div>
+                    <Field label="Fichier"><DocumentUpload value={doc.url} onChange={(v) => updateDoc({ url: v })} /></Field>
+                  </>
+                )}
+              />
             </>
-          )}
-        />
       </Section>
 
       <Section title="Parcours · Formations" eyebrow="05">
