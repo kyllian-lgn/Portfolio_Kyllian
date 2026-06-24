@@ -83,7 +83,7 @@ const portfolioData = {
         }
       ],
       "imageCaption": "Oeuvre d'art utilisée pour le projet",
-      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée d'une œuvre du cubisme. Le travail a couvert l'ensemble de la chaîne de production : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, simulation et vérification des trajectoires avant passage en machine réelle. \nUne attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision. \nL'objectif final, en complément de l'usinage de la pièce, était de respecter les tolérances géométriques au niveau des languettes et des creux de la pièce destinés à accueillir les languettes des autres pièces du puzzle. Cette contrainte était particulièrement importante car, à l'issue du projet, les pièces de l'ensemble de la promotion étaient réunies pour former l'œuvre dans sa totalité.",
+      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée d'une œuvre du cubisme. Le travail a couvert l'ensemble de la chaîne de production : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, simulation et vérification des trajectoires avant passage en machine réelle. \nUne attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision sachant qu'on a utilisé du Labelite 45PK. \nL'objectif final, en complément de l'usinage de la pièce, était de respecter les tolérances géométriques au niveau des languettes et des creux de la pièce destinés à accueillir les languettes des autres pièces du puzzle. Cette contrainte était particulièrement importante car, à l'issue du projet, les pièces de l'ensemble de la promotion étaient réunies pour former l'œuvre dans sa totalité.",
       "competences": [
         {
           "name": "Programmation FAO 5 axes",
@@ -328,29 +328,54 @@ const portfolioData = {
           "type": "video",
           "url": "https://res.cloudinary.com/dkfhtjeel/video/upload/v1779968204/IMG_3338_yxypee.mov",
           "caption": "Impression 3D du pare-choc"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782299961/j3vzg8jw0b28qyjtbyoz.png",
+          "caption": "Modélisation 3D du vhéliotech"
         }
       ],
       "imageCaption": "Moi (au centre) et mes collègues après l'impression du pare-choc",
-      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "longDescription": "Dans le cadre d'un workshop à l'IUT de Nantes, j'ai participé à la conception complète de l'habitacle d'un vhéliotech (un véhicule à assistance électrique et pédalage destiné à un usage urbain). L'objectif était de proposer une carrosserie fonctionnelle et ergonomique, en répondant à un cahier des charges précis intégrant des contraintes de masse, de forme, de procédés de fabrication et de réglementation cycliste.\nLe projet s'est articulé autour d'une démarche centrée utilisateur avec au départ trois profils distincts (jeune, parent de famille, senior) ont été définis pour orienter les choix de conception, avant de converger vers une solution hybride modulable. L'habitacle final propose deux configurations, version compacte et version \"break\" grâce à une structure arrière sur rails, permettant d'adapter la capacité du véhicule selon le besoin.\nRédaction du cahier des charges fonctionnel complet avec niveaux et flexibilités pour chaque fonction.\nModélisation de chaque sous-ensemble : armature acier, carrosserie avant en impression 3D, portes en bois, pare-brise en polycarbonate, structure arrière modulable avec son système de fixation sur rails.\nOptimisation des trajectoires d'impression 3D, gestion du poids et du temps d'impression du robot, définition des sens d'impression avec la largeurs du filament.",
       "competences": [
         {
-          "name": "Programmation FAO 5 axes",
-          "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill."
+          "name": "Analyse fonctionnelle & cahier des charges",
+          "description": "Élaboration du diagramme pieuvre, identification des fonctions principales et contraintes comme l'ergonomie, l'imperméabilité, la conformité réglementaire, la compatibilité du châssis et la charge utile jusqu'à 200 kg."
         },
         {
-          "name": "Simulation & vérification",
-          "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel."
+          "name": "Conception CAO & mise en plan",
+          "description": "Modélisation complète de l'habitacle sous 3DExperience."
         },
         {
-          "name": "Optimisation de l'état de surface",
-          "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée."
+          "name": "Impression 3D grand format",
+          "description": "Étude de faisabilité et conception orientée fabrication additive grand format (tête CEAD à pellets). Chaque pièce a été pensée pour garantir des trajectoires d'impression continues, minimiser le poids et respecter les contraintes géométriques du robot."
         },
         {
-          "name": "Travail en binôme",
-          "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning."
+          "name": "Design & UX produit",
+          "description": "Intégration d'une approche design dès la phase d'idéation avec des moodboards, croquis, itérations par votes d'équipe, puis modélisation 3D de la solution retenue. Mix bois et impression 3D pour allier légèreté, esthétique et développement durable."
+        },
+        {
+          "name": "Travail en groupe",
+          "description": "Coordination avec plusieurs partenaires de projet."
         }
       ],
-      "documents": []
+      "documents": [
+        {
+          "title": "Cahier des Charges",
+          "type": "PDF",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782299740/kbplnloopcnfc5idimzp.pdf"
+        },
+        {
+          "title": "Test ergonomie en VR",
+          "type": "PNG",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782299905/gik2livba4oq5frdway7.png"
+        },
+        {
+          "title": "Pare-chocs avant CAO",
+          "type": "PNG",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782300066/vsd3fukwk0r4ejksw6ea.png"
+        }
+      ]
     },
     {
       "id": "p6",
