@@ -52,7 +52,6 @@ export default function Projects() {
               <article key={p.id} className="card card-project reveal">
                 <span className="num">{p.num}</span>
 
-                {/* Image cliquable -> page de détail */}
                 <div style={{ cursor: "pointer" }} onClick={() => navigate(`/projets/${p.id}`)}>
                   <div style={{ position: "relative" }}>
                     <img src={p.image} alt={p.title} className="card-img" />
@@ -70,7 +69,6 @@ export default function Projects() {
                       </div>
                     )}
                   </div>
-                  {/* Légende style Passions — sous l'image */}
                   {p.imageCaption && (
                     <div style={{ fontSize: "0.65rem", color: "var(--fg-muted)", fontStyle: "italic", textAlign: "center", marginTop: 6 }}>
                       {p.imageCaption}
@@ -83,10 +81,6 @@ export default function Projects() {
                   <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.5rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
                   <p style={{ color: "var(--fg-soft)", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: 20 }}>{p.description}</p>
                 </div>
-
-                <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem", marginTop: 16 }}>{p.subtitle}</div>
-                <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.5rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
-                <p style={{ color: "var(--fg-soft)", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: 20 }}>{p.description}</p>
 
                 <div className="divider" style={{ margin: "20px 0" }} />
                 <div style={{ display: "grid", gridTemplateColumns: "120px 1fr", gap: 12, fontSize: "0.85rem", marginBottom: 8 }}>
