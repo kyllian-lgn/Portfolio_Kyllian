@@ -64,3 +64,22 @@ export async function uploadToCloudinary(file) {
   const data = await res.json();
   return data.secure_url;
 }
+export async function uploadDocumentToCloudinary(file) {
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+  const apiKey = import.meta.env.VITE_CLOUDINARY_API_KEY;
+
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", "portfolio_upload");
+  formData.append("api_key", apiKey);
+
+  // resource_type "auto" laisse Cloudinary détecter PDF, images, etc.
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${cloudName}/auto/upload`,
+    { method: "POST", body: formData }
+  );
+
+  if (!res.ok) throw new Error("Erreur upload Cloudinary");
+  const data = await res.json();
+  return data.secure_url;
+}
