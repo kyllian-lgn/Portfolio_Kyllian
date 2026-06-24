@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowUpRight, Images } from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
 import ProjectGallery from "../components/ProjectGallery";
@@ -7,6 +7,7 @@ import ProjectGallery from "../components/ProjectGallery";
 export default function Projects() {
   const { content, loading } = usePortfolio();
   const [galleryProject, setGalleryProject] = useState(null);
+  const navigate = useNavigate();
 
   if (loading || !content) return <div style={{ minHeight: "100vh" }} />;
 
@@ -51,8 +52,8 @@ export default function Projects() {
               <article key={p.id} className="card card-project reveal">
                 <span className="num">{p.num}</span>
 
-                {/* Image cliquable */}
-                <div style={{ cursor: "pointer" }} onClick={() => setGalleryProject(p)}>
+                {/* Image cliquable -> page de détail */}
+                <div style={{ cursor: "pointer" }} onClick={() => navigate(`/projets/${p.id}`)}>
                   <div style={{ position: "relative" }}>
                     <img src={p.image} alt={p.title} className="card-img" />
                     <div
@@ -61,7 +62,10 @@ export default function Projects() {
                       onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}
                     />
                     {p.gallery?.length > 0 && (
-                      <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}>
+                      <div
+                        onClick={(e) => { e.stopPropagation(); setGalleryProject(p); }}
+                        style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "4px 10px", fontSize: "0.72rem", color: "white", display: "flex", alignItems: "center", gap: 5 }}
+                      >
                         <Images size={12} /> {p.gallery.length + 1} photos
                       </div>
                     )}
@@ -72,6 +76,12 @@ export default function Projects() {
                       {p.imageCaption}
                     </div>
                   )}
+                </div>
+
+                <div style={{ cursor: "pointer" }} onClick={() => navigate(`/projets/${p.id}`)}>
+                  <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem", marginTop: 16 }}>{p.subtitle}</div>
+                  <h3 style={{ fontFamily: "var(--heading-font)", fontSize: "1.5rem", marginBottom: 16, lineHeight: 1.2 }}>{p.title}</h3>
+                  <p style={{ color: "var(--fg-soft)", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: 20 }}>{p.description}</p>
                 </div>
 
                 <div className="eyebrow no-after" style={{ marginBottom: 12, fontSize: "0.7rem", marginTop: 16 }}>{p.subtitle}</div>
@@ -92,7 +102,11 @@ export default function Projects() {
                   <span style={{ color: "var(--fg-soft)" }}>{p.innovation}</span>
                 </div>
 
-                <div>{p.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
+                <div style={{ marginBottom: 20 }}>{p.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}</div>
+
+                <Link to={`/projets/${p.id}`} className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+                  Voir le détail <ArrowUpRight size={14} />
+                </Link>
               </article>
             ))}
           </div>
