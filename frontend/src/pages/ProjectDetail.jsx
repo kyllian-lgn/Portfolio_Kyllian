@@ -45,7 +45,6 @@ export default function ProjectDetail() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.7fr) minmax(280px, 1fr)", gap: 36, alignItems: "start" }}>
-            {/* Visuel principal */}
             <div className="reveal">
               <div
                 style={{ position: "relative", borderRadius: 18, overflow: "hidden", background: "#0d0d0e", border: "1px solid var(--border)", cursor: "pointer" }}
@@ -90,7 +89,6 @@ export default function ProjectDetail() {
               )}
             </div>
 
-            {/* Sidebar Informations */}
             <div className="card reveal" style={{ padding: 28 }}>
               <div className="eyebrow no-after" style={{ marginBottom: 20, fontSize: "0.72rem" }}>Informations du projet</div>
               <InfoRow label="Catégorie" value={project.category} />
@@ -112,7 +110,6 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* Description détaillée */}
       <section className="section-pad">
         <div className="container-x" style={{ maxWidth: 1000 }}>
           <div className="eyebrow reveal" style={{ marginBottom: 24 }}>01 — Aperçu du projet</div>
@@ -122,7 +119,6 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* Compétences acquises */}
       {competences.length > 0 && (
         <section className="section-pad" style={{ paddingTop: 0 }}>
           <div className="container-x">
@@ -140,37 +136,37 @@ export default function ProjectDetail() {
         </section>
       )}
 
-      {/* Documents */}
       {documents.length > 0 && (
         <section className="section-pad" style={{ paddingTop: 0 }}>
           <div className="container-x">
             <div className="eyebrow reveal" style={{ marginBottom: 24 }}>03 — Documents</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
-              {documents.map((d, i) => (
-                
-                  key={i}
-                  href={d.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="card reveal"
-                  style={{ padding: 20, display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "var(--fg)" }}
-                >
-                  <div style={{ width: 42, height: 42, borderRadius: 10, background: "var(--accent-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <FileText size={18} style={{ color: "var(--accent)" }} />
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: "0.92rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{d.title || "Document"}</div>
-                    <div style={{ fontSize: "0.74rem", color: "var(--fg-muted)" }}>{d.type || "Fichier"}</div>
-                  </div>
-                  <Download size={16} style={{ color: "var(--fg-muted)", flexShrink: 0 }} />
-                </a>
-              ))}
+              {documents.map((d, i) => {
+                return (
+                  
+                    key={i}
+                    href={d.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="card reveal"
+                    style={{ padding: 20, display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "var(--fg)" }}
+                  >
+                    <div style={{ width: 42, height: 42, borderRadius: 10, background: "var(--accent-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <FileText size={18} style={{ color: "var(--accent)" }} />
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: "0.92rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{d.title || "Document"}</div>
+                      <div style={{ fontSize: "0.74rem", color: "var(--fg-muted)" }}>{d.type || "Fichier"}</div>
+                    </div>
+                    <Download size={16} style={{ color: "var(--fg-muted)", flexShrink: 0 }} />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
       )}
 
-      {/* Galerie complète */}
       {media.length > 1 && (
         <section className="section-pad" style={{ paddingTop: 0 }}>
           <div className="container-x">
