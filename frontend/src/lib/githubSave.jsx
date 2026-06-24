@@ -64,6 +64,7 @@ export async function uploadToCloudinary(file) {
   const data = await res.json();
   return data.secure_url;
 }
+
 export async function uploadDocumentToCloudinary(file) {
   const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
   const apiKey = import.meta.env.VITE_CLOUDINARY_API_KEY;
