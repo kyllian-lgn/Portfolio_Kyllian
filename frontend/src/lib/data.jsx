@@ -84,6 +84,14 @@ const portfolioData = {
       ],
       "imageCaption": "Oeuvre d'art utilisée pour le projet"
     },
+    "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "competences": [
+        { "name": "Programmation FAO 5 axes", "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill." },
+        { "name": "Simulation & vérification", "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel." },
+        { "name": "Optimisation de l'état de surface", "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée." },
+        { "name": "Travail en binôme", "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning." }
+      ],
+      "documents": []
     {
       "id": "p2",
       "num": "02",
@@ -126,6 +134,14 @@ const portfolioData = {
       ],
       "imageCaption": "Bras robotisé Kuka"
     },
+    "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "competences": [
+        { "name": "Programmation FAO 5 axes", "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill." },
+        { "name": "Simulation & vérification", "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel." },
+        { "name": "Optimisation de l'état de surface", "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée." },
+        { "name": "Travail en binôme", "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning." }
+      ],
+      "documents": []
     {
       "id": "p3",
       "num": "03",
@@ -172,6 +188,14 @@ const portfolioData = {
       ],
       "imageCaption": "Moi entrain de tester la simulation VR"
     },
+      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "competences": [
+        { "name": "Programmation FAO 5 axes", "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill." },
+        { "name": "Simulation & vérification", "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel." },
+        { "name": "Optimisation de l'état de surface", "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée." },
+        { "name": "Travail en binôme", "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning." }
+      ],
+      "documents": []
     {
       "id": "p4",
       "num": "04",
@@ -219,6 +243,14 @@ const portfolioData = {
       ],
       "imageCaption": "Mise en plan de mon Winch"
     },
+      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "competences": [
+        { "name": "Programmation FAO 5 axes", "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill." },
+        { "name": "Simulation & vérification", "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel." },
+        { "name": "Optimisation de l'état de surface", "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée." },
+        { "name": "Travail en binôme", "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning." }
+      ],
+      "documents": []
     {
       "id": "p5",
       "num": "05",
@@ -260,6 +292,14 @@ const portfolioData = {
       ],
       "imageCaption": "Moi (au centre) et mes collègues après l'impression du pare-choc"
     },
+      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "competences": [
+        { "name": "Programmation FAO 5 axes", "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill." },
+        { "name": "Simulation & vérification", "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel." },
+        { "name": "Optimisation de l'état de surface", "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée." },
+        { "name": "Travail en binôme", "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning." }
+      ],
+      "documents": []
     {
       "id": "p6",
       "num": "06",
@@ -302,6 +342,14 @@ const portfolioData = {
       ],
       "imageCaption": "Interface utilisateur du logiciel d'intégration 3D"
     }
+      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "competences": [
+        { "name": "Programmation FAO 5 axes", "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill." },
+        { "name": "Simulation & vérification", "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel." },
+        { "name": "Optimisation de l'état de surface", "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée." },
+        { "name": "Travail en binôme", "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning." }
+      ],
+      "documents": []
   ],
   "education": [
     {
