@@ -418,26 +418,28 @@ const portfolioData = {
         }
       ],
       "imageCaption": "Interface utilisateur du logiciel d'intégration 3D",
-      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "longDescription": "Dans le cadre d'un projet réalisé pour les Chantiers de l'Atlantique, j'ai développé un outil d'intégration automatisé destiné à standardiser la modélisation CAO des transports Pocket sur les réseaux d'eaux noires des paquebots. Ces assemblages de tuyauterie, composés d'un té latéral et d'un bouchon, doivent respecter des standards précis répertoriés dans les recueils techniques de l'entreprise.\nL'outil automatise la conception et l'assemblage qui, réalisée manuellement, serait longue et sujette à des erreurs sur des installations comportant des centaines de transports Pocket répartis sur l'ensemble du navire.\nCréation d'un programme en XML, en lien avec leur logiciel de CAO (SMART Marine). L'outil d'automatisation est utilisé dans un contexte d'amélioration continue.",
       "competences": [
         {
-          "name": "Programmation FAO 5 axes",
-          "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill."
+          "name": "Lecture et interprétation de standards techniques",
+          "description": "Analyse approfondie des recueils, pour identifier les composants, les contraintes dimensionnelles (longueur L entre 4D et 1 m, hauteur H ≥ 2D, pente à 0,2 %, angle à 45°) et les règles d'intégration des composants."
         },
         {
-          "name": "Simulation & vérification",
-          "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel."
+          "name": "Programmation & Code",
+          "description": "Apprentissage de la méthode de programmation appelée PAL (Parametric Assemblie Languages), puis intégration sur le logiciel de CAO."
         },
         {
-          "name": "Optimisation de l'état de surface",
-          "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée."
-        },
-        {
-          "name": "Travail en binôme",
-          "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning."
+          "name": "Autonomie et apprentissage",
+          "description": "Action de progrès réalisée en autonomie et apprentissage de la programmation par moi-même."
         }
       ],
-      "documents": []
+      "documents": [
+        {
+          "title": "Schéma du Transport Pocket",
+          "type": "PDF",
+          "url": "https://res.cloudinary.com/dkfhtjeel/image/upload/v1782301408/vcgqmmriozbleerqzsy7.pdf"
+        }
+      ]
     }
   ],
   "education": [
