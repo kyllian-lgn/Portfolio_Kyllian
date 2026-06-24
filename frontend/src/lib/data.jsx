@@ -274,23 +274,19 @@ const portfolioData = {
         }
       ],
       "imageCaption": "Mise en plan de mon Winch",
-      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "longDescription": "Dans le cadre d'un projet de conception mécanique à l'Université de Nantes, j'ai réalisé l'étude de dimensionnement et la conception complète d'un Winch à deux vitesses, capable de réduire la vitesse par un facteur de 2 et de 4. Ce projet couvrait l'intégralité du cycle de conception, de l'analyse cinématique jusqu'au plan d'ensemble, en passant par le choix et le dimensionnement de chaque composant.\nLa conception s'appuie sur un assemblage de 14 pièces : corps, tambour, pignons, cliquets, clavettes, coussinets et cages à aiguilles, dont la cohérence fonctionnelle et la faisabilité de montage ont guidé chaque décision de conception.\nCalcul des paramètres d'engrenages, sélection des composants normalisés (coussinets, cages à aiguilles, anneaux élastiques), vérification des ajustements et tolérances.\nModélisation finale avec 3DExpérience et automatisation des tolérances / paramètres des engrenages et cliquets.",
       "competences": [
         {
-          "name": "Programmation FAO 5 axes",
-          "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill."
+          "name": "Analyse cinématique",
+          "description": "Élaboration de deux schémas cinématiques distincts modélisant le comportement du mécanisme à chaque vitesse."
         },
         {
-          "name": "Simulation & vérification",
-          "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel."
+          "name": "Dimensionnement des engrenages",
+          "description": "Calcul des paramètres géométriques des pignons pour obtenir les rapports de réduction cibles."
         },
         {
-          "name": "Optimisation de l'état de surface",
-          "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée."
-        },
-        {
-          "name": "Travail en binôme",
-          "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning."
+          "name": "Conception orientée montage",
+          "description": "Réflexion approfondie sur la séquence d'assemblage et de démontage du produit. Choix des liaisons et positionnement des anneaux élastiques, des clavettes et des vis, pour garantir une maintenabilité réelle de l'ensemble."
         }
       ],
       "documents": []
