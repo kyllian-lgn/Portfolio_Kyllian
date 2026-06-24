@@ -145,23 +145,19 @@ const portfolioData = {
         }
       ],
       "imageCaption": "Bras robotisé Kuka",
-      "longDescription": "Ce projet consistait à programmer un parcours d'usinage complet (FAO) pour fabriquer une pièce aux formes complexes et gauches, inspirée du cubisme. Le travail a couvert l'ensemble de la chaîne numérique : modélisation de la géométrie, définition des stratégies d'ébauche, de demi-finition et de finition sur un centre 5 axes, puis simulation et vérification des trajectoires avant passage en machine réelle. Une attention particulière a été portée à l'optimisation de l'état de surface final et à la sécurisation des parcours pour éviter toute collision.",
+      "longDescription": "Dans le cadre d'un appel d'offres émis par La Poste, j'ai participé à la conception d'une cellule robotisée destinée à automatiser le déchargement de caisses sur un convoyeur. Ce projet répondait à un enjeu industriel concret qui est d'améliorer les conditions de travail des opérateurs et prévenir l'apparition de troubles musculosquelettiques liés aux manutentions répétitives.\n\nJ'ai pris en charge la conception du préhenseur du robot avec 3DExperience, en définissant les contraintes fonctionnelles nécessaires à la saisie et au dépôt sécurisé des caisses. L'ensemble de la cellule a ensuite été modélisé et simulé sous RobotStudio, permettant de valider les trajectoires, d'optimiser les cycles de production et d'anticiper les risques opérationnels.\n\nLa phase de simulation a notamment mis en évidence des positions de singularité potentiellement dangereuses pour le personnel à proximité. Cette expérience m'a conduit à réaliser une analyse des risques, en intégrant les paramètres de vitesse, de force et de sécurité dès la phase de conception. Cela m'a permis d'acquérir des compétences en interaction homme-machine. ",
       "competences": [
         {
-          "name": "Programmation FAO 5 axes",
-          "description": "Définition de stratégies d'usinage adaptées à des géométries complexes sur PowerMill."
+          "name": "Conception mécanique",
+          "description": "Développement d'un préhenseur adapté à la saisie et au dépôt de caisses sur convoyeur."
         },
         {
-          "name": "Simulation & vérification",
-          "description": "Contrôle des trajectoires d'outils sous NCSimul pour sécuriser l'usinage réel."
+          "name": "Simulation & Optimisation",
+          "description": "Modélisation complète de la cellule sous RobotStudio, incluant les cycles de production et les trajectoires optimales."
         },
         {
-          "name": "Optimisation de l'état de surface",
-          "description": "Réglage des paramètres de coupe pour atteindre la qualité de finition demandée."
-        },
-        {
-          "name": "Travail en binôme",
-          "description": "Coordination avec un partenaire de projet sur la répartition des tâches et le planning."
+          "name": "Analyse des risques",
+          "description": "Identification des zones de singularité, contrôle des vitesses et forces en conditions opérationnelles"
         }
       ],
       "documents": []
