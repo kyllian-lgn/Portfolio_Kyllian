@@ -47,15 +47,24 @@ export default function ProjectDetail() {
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.7fr) minmax(280px, 1fr)", gap: 36, alignItems: "start" }}>
             <div className="reveal">
               <div
-                style={{ position: "relative", borderRadius: 18, overflow: "hidden", background: "#0d0d0e", border: "1px solid var(--border)", cursor: "pointer" }}
-                onClick={() => setGalleryOpen(true)}
+                style={{ position: "relative", borderRadius: 18, overflow: "hidden", background: "#0d0d0e", border: "1px solid var(--border)", cursor: media[mainIndex]?.type === "video" ? "default" : "pointer" }}
+                onClick={() => { if (media[mainIndex]?.type !== "video") setGalleryOpen(true); }}
               >
-                <img
-                  src={media[mainIndex]?.url}
-                  alt={project.title}
-                  style={{ width: "100%", maxHeight: 460, objectFit: "contain", display: "block", margin: "0 auto" }}
-                />
-                {media.length > 1 && (
+                {media[mainIndex]?.type === "video" ? (
+                  <video
+                    key={media[mainIndex]?.url}
+                    src={media[mainIndex]?.url}
+                    controls
+                    style={{ width: "100%", maxHeight: 460, display: "block", background: "#000" }}
+                  />
+                ) : (
+                  <img
+                    src={media[mainIndex]?.url}
+                    alt={project.title}
+                    style={{ width: "100%", maxHeight: 460, objectFit: "contain", display: "block", margin: "0 auto" }}
+                  />
+                )}
+                {media.length > 1 && media[mainIndex]?.type !== "video" && (
                   <div style={{ position: "absolute", bottom: 14, right: 14, background: "rgba(0,0,0,0.7)", borderRadius: 20, padding: "5px 12px", fontSize: "0.74rem", color: "white", display: "flex", alignItems: "center", gap: 6 }}>
                     <Images size={13} /> {media.length} médias
                   </div>
@@ -80,7 +89,13 @@ export default function ProjectDetail() {
                       }}
                     >
                       {m.type === "video"
-                        ? <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: "0.7rem" }}>▶</div>
+                        ? (
+                          <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#1a1a1a", position: "relative" }}>
+                            <div style={{ width: 24, height: 24, borderRadius: "50%", background: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                              <span style={{ fontSize: "0.6rem", marginLeft: 2, color: "#000" }}>▶</span>
+                            </div>
+                          </div>
+                        )
                         : <img src={m.url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                       }
                     </div>
