@@ -137,6 +137,8 @@ export default function ContentEditor({ value, onChange }) {
                 )}
               />
             </>
+          )}
+        />
       </Section>
 
       <Section title="Parcours · Formations" eyebrow="05">
