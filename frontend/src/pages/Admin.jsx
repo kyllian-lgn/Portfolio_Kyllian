@@ -31,7 +31,7 @@ export default function Admin() {
   useEffect(() => {
   const checkPwd = async () => {
     const stored = localStorage.getItem("admin_pwd");
-    
+    const HASH = "27ae183d91339c114e51361ac2f5524d661039824461bc97a50c5a4ecb65d2e2";
     if (stored === HASH) return;
 
     const input = window.prompt("Mot de passe admin :");
