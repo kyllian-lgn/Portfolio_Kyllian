@@ -11,7 +11,7 @@ const portfolioData = {
     "firstName": "Kyllian",
     "lastName": "Le Guen",
     "subtitle": "Apprenti, ingénieur en conception 3D",
-    "description": "Étudiant en alternance passionné par la conception 3D, la fabrication additive et la réalité virtuelle. En alternance aux Chantiers de l'Atlantique.",
+    "description": "Étudiant en alternance passionné par la conception 3D, la fabrication additive et la réalité virtuelle. En alternance à Alstom.",
     "stats": [
       {
         "value": "2+",
@@ -39,7 +39,10 @@ const portfolioData = {
     "Réalité Augmenté",
     "Unity 3D",
     "NCSimul",
-    "Industrie 4.0"
+    "Industrie 4.0",
+    "PiXYZ",
+    "XRTwin",
+    "Interact"
   ],
   "projects": [
     {
